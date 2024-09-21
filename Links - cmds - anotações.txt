@@ -1,0 +1,8 @@
+==Comandos Git
+git status
+git add .
+git commit -m "nome do commit"
+git push
+
+git checkout main
+git pull
