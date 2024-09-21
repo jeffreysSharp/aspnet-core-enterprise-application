@@ -1,0 +1,32 @@
+==Objetivos
+Aplicação e-commerce utilizando conceitos avançados do ASP.NET Core e Angular
+
+==Ferramentas
+ASP.NET Core 8
+Visual Studio 2022
+SQL Server 2018
+Docker
+
+
+==Padrões
+SOLID
+Clean Code
+git-flow
+
+
+==Pré Requisitos
+
+==Comandos dotnet
+dotnet --list-sdks
+dotnet --list-runtimes
+dotnet --info
+
+
+==Comandos Git
+git status
+git add .
+git commit -m "nome do commit"
+git push
+
+git checkout main
+git pull
