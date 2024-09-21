@@ -13,6 +13,19 @@ SOLID
 Clean Code
 git-flow
 
+==API Identiddade - Packages
+Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Install-Package Microsoft.AspNetCore.Identity.UI
+Install-Package Microsoft.EntityFrameworkCore
+Install-Package Microsoft.EntityFrameworkCore.Abstractions
+Install-Package Microsoft.EntityFrameworkCore.Relational
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+==Migrations
+Add-Migration Initial
+Update-Database
 
 ==Pré Requisitos
 
