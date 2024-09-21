@@ -1,3 +1,6 @@
+==Objetivos
+Aplicação estilo e-commerce utilizando conceitos avançados do ASP.NET Core 
+
 ==Pré Requisitos
 
 ==Comandos Git
