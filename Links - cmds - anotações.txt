@@ -1,3 +1,5 @@
+==Pré Requisitos
+
 ==Comandos Git
 git status
 git add .
