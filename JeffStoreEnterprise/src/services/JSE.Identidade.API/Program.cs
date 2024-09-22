@@ -32,6 +32,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
 }).AddJwtBearer(bearerOptions =>
 {
     bearerOptions.RequireHttpsMetadata = true;
@@ -66,6 +67,14 @@ builder.Services.AddSwaggerGen(c =>
 );
 
 var app = builder.Build();
+
+builder.Configuration
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", false, false)
+        .AddJsonFile($@"appsettings.{builder.Environment.EnvironmentName}.json", false, false)
+        .AddCommandLine(args)
+        .AddEnvironmentVariables()
+        .AddUserSecrets(typeof(Program).Assembly).Build();
 
 if (app.Environment.IsDevelopment())
 {
