@@ -5,6 +5,12 @@ ASP.NET Core 8
 
 DDD 
 
+Identity 
+
+Swagger
+
+JWT
+
 API Gateway 
 
 Message Broker 
@@ -19,3 +25,11 @@ ASP.NET Core 8
 SQL Server
 
 Docker
+
+#Te
+
+# Features
+Cadastro de Usuários
+Login
+
+
