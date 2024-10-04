@@ -1,6 +1,4 @@
-﻿using JSE.WebApp.MVC.Models;
-
-namespace JSE.WebApp.MVC.Models
+﻿namespace JSE.WebApp.MVC.Models
 {
     public class ResponseResult
     {
