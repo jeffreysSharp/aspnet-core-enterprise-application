@@ -1,6 +1,10 @@
 ﻿using JSE.WebApp.MVC.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using NSE.WebApp.MVC.Services;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace JSE.WebApp.MVC.Controllers
 {
@@ -29,7 +33,7 @@ namespace JSE.WebApp.MVC.Controllers
 
             var resposta = await _autenticacaoService.Registro(usuarioRegistroViewModel);
 
-            if (false) return View(usuarioRegistroViewModel);
+            await RealizarLogin(resposta);
 
             return RedirectToAction("Index", "Home");
 
@@ -50,11 +54,9 @@ namespace JSE.WebApp.MVC.Controllers
 
             var resposta = await _autenticacaoService.Login(usuarioLoginViewModel);
 
-            if (false) return View(usuarioLoginViewModel);
+            await RealizarLogin(resposta);            
 
             return RedirectToAction("Index", "Home");
-
-
         }
 
         [HttpGet]
@@ -62,6 +64,33 @@ namespace JSE.WebApp.MVC.Controllers
         public async Task<IActionResult> Logout()
         {
             return RedirectToAction("Index", "Home");
+        }
+
+        private async Task RealizarLogin(UsuarioRespostaLoginViewModel usuarioRespostaLoginViewModel)
+        {
+            var token = ObterTokenFormatado(usuarioRespostaLoginViewModel.AccessToken);
+
+            var claims = new List<Claim>();
+            claims.Add(new Claim("JWT", usuarioRespostaLoginViewModel.AccessToken));
+            claims.AddRange(token.Claims);
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var authProperties = new AuthenticationProperties
+            {
+                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(60),
+                IsPersistent = true
+            };
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                authProperties);
+        }
+
+        private static JwtSecurityToken ObterTokenFormatado(string jwtToken)
+        {
+            return new JwtSecurityTokenHandler().ReadToken(jwtToken) as JwtSecurityToken;
         }
     }
 }
