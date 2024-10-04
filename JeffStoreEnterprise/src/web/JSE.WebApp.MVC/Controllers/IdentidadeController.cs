@@ -44,24 +44,29 @@ namespace JSE.WebApp.MVC.Controllers
 
         [HttpGet]
         [Route("login")]
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(UsuarioLoginViewModel usuarioLoginViewModel)
+        public async Task<IActionResult> Login(UsuarioLoginViewModel usuarioLoginViewModel, string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
+
             if (!ModelState.IsValid) return View(usuarioLoginViewModel);
 
             var resposta = await _autenticacaoService.Login(usuarioLoginViewModel);
 
             if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLoginViewModel);
 
-            await RealizarLogin(resposta);            
+            await RealizarLogin(resposta);
 
-            return RedirectToAction("Index", "Home");
+            if (string.IsNullOrEmpty(returnUrl)) return RedirectToAction("Index", "Home");
+
+            return LocalRedirect(returnUrl);
         }
 
         [HttpGet]
