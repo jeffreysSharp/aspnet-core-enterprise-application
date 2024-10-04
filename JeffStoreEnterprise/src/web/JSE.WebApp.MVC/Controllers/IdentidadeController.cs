@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using NSE.WebApp.MVC.Services;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
+using NSE.WebApp.MVC.Controllers;
 
 namespace JSE.WebApp.MVC.Controllers
 {
-    public class IdentidadeController : Controller
+    public class IdentidadeController : MainController
     {
 
         private readonly IAutenticacaoService _autenticacaoService;
@@ -33,6 +34,8 @@ namespace JSE.WebApp.MVC.Controllers
 
             var resposta = await _autenticacaoService.Registro(usuarioRegistroViewModel);
 
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistroViewModel);
+
             await RealizarLogin(resposta);
 
             return RedirectToAction("Index", "Home");
@@ -53,6 +56,8 @@ namespace JSE.WebApp.MVC.Controllers
             if (!ModelState.IsValid) return View(usuarioLoginViewModel);
 
             var resposta = await _autenticacaoService.Login(usuarioLoginViewModel);
+
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLoginViewModel);
 
             await RealizarLogin(resposta);            
 
