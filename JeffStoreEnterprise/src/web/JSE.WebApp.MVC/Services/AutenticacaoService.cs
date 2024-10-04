@@ -1,11 +1,9 @@
 ﻿using JSE.WebApp.MVC.Models;
 using NSE.WebApp.MVC.Services;
-using System.Text.Json;
-using System.Text;
 
 namespace JSE.WebApp.MVC.Services
 {
-    public class AutenticacaoService : Service,  IAutenticacaoService
+    public class AutenticacaoService : Service, IAutenticacaoService
     {
         private readonly HttpClient _httpClient;
 
@@ -16,54 +14,37 @@ namespace JSE.WebApp.MVC.Services
 
         public async Task<UsuarioRespostaLoginViewModel> Login(UsuarioLoginViewModel usuarioLoginViewModel)
         {
-            var loginContent = new StringContent(
-                JsonSerializer.Serialize(usuarioLoginViewModel),
-                Encoding.UTF8,
-                "application/json");
+            var loginContent = ObterConteudo(usuarioLoginViewModel);
 
             var response = await _httpClient.PostAsync("http://localhost:5080/api/identidade/autenticar", loginContent);
-
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-            };
 
             if (!TratarErrosResponse(response))
             {
                 return new UsuarioRespostaLoginViewModel
                 {
-                    ResponseResult = JsonSerializer.Deserialize<ResponseResult>(await response.Content.ReadAsStringAsync(), options)
+                    ResponseResult = await DeserializarObjetoResponse<ResponseResult>(response)
                 };
-
             }
 
-            return JsonSerializer.Deserialize<UsuarioRespostaLoginViewModel>(await response.Content.ReadAsStringAsync(), options);
+            return await DeserializarObjetoResponse<UsuarioRespostaLoginViewModel>(response);
         }
 
         public async Task<UsuarioRespostaLoginViewModel> Registro(UsuarioRegistroViewModel usuarioRegistroViewModel)
         {
-            var registroContent = new StringContent(
-                JsonSerializer.Serialize(usuarioRegistroViewModel),
-                Encoding.UTF8,
-                "application/json");
+            var registroContent = ObterConteudo(usuarioRegistroViewModel);
 
             var response = await _httpClient.PostAsync("http://localhost:5080/api/identidade/nova-conta", registroContent);
-
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-            };
 
             if (!TratarErrosResponse(response))
             {
                 return new UsuarioRespostaLoginViewModel
                 {
-                    ResponseResult = JsonSerializer.Deserialize<ResponseResult>(await response.Content.ReadAsStringAsync(), options)
-                };
+                    ResponseResult = await DeserializarObjetoResponse<ResponseResult>(response)
 
+                };
             }
 
-            return JsonSerializer.Deserialize<UsuarioRespostaLoginViewModel>(await response.Content.ReadAsStringAsync(), options);
+            return await DeserializarObjetoResponse<UsuarioRespostaLoginViewModel>(response);
         }
     }
 }
