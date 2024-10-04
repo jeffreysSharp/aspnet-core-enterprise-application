@@ -1,8 +1,13 @@
+using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using NSE.WebApp.MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
@@ -11,6 +16,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                     options.AccessDeniedPath = "/acesso-negado";
                 });
 
+
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -18,8 +25,6 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
-
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

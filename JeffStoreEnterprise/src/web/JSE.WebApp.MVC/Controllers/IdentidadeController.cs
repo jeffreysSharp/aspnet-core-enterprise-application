@@ -1,10 +1,19 @@
 ﻿using JSE.WebApp.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using NSE.WebApp.MVC.Services;
 
 namespace JSE.WebApp.MVC.Controllers
 {
     public class IdentidadeController : Controller
     {
+
+        private readonly IAutenticacaoService _autenticacaoService;
+
+        public IdentidadeController(IAutenticacaoService autenticacaoService)
+        {
+            _autenticacaoService = autenticacaoService;
+        }
+
         [HttpGet]
         [Route("nova-conta")]
         public IActionResult Registro()
@@ -17,6 +26,8 @@ namespace JSE.WebApp.MVC.Controllers
         public async Task<IActionResult> Registro(UsuarioRegistroViewModel usuarioRegistroViewModel)
         {
             if (!ModelState.IsValid) return View(usuarioRegistroViewModel);
+
+            var resposta = await _autenticacaoService.Registro(usuarioRegistroViewModel);
 
             if (false) return View(usuarioRegistroViewModel);
 
@@ -36,6 +47,8 @@ namespace JSE.WebApp.MVC.Controllers
         public async Task<IActionResult> Login(UsuarioLoginViewModel usuarioLoginViewModel)
         {
             if (!ModelState.IsValid) return View(usuarioLoginViewModel);
+
+            var resposta = await _autenticacaoService.Login(usuarioLoginViewModel);
 
             if (false) return View(usuarioLoginViewModel);
 

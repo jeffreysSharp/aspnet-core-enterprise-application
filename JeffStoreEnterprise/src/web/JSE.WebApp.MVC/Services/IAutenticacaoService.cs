@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
-using JSE.WebApp.MVC.Models;
+﻿using JSE.WebApp.MVC.Models;
 
 namespace NSE.WebApp.MVC.Services
 {
     public interface IAutenticacaoService
     {
-         //Task<UsuarioRespostaLoginViewModel> Login(UsuarioLoginViewModel usuarioLogin);
+         Task<UsuarioRespostaLoginViewModel> Login(UsuarioLoginViewModel usuarioLogin);
 
-         //Task<UsuarioRespostaLogin> Registro(UsuarioRegistroViewModel usuarioRegistro);
+         Task<UsuarioRespostaLoginViewModel> Registro(UsuarioRegistroViewModel usuarioRegistro);
     }
 }
