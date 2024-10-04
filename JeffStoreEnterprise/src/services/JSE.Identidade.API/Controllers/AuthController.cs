@@ -30,8 +30,6 @@ namespace NSE.Identidade.API.Controllers
         [HttpPost("nova-conta")]
         public async Task<ActionResult> Registrar(UsuarioRegistroViewModel usuarioRegistro)
         {
-            return new StatusCodeResult(401);
-
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var user = new IdentityUser
@@ -100,7 +98,7 @@ namespace NSE.Identidade.API.Controllers
             claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
             claims.Add(new Claim(JwtRegisteredClaimNames.Nbf, ToUnixEpochDate(DateTime.UtcNow).ToString()));
             claims.Add(new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(DateTime.UtcNow).ToString(), ClaimValueTypes.Integer64));
-           
+
             foreach (var userRole in userRoles)
             {
                 claims.Add(new Claim("role", userRole));

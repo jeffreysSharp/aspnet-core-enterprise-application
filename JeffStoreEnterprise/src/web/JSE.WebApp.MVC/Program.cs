@@ -23,12 +23,21 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/erro/500");
-    app.UseStatusCodePagesWithRedirects("/erro/{0}");
-    app.UseHsts();
-}
+// Comentado para testes em DEV
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
+//}
+//else
+//{
+//    app.UseExceptionHandler("/erro/500");
+//    app.UseStatusCodePagesWithRedirects("/erro/{0}");
+//    app.UseHsts();
+//}
+
+app.UseExceptionHandler("/erro/500");
+app.UseStatusCodePagesWithRedirects("/erro/{0}");
+app.UseHsts();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
