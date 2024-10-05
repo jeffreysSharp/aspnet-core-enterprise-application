@@ -23,21 +23,25 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 var app = builder.Build();
 
-// Comentado para testes em DEV
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseDeveloperExceptionPage();
-//}
-//else
-//{
-//    app.UseExceptionHandler("/erro/500");
-//    app.UseStatusCodePagesWithRedirects("/erro/{0}");
-//    app.UseHsts();
-//}
 
-app.UseExceptionHandler("/erro/500");
-app.UseStatusCodePagesWithRedirects("/erro/{0}");
-app.UseHsts();
+builder.Configuration
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", false, false)
+        .AddJsonFile($@"appsettings.{builder.Environment.EnvironmentName}.json", false, false)
+        .AddCommandLine(args)
+        .AddEnvironmentVariables()
+        .AddUserSecrets(typeof(Program).Assembly).Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/erro/500");
+    app.UseStatusCodePagesWithRedirects("/erro/{0}");
+    app.UseHsts();
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
