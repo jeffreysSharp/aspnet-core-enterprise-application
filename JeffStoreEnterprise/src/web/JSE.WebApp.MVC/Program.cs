@@ -1,17 +1,43 @@
+using JSE.WebApp.MVC.Extensions;
+using JSE.WebApp.MVC.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using NSE.WebApp.MVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<IUser, AspNetUser>();
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/login";
+                    options.AccessDeniedPath = "/acesso-negado";
+                });
+
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+// Comentado para testes em DEV
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
+//}
+//else
+//{
+//    app.UseExceptionHandler("/erro/500");
+//    app.UseStatusCodePagesWithRedirects("/erro/{0}");
+//    app.UseHsts();
+//}
+
+app.UseExceptionHandler("/erro/500");
+app.UseStatusCodePagesWithRedirects("/erro/{0}");
+app.UseHsts();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -19,7 +45,11 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
+app.UseMiddleware<ExceptionMiddleware>();
 
-app.MapRazorPages();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
