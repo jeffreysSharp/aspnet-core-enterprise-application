@@ -1,6 +1,6 @@
-@JSE.Catalogo.API_HostAddress = http://localhost:5258
+@JSE.Catalogo.API_HostAddress = http://localhost:44307
 
-GET {{JSE.Catalogo.API_HostAddress}}/weatherforecast/
+GET {{JSE.Catalogo.API_HostAddress}}/vitrine/
 Accept: application/json
 
 ###
