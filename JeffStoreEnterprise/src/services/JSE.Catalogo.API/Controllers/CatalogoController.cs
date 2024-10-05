@@ -1,5 +1,4 @@
-﻿using JSE.Catalogo.API.Extensions;
-using JSE.Catalogo.API.Models;
+﻿using JSE.Catalogo.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +6,7 @@ namespace JSE.Catalogo.API.Controllers
 {
     [ApiController]
     // [Authorize]
-    public class CatalogoController : MainController
+    public class CatalogoController : Controller
     {
 
         private readonly IProdutoRepository _produtoRepository;
