@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - JeffStore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/JSE.WebApp.MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/site.css" asp-append-version="true" />
 </head>  
 <body class="d-flex flex-column h-100">
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">JeffStore</a>
+                <a asp-action"Index" asp-controller"Catalogo" class="navbar-brand" href="#">JeffStore</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
