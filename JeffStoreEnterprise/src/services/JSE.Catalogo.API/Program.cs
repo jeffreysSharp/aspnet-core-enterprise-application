@@ -8,7 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 
-var builder = WebApplication.CreateBuilder(args); 
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
@@ -49,18 +49,40 @@ builder.Services.AddScoped<CatalogoContext>();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
-    c.SwaggerDoc("v1", new OpenApiInfo
+{
+    c.SwaggerDoc("v1", new OpenApiInfo()
     {
         Title = "JeffStore Enterprise Catálogo API",
         Description = "Esta é a API da JeffStore Enterprise Applications",
         Contact = new OpenApiContact() { Name = "Jeferson Almeida", Email = "jefferson_qi3@hotmail.com" },
-        License = new OpenApiLicense()
+        License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
+    });
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "Insira o token JWT desta maneira: Bearer {seu token}",
+        Name = "Authorization",
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
         {
-            Name = "MIT",
-            Url = new Uri("https://opensource.org/licenses/MIT")
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
         }
-    })
-);
+    });
+});
 
 
 var app = builder.Build();
