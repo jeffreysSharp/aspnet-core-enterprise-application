@@ -29,6 +29,8 @@ namespace NSE.WebApp.MVC.Controllers
         [Route("produto-detalhe/{id}")]
         public async Task<IActionResult> ProdutoDetalhe(Guid id)
         {
+            if (!ModelState.IsValid) return View(ModelState);
+
             var produto = await _catalogoService.ObterPorId(id);
 
             return View(produto);
