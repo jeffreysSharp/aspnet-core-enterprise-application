@@ -1,6 +1,5 @@
 # Aplicação e-commerce utilizando conceitos avançados do ASP.NET Core 8 
 
-## Imagem 
 ![Modelo da Arquitetura proposta](https://raw.githubusercontent.com/jeffreysSharp/aspnet-core-enterprise-application/refs/heads/develop/images/01-architecturemap.JPG)
 
 # ASPNET Core Enterprise Application
