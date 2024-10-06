@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JSE.Catalogo.API.Controllers
 {
-    [ApiController]    
+    [ApiController]
     [Authorize]
     public class CatalogoController : Controller
     {
@@ -24,11 +24,11 @@ namespace JSE.Catalogo.API.Controllers
             return await _produtoRepository.ObterTodos();
         }
 
-        
+
         [ClaimsAuthorize("Catalogo", "Ler")]
         [HttpGet("catalogo/produtos/{id}")]
         public async Task<Produto> Produtodetalhe(Guid id)
-        {            
+        {
             return await _produtoRepository.ObterPorId(id);
         }
 

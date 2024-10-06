@@ -14,8 +14,9 @@ builder.Services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
 builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
     .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
-    .AddTransientHttpErrorPolicy(
-    p => p.WaitAndRetryAsync(3, _ => TimeSpan.FromMilliseconds(600)));
+        .AddPolicyHandler(PollyExtensions.EsperarTentar())
+                .AddTransientHttpErrorPolicy(
+                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUser, AspNetUser>();
