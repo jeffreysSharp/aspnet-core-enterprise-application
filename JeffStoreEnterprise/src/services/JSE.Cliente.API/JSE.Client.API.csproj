@@ -21,4 +21,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
+  </ItemGroup>
+
 </Project>
