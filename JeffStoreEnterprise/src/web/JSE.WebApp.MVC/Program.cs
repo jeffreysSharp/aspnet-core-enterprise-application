@@ -1,9 +1,11 @@
 using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
 using NSE.WebApp.MVC.Services;
 using NSE.WebApp.MVC.Services.Handlers;
 using Polly;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,6 +63,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+var supportedCultures = new[] { new CultureInfo("pt-BR") };
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("pt-BR"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
 
 app.UseAuthorization();
 app.UseAuthentication();
