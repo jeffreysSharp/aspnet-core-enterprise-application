@@ -2,13 +2,17 @@ using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using NSE.WebApp.MVC.Services;
+using NSE.WebApp.MVC.Services.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
+
 builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
-builder.Services.AddHttpClient<ICatalogoService, CatalogoService>();
+builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
+    .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUser, AspNetUser>();
@@ -34,16 +38,20 @@ builder.Configuration
         .AddEnvironmentVariables()
         .AddUserSecrets(typeof(Program).Assembly).Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
-{
-    app.UseExceptionHandler("/erro/500");
-    app.UseStatusCodePagesWithRedirects("/erro/{0}");
-    app.UseHsts();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
+//}
+//else
+//{
+//    app.UseExceptionHandler("/erro/500");
+//    app.UseStatusCodePagesWithRedirects("/erro/{0}");
+//    app.UseHsts();
+//}
+
+app.UseExceptionHandler("/erro/500");
+app.UseStatusCodePagesWithRedirects("/erro/{0}");
+app.UseHsts();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
