@@ -5,9 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JSE.Catalogo.API.Controllers
 {
-    [ApiController]
-    //TODO Resolver redirectUrl
-    // [Authorize]
+    [ApiController]    
+    [Authorize]
     public class CatalogoController : Controller
     {
 
@@ -25,8 +24,8 @@ namespace JSE.Catalogo.API.Controllers
             return await _produtoRepository.ObterTodos();
         }
 
-        //TODO Resolver redirectUrl
-        // [ClaimsAuthorize("Catalogo", "Ler")]
+        
+        [ClaimsAuthorize("Catalogo", "Ler")]
         [HttpGet("catalogo/produtos/{id}")]
         public async Task<Produto> Produtodetalhe(Guid id)
         {
