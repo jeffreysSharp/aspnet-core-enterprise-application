@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pagamento.API", "src\se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pedido.API", "src\services\JSE.Pedido.API\JSE.Pedido.API.csproj", "{FCDB1D73-2DEA-41F9-87B7-67112E8B73C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Cliente.API", "src\services\JSE.Cliente.API\JSE.Cliente.API.csproj", "{D76772EC-04A8-4637-B155-EBCA8ACE0DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Client.API", "src\services\JSE.Cliente.API\JSE.Client.API.csproj", "{D76772EC-04A8-4637-B155-EBCA8ACE0DAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.WebApp.MVC", "src\web\JSE.WebApp.MVC\JSE.WebApp.MVC.csproj", "{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}"
 EndProject
