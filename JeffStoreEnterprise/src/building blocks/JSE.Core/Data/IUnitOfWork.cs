@@ -1,4 +1,4 @@
-﻿namespace JSE.Core.DomainObjects.Data
+﻿namespace JSE.Core.Data
 {
     public interface IUnitOfWork
     {

@@ -1,4 +1,4 @@
-﻿using JSE.Core.DomainObjects.Data;
+﻿using JSE.Core.Data;
 
 namespace JSE.Catalogo.API.Models
 {
