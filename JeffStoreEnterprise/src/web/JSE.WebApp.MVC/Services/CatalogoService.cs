@@ -1,19 +1,13 @@
-﻿using Microsoft.Extensions.Options;
-using JSE.WebApp.MVC.Extensions;
-using JSE.WebApp.MVC.Models;
-using NSE.WebApp.MVC.Services;
+﻿using JSE.WebApp.MVC.Models;
 
 namespace JSE.WebApp.MVC.Services
 {
     public class CatalogoService : Service, ICatalogoService
     {
         private readonly HttpClient _httpClient;
-
-        public CatalogoService(HttpClient httpClient,
-            IOptions<AppSettings> settings)
-        {
-            // httpClient.BaseAddress = new Uri(settings.Value.CatalogoUrl);
-
+   
+        public CatalogoService(HttpClient httpClient)
+        {            
             _httpClient = httpClient;
         }
 
