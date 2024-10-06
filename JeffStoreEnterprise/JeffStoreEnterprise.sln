@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pedido.API", "src\servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Cliente.API", "src\services\JSE.Cliente.API\JSE.Cliente.API.csproj", "{D76772EC-04A8-4637-B155-EBCA8ACE0DAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSE.WebApp.MVC", "src\web\JSE.WebApp.MVC\JSE.WebApp.MVC.csproj", "{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.WebApp.MVC", "src\web\JSE.WebApp.MVC\JSE.WebApp.MVC.csproj", "{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

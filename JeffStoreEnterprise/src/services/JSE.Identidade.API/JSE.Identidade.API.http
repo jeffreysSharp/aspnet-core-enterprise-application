@@ -1,6 +1,6 @@
-@JSE.Identidade.API_HostAddress = http://localhost:5080
+@JSE.Identidade.API_HostAddress = http://localhost:44396
 
-GET {{JSE.Identidade.API_HostAddress}}/weatherforecast/
+GET {{JSE.Identidade.API_HostAddress}}/login/
 Accept: application/json
 
 ###

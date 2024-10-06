@@ -1,13 +1,25 @@
 using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
 using NSE.WebApp.MVC.Services;
+using NSE.WebApp.MVC.Services.Handlers;
+using Polly;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
+
 builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
+builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
+    .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
+        .AddPolicyHandler(PollyExtensions.EsperarTentar())
+                .AddTransientHttpErrorPolicy(
+                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
+
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUser, AspNetUser>();
 
@@ -23,7 +35,15 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 var app = builder.Build();
 
-// Comentado para testes em DEV
+
+builder.Configuration
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", false, false)
+        .AddJsonFile($@"appsettings.{builder.Environment.EnvironmentName}.json", false, false)
+        .AddCommandLine(args)
+        .AddEnvironmentVariables()
+        .AddUserSecrets(typeof(Program).Assembly).Build();
+
 //if (app.Environment.IsDevelopment())
 //{
 //    app.UseDeveloperExceptionPage();
@@ -44,12 +64,20 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+var supportedCultures = new[] { new CultureInfo("pt-BR") };
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("pt-BR"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
+
 app.UseAuthorization();
 app.UseAuthentication();
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Catalogo}/{action=Index}/{id?}");
 
 app.Run();
