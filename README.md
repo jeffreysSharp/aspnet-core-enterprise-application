@@ -21,6 +21,16 @@
 - Command Handler 
 - EventBus
 - BFF
+- DelegatingHandlers 
+- Refit
+- Retry Pattern com Polly
+- Circuit Breaker com Polly
+- IAggregateRoot
+- Delegating Handlers
+- IHttpClientFactory
+- Retry Pattern com Polly
+- Circuit Breaker
+
 
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++
@@ -30,7 +40,7 @@
 # Features
 - [x] Cadastro de Usuários
 - [x] Autenticação
-- [ ] Catálogo 
+- [x] Catálogo 
 - [ ] Clientes
 - [ ] Carrinho
 - [ ] Pedidos
