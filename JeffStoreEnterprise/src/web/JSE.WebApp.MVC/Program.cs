@@ -3,6 +3,7 @@ using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using NSE.WebApp.MVC.Services;
 using NSE.WebApp.MVC.Services.Handlers;
+using Polly;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,9 @@ builder.Services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 
 builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
 builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
-    .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>();
+    .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
+    .AddTransientHttpErrorPolicy(
+    p => p.WaitAndRetryAsync(3, _ => TimeSpan.FromMilliseconds(600)));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUser, AspNetUser>();
