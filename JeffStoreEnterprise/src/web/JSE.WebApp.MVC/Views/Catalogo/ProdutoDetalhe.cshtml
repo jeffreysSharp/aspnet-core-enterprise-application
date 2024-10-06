@@ -3,78 +3,188 @@
 @{
     ViewData["Title"] = Model.Nome;
 }
-<section class="section-content padding-y bg container">
-    <div class="card">
-        <div class="row no-gutters">
-            <aside class="col-md-6">
-                <article class="gallery-wrap">
-                    <div class="img-big-wrap" style="text-align: center">
-                        <img src="~/images/produtos/@Model.Imagem" alt="@Model.Nome">
-                    </div>
-                </article>
-            </aside>
-            <main class="col-md-6 border-left">
-                <article class="content-body">
 
-                    <h2 class="title">@Model.Nome</h2>
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
 
-                    <div class="rating-wrap my-3">
-                        <ul class="rating-stars">
-                            <li style="width: 80%" class="stars-active">
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </li>
-                        </ul>
-                        <small class="label-rating text-muted">132 avaliações</small>
-                        <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 peças vendidas</small>
-                    </div>
 
-                    <div class="mb-3">
-              
-                    </div>
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Carrinho</span>
+          <span class="badge bg-primary rounded-pill">1</span>
+        </h4>
 
-                    <h5>@Model.Descricao</h5><br />
+        <ul class="list-group mb-3">
+         
             
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+             <h6 class="my-0">@Model.Nome</h6>            
+            </div>
+            <span class="text-body-secondary">R$ @Model.Valor</span>
+          </li>
 
-                    <hr>
 
-                    @{
-                        if (Model.QuantidadeEstoque > 0)
-                        {
-                            <div class="form-row">
-                                <div class="form-group col-md flex-grow-0">
-                                    <label>Quantidade</label>
-                                    <div class="input-group input-spinner">
-                                        <select class="form-control">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <br />
-                            <a href="#" class="btn  btn-outline-primary">
-                                <span class="text">Adicionar ao carrinho</span> <i class="fas fa-shopping-cart"> &nbsp;</i>
-                            </a>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total</span>
+            <strong>R$ @Model.Valor</strong>
+          </li>
+        </ul>
 
-                        }
-                    }
-                    
-                    <a asp-action="Index" class="btn  btn-info">
-                        <span class="text">Voltar</span>
-                    </a>
-                </article>
-            </main>
-        </div>
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Cupom">
+            <button type="submit" class="btn btn-secondary">+</button>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">@Model.Nome</h4>
+          <div class="row">              
+            <img src="~/images/produtos/@Model.Imagem" alt="@Model.Nome" class="bd-placeholder-img card-img-top" width="100%" height="100%">
+          </div>
+          <p>@Model.Descricao</p>
+
+        <h4 class="mb-3">Dados Pessoais</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Sobrenome</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-body-secondary">(Obrigatório)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="email@email.com">
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="address" placeholder="Av. Paulista" required>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">País</label>
+              <select class="form-select" id="country" required>
+                <option value="">Selecione...</option>
+                <option>Brasil</option>
+              </select>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">UF</label>
+              <select class="form-select" id="state" required>
+                <option value="">Selecione...</option>
+                <option>São Paulo</option>
+              </select>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">CEP</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">O endereço de entrega é igual ao meu endereço de cobrança</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+                <label class="form-check-label" for="save-info">Salve essas informações para a próxima vez</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Pagamento</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Cartão de crédito</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="debit">Boleto</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">PIX</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-body-secondary">Nome impresso no cartão</small>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Número Cartão</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiração</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                        Campo obrigatório!
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Finalizar pedido</button>
+        </form>
+        <span class="mt-5 pt-5 mb-5 mt-5">&nbsp;</span>
+      </div>
     </div>
-</section>
+
