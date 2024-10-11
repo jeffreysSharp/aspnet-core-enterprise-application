@@ -6,6 +6,8 @@ using JSE.Core.Mediator;
 using MediatR;
 using JSE.Client.API.Application.Commands;
 using FluentValidation.Results;
+using JSE.Client.API.Models;
+using JSE.Client.API.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +16,12 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ClientContext>(x => x.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<ClientContext>();
+
 builder.Services.AddScoped<IMediatorHandler, MediatorHandler>();
 builder.Services.AddScoped<IRequestHandler<RegisterClientCommand, ValidationResult>, ClientCommandHandler>();
+
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<ClientContext>();
 
 builder.Services.AddEndpointsApiExplorer();
 
