@@ -1,7 +1,6 @@
-﻿using JSE.Core.DomainObjects;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
-namespace Jse.Core.DomainObjects
+namespace JSE.Core.DomainObjects
 {
     public class Email
     {

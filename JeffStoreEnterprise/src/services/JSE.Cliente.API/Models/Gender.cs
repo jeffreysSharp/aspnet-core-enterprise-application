@@ -1,6 +1,6 @@
 ﻿using JSE.Core.DomainObjects;
 
-namespace JSE.Cliente.API.Models
+namespace JSE.Client.API.Models
 {
     public class Gender : Entity
     {
