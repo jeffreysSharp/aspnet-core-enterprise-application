@@ -34,7 +34,8 @@ namespace JSE.Catalogo.API.Data
 
         public async Task<bool> Commit()
         {
-            return await base.SaveChangesAsync() > 0;
+            var success = await base.SaveChangesAsync() > 0;
+            return success;
         }
     }
 }

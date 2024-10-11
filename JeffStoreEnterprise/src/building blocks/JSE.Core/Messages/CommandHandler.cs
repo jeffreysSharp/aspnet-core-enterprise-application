@@ -1,4 +1,5 @@
 ﻿using FluentValidation.Results;
+using JSE.Core.Data;
 
 namespace JSE.Core.Messages
 {
@@ -6,14 +7,20 @@ namespace JSE.Core.Messages
     {
         protected ValidationResult ValidationResult;
 
-        protected CommandHandler() 
+        protected CommandHandler()
         {
             ValidationResult = new ValidationResult();
         }
 
-        protected void AddError(string message) 
+        protected void AddError(string message)
         {
-            ValidationResult.Errors.Add(new ValidationFailure(string.Empty, message));    
+            ValidationResult.Errors.Add(new ValidationFailure(string.Empty, message));
+        }
+
+        protected async Task<ValidationResult> PersistData(IUnitOfWork uow)
+        {
+            if (!await uow.Commit()) AddError("Houve um erro ao persistir os dados");
+            return ValidationResult;
         }
     }
 }
