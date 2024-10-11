@@ -1,4 +1,5 @@
-﻿using JSE.Core.Messages;
+﻿using FluentValidation;
+using JSE.Core.Messages;
 
 namespace JSE.Client.API.Application.Commands
 {
@@ -26,6 +27,49 @@ namespace JSE.Client.API.Application.Commands
             Phone = phone;
             BirthdayDate = birthdayDate;
             DocumentNumber = documentNumber;
+        }
+
+        public override bool IsValid()
+        {
+            ValidationResult = new RegisterClientValidation().Validate(this);
+            return ValidationResult.IsValid;
+        }
+
+
+        public class RegisterClientValidation : AbstractValidator<RegisterClientCommand>
+        {
+            public RegisterClientValidation()
+            {
+                RuleFor(c => c.Id)
+                    .NotEqual(Guid.Empty)
+                    .WithMessage("Id do Cliente inválido");
+
+                RuleFor(c => c.FirstName)
+                    .NotEmpty()
+                    .WithMessage("O Primeiro Nome não foi informado");
+
+                RuleFor(c => c.LastName)
+                    .NotEmpty()
+                    .WithMessage("O Sobrenome não foi informado");
+
+                RuleFor(c => c.DocumentNumber)
+                    .Must(IsValidDocument)
+                    .WithMessage("CPF inválido");
+
+                RuleFor(c => c.Email)
+                    .Must(IsValidEmail)
+                    .WithMessage("E-mail inválido");
+            }
+
+            protected static bool IsValidDocument(string documentNumber)
+            {
+                return Core.DomainObjects.ClientDocument.ValidarCpf(documentNumber);
+            }
+
+            protected static bool IsValidEmail(string email)
+            {
+                return Core.DomainObjects.Email.Validate(email);
+            }
         }
     }
 }
