@@ -1,7 +1,7 @@
 ﻿using Jse.Core.DomainObjects;
 using JSE.Core.DomainObjects;
 
-namespace JSE.Cliente.API.Models
+namespace JSE.Client.API.Models
 {
     public class Client : Entity, IAggregateRoot
     {

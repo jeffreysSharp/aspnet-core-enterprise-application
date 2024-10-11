@@ -1,6 +1,6 @@
 ﻿using JSE.Core.DomainObjects;
 
-namespace JSE.Cliente.API.Models
+namespace JSE.Client.API.Models
 {
     public class ClientAddress : Entity
     {       
@@ -15,12 +15,13 @@ namespace JSE.Cliente.API.Models
         public string State { get;  private set; }
         public string Reference { get;  private set; }
         public Guid ClientId { get; private set; }
-        public Client Client { get; private set; }
+        public Clients Client { get; private set; }
 
         public ClientAddress()
         {
                 
         }
+
         public ClientAddress(int addressType, bool isDefaultAddress, string addresss, string number, string complement, string zipCode, string country, string city, string state, string reference)
         {
             AddressType = addressType;

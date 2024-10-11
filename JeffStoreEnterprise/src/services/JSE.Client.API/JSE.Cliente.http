@@ -1,6 +1,6 @@
-@JSE.Cliente_HostAddress = http://localhost:5170
+@JSE.Client_HostAddress = http://localhost:5170
 
-GET {{JSE.Cliente_HostAddress}}/cliente/
+GET {{JSE.Client_HostAddress}}/client/
 Accept: application/json
 
 ###
