@@ -8,6 +8,7 @@ using JSE.Client.API.Application.Commands;
 using FluentValidation.Results;
 using JSE.Client.API.Models;
 using JSE.Client.API.Data.Repository;
+using JSE.Client.API.Application.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +21,10 @@ builder.Services.AddDbContext<ClientContext>(x => x.UseSqlServer(connectionStrin
 builder.Services.AddScoped<IMediatorHandler, MediatorHandler>();
 builder.Services.AddScoped<IRequestHandler<RegisterClientCommand, ValidationResult>, ClientCommandHandler>();
 
+builder.Services.AddScoped<INotificationHandler<ClientRegisteredEvent>, ClientEventHandler>();
+
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
+
 builder.Services.AddScoped<ClientContext>();
 
 builder.Services.AddEndpointsApiExplorer();

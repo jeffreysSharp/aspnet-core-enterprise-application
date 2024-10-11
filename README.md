@@ -8,6 +8,8 @@
 - ASP.NET MVC - Razor Pages 
 - Bootstrap 5.3
 - API Services
+- SOLID
+- Clean Code
 - Identity 
 - Swagger
 - JWT
