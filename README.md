@@ -22,6 +22,7 @@
 - EventBus
 - BFF
 - FluentValidation
+- MediatR e Command Handler
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++
 - SQL Server
