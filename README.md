@@ -30,7 +30,8 @@
 # Features
 - [x] Cadastro de Usuários
 - [x] Autenticação
-- [ ] Catálogo 
+- [x] Lista de Produtos
+- [x] Detalhes do Produto
 - [ ] Clientes
 - [ ] Carrinho
 - [ ] Pedidos
