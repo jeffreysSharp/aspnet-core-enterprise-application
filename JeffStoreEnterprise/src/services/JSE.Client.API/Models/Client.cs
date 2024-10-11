@@ -21,14 +21,17 @@ namespace JSE.Client.API.Models
 
         protected Clients() { }
 
-        public Clients(Guid id, string firstName, string lastName, Guid genderId, string email, string phone, DateTime birthdayDate, string document)
+        public Clients(Guid id, string firstName, string lastName, string surname, Guid genderId, Email email, string phone, DateTime birthdayDate, ClientDocument documentNumber, bool isRemoved)
         {
+            Id = id;
             FirstName = firstName;
             LastName = lastName;
-            Email = new Email(email);
+            Surname = surname;
+            GenderId = genderId;
+            Email = email;
             Phone = phone;
             BirthdayDate = birthdayDate;
-            DocumentNumber = new ClientDocument(document);
+            DocumentNumber = documentNumber;
             IsRemoved = false;
         }
 
