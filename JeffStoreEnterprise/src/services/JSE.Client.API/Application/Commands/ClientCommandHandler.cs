@@ -1,5 +1,7 @@
 ﻿using FluentValidation.Results;
+using JSE.Client.API.Application.Events;
 using JSE.Client.API.Models;
+using JSE.Core.DomainObjects;
 using JSE.Core.Messages;
 using MediatR;
 
@@ -28,9 +30,12 @@ namespace JSE.Client.API.Application.Commands
             {
                 AddError("Este CPF já está em uso.");
                 return ValidationResult;
-            }            
-
+            }
             _clientRepository.Add(client);
+
+            client.AddEvent(new ClientRegisteredEvent(message.Id, message.FirstName, message.LastName,
+                message.Surname, message.GenderId, message.Email, message.Phone, message.BirthdayDate,
+                message.DocumentNumber));
 
             return await PersistData(_clientRepository.UnitOfWork);
         }

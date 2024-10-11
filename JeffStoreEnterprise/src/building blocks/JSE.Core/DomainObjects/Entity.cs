@@ -1,8 +1,36 @@
-﻿namespace JSE.Core.DomainObjects
+﻿using JSE.Core.Messages;
+
+namespace JSE.Core.DomainObjects
 {
     public abstract class Entity
     {
         public Guid Id { get; set; }
+
+        protected Entity()
+        {
+            Id = Guid.NewGuid();
+        }
+        private List<Event> _events;
+        public IReadOnlyCollection<Event> Events => _events?.AsReadOnly();
+
+        public void AddEvent(Event events)
+        {
+            _events = _events ?? new List<Event>();
+            _events.Add(events);
+        }
+
+        public void RemoveEvent(Event eventItem)
+        {
+            _events?.Remove(eventItem);
+        }
+
+        public void ClearEvents()
+        {
+            _events?.Clear();
+        }
+
+        #region Comparations
+
 
         public override bool Equals(object obj)
         {
@@ -22,7 +50,7 @@
             if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
                 return false;
 
-            return a.Equals(b); 
+            return a.Equals(b);
         }
 
         public static bool operator !=(Entity a, Entity b)
@@ -39,5 +67,6 @@
         {
             return $"{GetType().Name} [Id={Id}]";
         }
+        #endregion
     }
 }

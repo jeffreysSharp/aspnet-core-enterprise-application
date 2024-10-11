@@ -1,11 +1,23 @@
 ﻿using JSE.Client.API.Models;
 using JSE.Core.Data;
+using JSE.Core.DomainObjects;
+using JSE.Core.Mediator;
 using Microsoft.EntityFrameworkCore;
 
 namespace JSE.Catalogo.API.Data
 {
     public class ClientContext : DbContext, IUnitOfWork
     {
+        private readonly IMediatorHandler _mediatorHandler;
+
+        public ClientContext(DbContextOptions<ClientContext> options, IMediatorHandler mediatorHandler)
+            : base(options)
+        {
+            _mediatorHandler = mediatorHandler;
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+            ChangeTracker.AutoDetectChangesEnabled = false;
+        }
+
         public ClientContext(DbContextOptions<ClientContext> options)
             : base(options)
         {
@@ -35,7 +47,34 @@ namespace JSE.Catalogo.API.Data
         public async Task<bool> Commit()
         {
             var success = await base.SaveChangesAsync() > 0;
+            if (success) await _mediatorHandler.PublishEvent(this);
+
             return success;
+        }
+    }
+
+    public static class MediatorExtension
+    {
+        public static async Task PublishEvent<T>(this IMediatorHandler mediator, T ctx) where T : DbContext
+        {
+            var domainEntities = ctx.ChangeTracker
+                .Entries<Entity>()
+                .Where(x => x.Entity.Events != null && x.Entity.Events.Any());
+
+            var domainEvents = domainEntities
+                .SelectMany(x => x.Entity.Events)
+                .ToList();
+
+            domainEntities.ToList()
+                .ForEach(entity => entity.Entity.ClearEvents());
+
+            var tasks = domainEvents
+                .Select(async (domainEvent) =>
+                {
+                    await mediator.PublishEvent(domainEvent);
+                });
+
+            await Task.WhenAll(tasks);
         }
     }
 }
