@@ -2,6 +2,7 @@ using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using NSE.WebApp.MVC.Services;
 using NSE.WebApp.MVC.Services.Handlers;
 using Polly;
@@ -10,7 +11,7 @@ using System.Globalization;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
 builder.Services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 
 builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
