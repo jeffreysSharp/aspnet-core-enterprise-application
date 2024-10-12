@@ -1,6 +1,0 @@
-@JSE.Cliente_HostAddress = http://localhost:5170
-
-GET {{JSE.Cliente_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

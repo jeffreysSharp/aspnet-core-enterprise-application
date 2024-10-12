@@ -1,7 +1,9 @@
 ﻿@if (ViewData.ModelState.ErrorCount > 0)
 {
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong id="msgRetorno">Opa! Algo deu errado :(</strong> <br />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong id="msgRetorno">Opa! Algo deu errado :(</strong> <br />
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
     </div>
 }

@@ -30,4 +30,9 @@
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
+  </ItemGroup>
+
 </Project>

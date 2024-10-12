@@ -8,6 +8,8 @@
 - ASP.NET MVC - Razor Pages 
 - Bootstrap 5.3
 - API Services
+- SOLID
+- Clean Code
 - Identity 
 - Swagger
 - JWT
@@ -21,7 +23,8 @@
 - Command Handler 
 - EventBus
 - BFF
-
+- FluentValidation
+- MediatR e Command Handler
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++
 - SQL Server
@@ -36,6 +39,3 @@
 - [ ] Carrinho
 - [ ] Pedidos
 - [ ] Pagamentos
-
-
-

@@ -1,0 +1,6 @@
+@JSE.Client_HostAddress = http://localhost:5170
+
+GET {{JSE.Client_HostAddress}}/client/
+Accept: application/json
+
+###
