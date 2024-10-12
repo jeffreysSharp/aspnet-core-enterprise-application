@@ -112,10 +112,8 @@ namespace JSE.Client.API.Migrations
                     b.Property<Guid>("GenderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("IsRemoved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -123,7 +121,7 @@ namespace JSE.Client.API.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("Surname")
                         .IsRequired()

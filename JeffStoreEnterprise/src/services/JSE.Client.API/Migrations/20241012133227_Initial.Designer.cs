@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JSE.Client.API.Migrations
 {
     [DbContext(typeof(ClientContext))]
-    [Migration("20241011144322_Clients")]
-    partial class Clients
+    [Migration("20241012133227_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,10 +115,8 @@ namespace JSE.Client.API.Migrations
                     b.Property<Guid>("GenderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("IsRemoved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -126,7 +124,7 @@ namespace JSE.Client.API.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("Surname")
                         .IsRequired()

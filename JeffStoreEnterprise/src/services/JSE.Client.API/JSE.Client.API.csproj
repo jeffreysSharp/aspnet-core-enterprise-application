@@ -24,12 +24,12 @@
   <ItemGroup>
     <Folder Include="Application\Queries\" />
     <Folder Include="Configuration\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
+    <ProjectReference Include="..\..\building blocks\JSE.WebAPI.Core\JSE.WebAPI.Core.csproj" />
   </ItemGroup>
 
 </Project>

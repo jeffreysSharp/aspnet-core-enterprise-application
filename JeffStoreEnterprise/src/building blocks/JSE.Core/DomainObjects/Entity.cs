@@ -10,6 +10,7 @@ namespace JSE.Core.DomainObjects
         {
             Id = Guid.NewGuid();
         }
+
         private List<Event> _events;
         public IReadOnlyCollection<Event> Events => _events?.AsReadOnly();
 

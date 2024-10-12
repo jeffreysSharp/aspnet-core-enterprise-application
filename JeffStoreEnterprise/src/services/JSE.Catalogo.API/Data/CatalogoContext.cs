@@ -1,6 +1,8 @@
 ﻿using JSE.Catalogo.API.Models;
 using JSE.Core.Data;
+using JSE.Core.Messages;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace JSE.Catalogo.API.Data
 {
@@ -13,6 +15,9 @@ namespace JSE.Catalogo.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Ignore<ValidationResult>();
+            modelBuilder.Ignore<Event>();
+
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");
