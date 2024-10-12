@@ -37,7 +37,7 @@ namespace JSE.Client.API.Data.Mappings
 
             builder.Property(c => c.Phone)
                    .IsRequired()
-                   .HasColumnType("varchar(10)");
+                   .HasColumnType("varchar(15)");
 
             builder.Property(c => c.BirthdayDate)
                    .IsRequired()
@@ -51,10 +51,6 @@ namespace JSE.Client.API.Data.Mappings
                 .HasColumnName("DocumentNumber")
                 .HasColumnType($"varchar({ClientDocument.DocumentMaxLength})");
             });
-
-            builder.Property(c => c.IsRemoved)
-                    .HasDefaultValue(0)
-                    .HasColumnType("int");
 
             builder.HasMany(c => c.Addresses)
                 .WithOne(c => c.Client);

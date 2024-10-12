@@ -31,6 +31,7 @@ namespace JSE.Client.API.Application.Commands
                 AddError("Este CPF já está em uso.");
                 return ValidationResult;
             }
+
             _clientRepository.Add(client);
 
             client.AddEvent(new ClientRegisteredEvent(message.Id, message.FirstName, message.LastName,

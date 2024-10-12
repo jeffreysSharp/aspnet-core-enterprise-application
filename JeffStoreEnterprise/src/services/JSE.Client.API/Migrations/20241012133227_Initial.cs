@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JSE.Client.API.Migrations
 {
     /// <inheritdoc />
-    public partial class Clients : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,10 +33,10 @@ namespace JSE.Client.API.Migrations
                     Surname = table.Column<string>(type: "varchar(10)", nullable: false),
                     GenderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EmailAddress = table.Column<string>(type: "varchar(254)", nullable: false),
-                    Phone = table.Column<string>(type: "varchar(10)", nullable: false),
+                    Phone = table.Column<string>(type: "varchar(15)", nullable: false),
                     BirthdayDate = table.Column<DateTime>(type: "Date", nullable: false),
                     DocumentNumber = table.Column<string>(type: "varchar(11)", maxLength: 11, nullable: false),
-                    IsRemoved = table.Column<int>(type: "int", nullable: false, defaultValue: 0)
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -26,7 +26,7 @@ namespace JSE.Client.API.Application.Commands
             Email = email;
             Phone = phone;
             BirthdayDate = birthdayDate;
-            DocumentNumber = documentNumber;
+            DocumentNumber = documentNumber;            
         }
 
         public override bool IsValid()
