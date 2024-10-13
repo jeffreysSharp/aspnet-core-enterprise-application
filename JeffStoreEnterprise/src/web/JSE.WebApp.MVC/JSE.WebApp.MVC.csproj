@@ -9,6 +9,17 @@
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\apache\README.apache.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\commands\db\README.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\commands\host\README.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\commands\solr\README.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\commands\web\README.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\homeadditions\README.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\nginx_full\README.nginx_full.txt" />
+    <Content Include="wwwroot\assets\vendor\glightbox\.ddev\providers\README.txt" />
+  </ItemGroup>
+
   
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
@@ -28,6 +39,15 @@
   
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <None Include="wwwroot\assets\vendor\glightbox\.github\FUNDING.yml" />
+    <None Include="wwwroot\assets\vendor\glightbox\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\assets\vendor\glightbox\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="wwwroot\assets\vendor\glightbox\.github\stale.yml" />
+    <None Include="wwwroot\assets\vendor\glightbox\.github\workflows\greetings.yml" />
   </ItemGroup>
 
   

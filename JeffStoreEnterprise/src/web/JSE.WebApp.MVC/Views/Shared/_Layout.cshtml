@@ -1,46 +1,158 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" data-bs-theme="light" data-pwa="true">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+
+
     <title>@ViewData["Title"] - Jeff Store</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/site.css" asp-append-version="true" />
-</head>  
-<body class="d-flex flex-column h-100">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-            <div class="container">
-                <a asp-action="Index" asp-controller="Catalogo" class="navbar-brand">Jeff Store</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jeferson Almeida | jeffreysSharp">
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="manifest" href="~/manifest.json">
+    <link rel="icon" type="image/png" href="~/assets/app-icons/icon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="~/assets/app-icons/icon-180x180.png">
+
+
+    <script src="~/assets/js/theme-switcher.js"></script>
+    <link rel="preload" href="~/assets/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="~/assets/icons/cartzilla-icons.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="~/assets/icons/cartzilla-icons.min.css">
+
+    <link rel="stylesheet" href="~/assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/simplebar/dist/simplebar.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/glightbox/dist/css/glightbox.min.css">
+
+    <link rel="preload" href="~/assets/css/theme.min.css" as="style">
+    <link rel="stylesheet" href="~/assets/css/theme.min.css" id="theme-styles">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-sticky bg-body d-block z-fixed p-0" data-sticky-navbar='{"offset": 500}'>
+        <div class="container py-2 py-lg-3">
+            <div class="d-flex align-items-center gap-3">
+                <button type="button" class="navbar-toggler me-4 me-md-2" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                 
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Home</a>
-                        </li>                          
+            </div>
+
+            <a asp-action="Index" asp-controller="Catalogo" class="navbar-brand fs-2 py-0 m-0 me-auto me-sm-n5">Jeff Store</a>
+
+
+            <div class="d-flex align-items-center">
+
+                <div class="dropdown">
+                    <button type="button" class="theme-switcher btn btn-icon btn-lg btn-outline-secondary fs-lg border-0 rounded-circle animate-scale" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme (light)">
+                        <span class="theme-icon-active d-flex animate-target">
+                            <i class="ci-sun"></i>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu" style="--cz-dropdown-min-width: 9rem">
+                        <li>
+                            <button type="button" class="dropdown-item active" data-bs-theme-value="light" aria-pressed="true">
+                                <span class="theme-icon d-flex fs-base me-2">
+                                    <i class="ci-sun"></i>
+                                </span>
+                                <span class="theme-label">Claro</span>
+                                <i class="item-active-indicator ci-check ms-auto"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
+                                <span class="theme-icon d-flex fs-base me-2">
+                                    <i class="ci-moon"></i>
+                                </span>
+                                <span class="theme-label">Escuro</span>
+                                <i class="item-active-indicator ci-check ms-auto"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item" data-bs-theme-value="auto" aria-pressed="false">
+                                <span class="theme-icon d-flex fs-base me-2">
+                                    <i class="ci-auto"></i>
+                                </span>
+                                <span class="theme-label">Automático</span>
+                                <i class="item-active-indicator ci-check ms-auto"></i>
+                            </button>
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
+
+               
+
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="flex-shrink-0">
-        <div class="container">
+    <main class="content-wrapper">
         @RenderBody()
-        </div>
     </main>
 
-    <footer class="footer mt-auto py-3 bg-body-tertiary">
-        <div class="container">
-            <span class="text-body-secondary">Jeff Store by Jeferson Almeida since 2024 | v1.0.2</span>
+    <footer class="footer pt-5 pb-4">
+        <div class="container pt-sm-2 pt-md-3 pt-lg-4">
+
+            <div class="d-flex justify-content-center justify-content-lg-start gap-2 mt-n2 mt-md-0">
+                <a class="btn btn-icon fs-base btn-outline-secondary border-0" href="#!" data-bs-toggle="tooltip" data-bs-template='<div class="tooltip fs-xs mb-n2" role="tooltip"><div class="tooltip-inner bg-transparent text-body p-0"></div></div>' title="YouTube" aria-label="YouTube">
+                    <i class="ci-youtube"></i>
+                </a>
+                <a class="btn btn-icon fs-base btn-outline-secondary border-0" href="#!" data-bs-toggle="tooltip" data-bs-template='<div class="tooltip fs-xs mb-n2" role="tooltip"><div class="tooltip-inner bg-transparent text-body p-0"></div></div>' title="Facebook" aria-label="Facebook">
+                    <i class="ci-facebook"></i>
+                </a>
+                <a class="btn btn-icon fs-base btn-outline-secondary border-0" href="#!" data-bs-toggle="tooltip" data-bs-template='<div class="tooltip fs-xs mb-n2" role="tooltip"><div class="tooltip-inner bg-transparent text-body p-0"></div></div>' title="Instagram" aria-label="Instagram">
+                    <i class="ci-instagram"></i>
+                </a>
+                <a class="btn btn-icon fs-base btn-outline-secondary border-0" href="#!" data-bs-toggle="tooltip" data-bs-template='<div class="tooltip fs-xs mb-n2" role="tooltip"><div class="tooltip-inner bg-transparent text-body p-0"></div></div>' title="Telegram" aria-label="Telegram">
+                    <i class="ci-telegram"></i>
+                </a>
+                <a class="btn btn-icon fs-base btn-outline-secondary border-0" href="#!" data-bs-toggle="tooltip" data-bs-template='<div class="tooltip fs-xs mb-n2" role="tooltip"><div class="tooltip-inner bg-transparent text-body p-0"></div></div>' title="Pinterest" aria-label="Pinterest">
+                    <i class="ci-pinterest"></i>
+                </a>
+            </div>
+
+            <div class="d-lg-flex align-items-center border-top pt-4 mt-3">
+                <div class="d-md-flex justify-content-center order-lg-1">
+                    <ul class="nav justify-content-center gap-4 order-md-3 mb-4 mb-md-0">
+                        <li class="animate-underline">
+                            <a class="nav-link fs-xs fw-normal p-0 animate-target" href="#!">Privacidade</a>
+                        </li>
+                        <li class="animate-underline">
+                            <a class="nav-link fs-xs fw-normal p-0 animate-target" href="#!">Afiliados</a>
+                        </li>
+                        <li class="animate-underline">
+                            <a class="nav-link fs-xs fw-normal p-0 animate-target" href="#!">Termos de uso</a>
+                        </li>
+                    </ul>
+                    <div class="vr text-body-secondary opacity-25 mx-4 d-none d-md-inline-block order-md-2"></div>
+                    <p class="fs-xs text-center text-lg-start mb-0 order-md-1">
+                        &copy; Todos os direitos reservados. por <span class="animate-underline"><a class="animate-target text-dark-emphasis text-decoration-none" href="https://www.linkedin.com/in/jefersonalmeidadotnetdeveloper" target="_blank" rel="noreferrer">Jeferson Almeida</a></span>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <div class="floating-buttons position-fixed top-50 end-0 z-sticky me-3 me-xl-4 pb-4">
+        <a class="btn-scroll-top btn btn-sm bg-body border-0 rounded-pill shadow animate-slide-end" href="#top">
+            Topo
+            <i class="ci-arrow-right fs-base ms-1 me-n1 animate-target"></i>
+            <span class="position-absolute top-0 start-0 w-100 h-100 border rounded-pill z-0"></span>
+            <svg class="position-absolute top-0 start-0 w-100 h-100 z-1" viewBox="0 0 62 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x=".75" y=".75" width="60.5" height="30.5" rx="15.25" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+            </svg>
+        </a>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>    
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="~/assets/vendor/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="~/assets/js/theme.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

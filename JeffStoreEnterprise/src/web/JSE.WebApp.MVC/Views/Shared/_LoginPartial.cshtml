@@ -1,23 +1,26 @@
 ﻿@using JSE.WebApp.MVC.Extensions
 @inject IUser AppUser
 
-<ul class="navbar-nav">
-    @if (AppUser.EstaAutenticado())
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" title="Manage">Olá @AppUser.ObterUserEmail()</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Identidade" asp-action="Logout">Sair</a>
-        </li>
-    }
-    else
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Identidade" asp-action="Registro">Crie sua conta</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Identidade" asp-action="Login">Entrar</a>
-        </li>
-    }
-</ul>
+@if (AppUser.EstaAutenticado())
+{
+    <span>Bem-vindo @AppUser.ObterUserEmail()</span>
+
+    <a asp-controller="Identidade" asp-action="Logout" class="btn btn-icon btn-lg btn-outline-secondary fs-lg border-0 rounded-circle animate-scale" aria-expanded="false" aria-label="Cadastre-se" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Sair">
+        <span class="theme-icon-active d-flex animate-target">
+            <i class="ci-close-circle"></i>
+        </span>
+    </a>
+}
+else
+{
+    <a asp-controller="Identidade" asp-action="Login" class="btn btn-icon btn-lg btn-outline-secondary fs-lg border-0 rounded-circle animate-scale" aria-expanded="false" aria-label="Entrar" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Entrar">
+        <span class="theme-icon-active d-flex animate-target">
+            <i class="ci-user-check"></i>
+        </span>
+    </a>
+    <a asp-controller="Identidade" asp-action="Registro" class="btn btn-icon btn-lg btn-outline-secondary fs-lg border-0 rounded-circle animate-scale" aria-expanded="false" aria-label="Cadastre-se" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Cadastre-se">
+        <span class="theme-icon-active d-flex animate-target">
+            <i class="ci-user-plus"></i>
+        </span>
+    </a>
+}
