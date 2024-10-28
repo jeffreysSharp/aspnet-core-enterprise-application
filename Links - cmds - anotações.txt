@@ -43,3 +43,15 @@ git push
 
 git checkout main
 git pull
+
+== Docker
+// dokcer run = Dizendo para o docker rodar com imagem rabbit-host
+// -d rodar no modo desatachado / pesquisar mais sobre
+// --hostname = flag da própria imagem
+// rabbit-host = nome do host dop rabbitMQ
+// --name rabbit-jefstore = nome da instância
+// -p = porta 15672:15672 porta da administração, site onde vai rodar o rabbitMQ, ver as filas
+// -p = porta 5672:5672 porta onde o rabbit vai ouvir as mensagens
+// rabbit:management = nome da imagem com especialização de gerenciamento, plugin de gerenciamento
+
+dockcer run -d --hostname rabbit-host --name rabbit-jefstore -p 15672:15672 -p 5672:5672 rabbitmq:management
