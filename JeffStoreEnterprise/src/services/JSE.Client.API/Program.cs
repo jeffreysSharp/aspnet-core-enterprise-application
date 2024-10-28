@@ -9,6 +9,7 @@ using FluentValidation.Results;
 using JSE.Client.API.Models;
 using JSE.Client.API.Data.Repository;
 using JSE.Client.API.Application.Events;
+using JSE.Client.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ builder.Services.AddScoped<INotificationHandler<ClientRegisteredEvent>, ClientEv
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
 builder.Services.AddScoped<ClientContext>();
+
+builder.Services.AddHostedService<RegistroClienteIntegrationHandler>();
 
 builder.Services.AddEndpointsApiExplorer();
 

@@ -14,13 +14,14 @@ namespace JSE.Identidade.API.Models
         public string Surname { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public string GenderId { get; set; }
+        public Guid GenderId { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Phone { get; set; }
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
 
-        public string BirthdayDate { get; set; }
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public DateTime BirthdayDate { get; set; }
+
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string DocumentNumber { get; set; }
 
