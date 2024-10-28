@@ -5,6 +5,26 @@ namespace JSE.Identidade.API.Models
     public class UsuarioRegistroViewModel
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string Surname { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string GenderId { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string Phone { get; set; }
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+
+        public string BirthdayDate { get; set; }
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string DocumentNumber { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
         public string Email { get; set; }
 

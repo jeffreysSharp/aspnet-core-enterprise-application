@@ -8,6 +8,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using JSE.Identidade.API.Models;
 using JSE.WebAPI.Core.Controllers;
+using JSE.Core.Integration;
+using EasyNetQ;
 
 namespace NSE.Identidade.API.Controllers
 {
@@ -18,13 +20,17 @@ namespace NSE.Identidade.API.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
 
+        private IBus _bus;
+
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings)
+                              IOptions<AppSettings> appSettings,
+                              IBus bus)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _bus = bus;
         }
 
         [HttpPost("nova-conta")]
@@ -43,6 +49,7 @@ namespace NSE.Identidade.API.Controllers
 
             if (result.Succeeded)
             {
+                var sucesso = await RegistrarCliente(usuarioRegistro);
                 return CustomResponse(await GerarJwt(usuarioRegistro.Email));
             }
 
@@ -52,6 +59,21 @@ namespace NSE.Identidade.API.Controllers
             }
 
             return CustomResponse();
+        }
+
+        private async Task<ResponseMessage> RegistrarCliente(UsuarioRegistroViewModel usuarioRegistroViewModel)
+        {
+            var usuario = await _userManager.FindByEmailAsync(usuarioRegistroViewModel.Email);
+
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(Guid.Parse(usuario.Id), usuarioRegistroViewModel.FirstName, usuarioRegistroViewModel.LastName,
+                usuarioRegistroViewModel.Surname, usuarioRegistroViewModel.GenderId, usuarioRegistroViewModel.Email, usuarioRegistroViewModel.Phone,
+                usuarioRegistroViewModel.BirthdayDate, usuarioRegistroViewModel.DocumentNumber);
+
+            _bus = RabbitHutch.CreateBus("host=localhost:5672");
+
+            var sucesso = await _bus.RequesAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+
+            return sucesso;
         }
 
         [HttpPost("autenticar")]
