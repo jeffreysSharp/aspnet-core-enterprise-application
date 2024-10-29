@@ -6,6 +6,8 @@ using Microsoft.OpenApi.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using JSE.Identidade.API.Extensions;
+using JSE.Core.Utils;
+using Microsoft.Azure.ServiceBus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddControllers();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
+
+string messageQueueConnection = builder.Configuration.GetMessageQueueConnection("MessageQueueConnection:MessageBus");
+QueueClient queueClient = new QueueClient(messageQueueConnection, "MessageBus");
 
 builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddRoles<IdentityRole>()
