@@ -37,8 +37,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                     options.AccessDeniedPath = "/acesso-negado";
                 });
 
-
-
 var app = builder.Build();
 
 
