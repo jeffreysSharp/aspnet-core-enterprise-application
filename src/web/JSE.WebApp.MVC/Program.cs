@@ -9,6 +9,7 @@ using System.Globalization;
 using JSE.WebAPI.Core.IdentityConfiguration;
 using Microsoft.Extensions.DependencyInjection;
 using AppSettings = JSE.WebApp.MVC.Extensions.AppSettings;
+using JSE.WebAPI.Core.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
                     p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddScoped<IUser, AspNetUser>();
+builder.Services.AddScoped<IAspNetUser, AspNetUser>();
 
 var configuration = builder.Configuration.GetSection("AutenticacaoUrl");
 builder.Services.Configure<AppSettings>(configuration);
