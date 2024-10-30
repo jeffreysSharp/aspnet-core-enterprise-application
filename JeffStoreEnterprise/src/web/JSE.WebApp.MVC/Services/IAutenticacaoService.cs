@@ -1,6 +1,6 @@
 ﻿using JSE.WebApp.MVC.Models;
 
-namespace NSE.WebApp.MVC.Services
+namespace JSE.WebApp.MVC.Services
 {
     public interface IAutenticacaoService
     {

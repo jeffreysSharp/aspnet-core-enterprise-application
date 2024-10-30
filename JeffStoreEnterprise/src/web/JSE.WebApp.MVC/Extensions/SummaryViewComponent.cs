@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NSE.WebApp.MVC.Extensions
+namespace JSE.WebApp.MVC.Extensions
 {
     public class SummaryViewComponent : ViewComponent
     {

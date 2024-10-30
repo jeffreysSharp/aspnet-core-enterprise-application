@@ -1,7 +1,7 @@
 ﻿using JSE.WebApp.MVC.Extensions;
 using System.Net.Http.Headers;
 
-namespace NSE.WebApp.MVC.Services.Handlers
+namespace JSE.WebApp.MVC.Services.Handlers
 {
     public class HttpClientAuthorizationDelegatingHandler : DelegatingHandler
     {
