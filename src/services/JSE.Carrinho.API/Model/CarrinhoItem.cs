@@ -1,6 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
 using System.Text.Json.Serialization;
-using FluentValidation;
 
 namespace JSE.Carrinho.API.Model
 {
