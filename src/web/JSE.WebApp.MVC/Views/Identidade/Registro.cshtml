@@ -1,0 +1,141 @@
+﻿@model JSE.WebApp.MVC.Models.UsuarioRegistroViewModel
+
+@{
+    ViewData["Title"] = "Cadastro de novo usuário";
+}
+
+
+<div class="row mt-5">
+    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
+        <vc:Summary></vc:Summary>
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="FirstName" class="form-label"></label>
+                <input asp-for="FirstName" type="text" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="FirstName" class="text-danger m-1"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="LastName" class="form-label"></label>
+                <input asp-for="LastName" type="text" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="LastName" class="text-danger m-1"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Surname" class="form-label"></label>
+                <input asp-for="Surname" type="text" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="Surname" class="text-danger m-1"></span>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="DocumentNumber" class="form-label"></label>
+                <input asp-for="DocumentNumber" type="text" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="DocumentNumber" class="text-danger m-1"></span>
+            </div>
+
+            <div class="col-md-8 mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" type="text" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="Email" class="text-danger m-1"></span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label asp-for="GenderId" class="form-label"></label>
+                <select asp-for="GenderId" class="form-select" required>
+                    <option value="" selected disabled>Selecione...</option>
+                    <option value="B91AFC01-B0B7-4B5E-98BD-885F2BE32780">Masculino</option>
+                    <option value="642C6A08-3CCA-484E-985F-442DD22058DD">Feminino</option>
+                </select>
+                <span asp-validation-for="GenderId" class="text-danger m-1"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Phone" class="form-label"></label>
+                <input asp-for="Phone" type="text" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="Phone" class="text-danger m-1"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="BirthdayDate" class="form-label"></label>
+                <input asp-for="BirthdayDate" type="text" class="form-control" autocomplete="new-text" required>
+                <span asp-validation-for="BirthdayDate" class="text-danger m-1"></span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Senha" class="form-label"></label>
+                <input asp-for="Senha" type="password" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="Senha" class="text-danger m-1"></span>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="SenhaConfirmacao" class="form-label"></label>
+                <input asp-for="SenhaConfirmacao" type="password" class="form-control" value="" autocomplete="new-text" required>
+                <span asp-validation-for="SenhaConfirmacao" class="text-danger m-1"></span>
+            </div>
+
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" required>
+                <label for="validationText06" class="form-check-label">Concordo com os termos e condições</label>
+                <div class="invalid-feedback">Você deve concordar antes de enviar</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <hr class="my-4">
+        <small class="text-body-secondary"><a asp-action="Login" asp-controller="Identidade">Entrar</a></small>
+    </form>
+
+    @*     <div class="col-lg-7 text-center text-lg-start">
+    <h5 class="display-4 mb-3">Cadastre-se</h5>
+    <p class="col-lg-10 fs-4">Você precisa estar cadastrado para efetuar transações.</p>
+    </div>
+
+    <div class="col-md-10 mx-auto col-lg-5">
+    <form class="p-2 p-md-3 border rounded-3 bg-body-tertiary" method="post" autocomplete="off">
+    <vc:Summary></vc:Summary>
+
+    <div class="form-floating mb-2">
+    <input asp-for="Email" class="form-control" placeholder="nome@dominio.com" autocomplete="new-text" />
+    <label asp-for="Email"></label>
+    <span asp-validation-for="Email" class="text-danger m-1"></span>
+    </div>
+
+    <div class="form-floating mb-2">
+    <input type="password" asp-for="Senha" class="form-control" placeholder="Senha" autocomplete="new-text" />
+    <label asp-for="Senha"></label>
+    <span asp-validation-for="Senha" class="text-danger m-1"></span>
+    </div>
+
+
+    <div class="form-floating mb-2">
+    <input type="password" asp-for="SenhaConfirmacao" class="form-control" placeholder="Confirme a senha" autocomplete="new-text" />
+    <label asp-for="SenhaConfirmacao"></label>
+    <span asp-validation-for="SenhaConfirmacao" class="text-danger m-1"></span>
+    </div>
+
+    <button type="submit" class="w-100 btn btn-lg btn-primary">Cadastrar</button>
+
+    <hr class="my-4">
+    <small class="text-body-secondary"><a asp-action="Login" asp-controller="Identidade">Entrar</a></small>
+    </form>
+    </div> *@
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

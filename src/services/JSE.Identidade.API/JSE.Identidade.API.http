@@ -1,0 +1,6 @@
+@JSE.Identidade.API_HostAddress = http://localhost:44396
+
+GET {{JSE.Identidade.API_HostAddress}}/login/
+Accept: application/json
+
+###

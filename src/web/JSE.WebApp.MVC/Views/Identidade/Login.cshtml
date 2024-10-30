@@ -1,0 +1,43 @@
+﻿@model JSE.WebApp.MVC.Models.UsuarioLoginViewModel
+
+@{
+    ViewData["Title"] = "Entrar";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+    <div class="row align-items-center mt-4">
+        
+        <div class="col-lg-7 text-center text-lg-start">
+            <h5 class="display-4 mb-3">Entre com seu login e senha</h5>
+            <p class="col-lg-10 fs-4">Para efetuar transações você precisa fazer autenticação.</p>
+        </div>
+
+        <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-2 p-md-3 border rounded-3 bg-body-tertiary" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
+                <vc:Summary></vc:Summary>
+               
+                <div class="form-floating mb-2">
+                <input asp-for="Email" class="form-control" placeholder="nome@dominio.com" autocomplete="new-text" />
+                    <label asp-for="Email"></label>
+                    <span asp-validation-for="Email" class="text-danger m-1"></span>
+                </div>
+
+                <div class="form-floating mb-2">                
+                <input type="password" asp-for="Senha" class="form-control" placeholder="Senha" autocomplete="new-text" />
+                <label asp-for="Senha"></label>
+                <span asp-validation-for="Senha" class="text-danger m-1"></span>
+                </div>
+
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Entrar</button>
+
+                <hr class="my-4">
+                <small class="text-body-secondary"><a asp-action="Registro" asp-controller="Identidade">Criar uma conta</a></small>
+            </form>
+        </div>
+    </div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
