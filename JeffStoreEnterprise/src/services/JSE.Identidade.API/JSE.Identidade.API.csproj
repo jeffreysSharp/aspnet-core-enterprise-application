@@ -34,6 +34,7 @@
     <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
     <ProjectReference Include="..\..\building blocks\JSE.MessageBus\JSE.MessageBus.csproj" />
     <ProjectReference Include="..\..\building blocks\JSE.WebAPI.Core\JSE.WebAPI.Core.csproj" />
+    <ProjectReference Include="..\JSE.Client.API\JSE.Client.API.csproj" />
   </ItemGroup>
 
 </Project>
