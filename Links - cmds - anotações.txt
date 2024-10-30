@@ -8,6 +8,7 @@ SQL Server 2018
 Docker
 
 
+
 ==Padrões
 SOLID
 Clean Code
