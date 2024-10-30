@@ -11,7 +11,7 @@ using JSE.Client.API.Data.Repository;
 using JSE.Client.API.Application.Events;
 using JSE.Client.API.Services;
 using JSE.Core.Utils;
-using Microsoft.Azure.ServiceBus;
+using JSE.MessageBus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,8 +30,10 @@ builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
 builder.Services.AddScoped<ClientContext>();
 
-string messageQueueConnection = builder.Configuration.GetMessageQueueConnection("MessageQueueConnection:MessageBus");
-QueueClient queueClient = new QueueClient(messageQueueConnection, "MessageBus");
+string messageQueueConnection = builder.Configuration.GetMessageQueueConnection("MessageBus");
+builder.Services.AddMessageBus(messageQueueConnection)
+    .AddHostedService<RegistroClienteIntegrationHandler>();
+
 
 builder.Services.AddHostedService<RegistroClienteIntegrationHandler>();
 

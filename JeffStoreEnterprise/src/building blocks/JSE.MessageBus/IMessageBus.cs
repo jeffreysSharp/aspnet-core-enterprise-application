@@ -1,9 +1,14 @@
-﻿using JSE.Core.Integration;
+﻿using EasyNetQ;
+using JSE.Core.Integration;
 
 namespace JSE.MessageBus
 {
     public interface IMessageBus : IDisposable
     {
+        //TODO
+        // bool IsConnected { get; }
+        IAdvancedBus AdvancedBus { get; }
+
         void Publish<T>(T message) where T : IntegrationEvent;
         Task PublishAsync<T>(T message) where T : IntegrationEvent;
         void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class;
@@ -24,6 +29,5 @@ namespace JSE.MessageBus
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage;
 
-        bool IsConnected { get; }        
     }
 }

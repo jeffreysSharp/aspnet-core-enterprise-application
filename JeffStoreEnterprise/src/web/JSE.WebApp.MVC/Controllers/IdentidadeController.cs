@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using NSE.WebApp.MVC.Services;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
-using NSE.WebApp.MVC.Controllers;
+using JSE.WebAPI.Core.Controllers;
 
 namespace JSE.WebApp.MVC.Controllers
 {
@@ -34,7 +34,7 @@ namespace JSE.WebApp.MVC.Controllers
 
             var resposta = await _autenticacaoService.Registro(usuarioRegistroViewModel);
 
-            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistroViewModel);
+            // if (ResponsePossuiErros(resposta)) return View(usuarioRegistroViewModel);
 
             await RealizarLogin(resposta);
 
@@ -60,7 +60,8 @@ namespace JSE.WebApp.MVC.Controllers
 
             var resposta = await _autenticacaoService.Login(usuarioLoginViewModel);
 
-            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLoginViewModel);
+            //TODO
+            // if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLoginViewModel);
 
             await RealizarLogin(resposta);
 

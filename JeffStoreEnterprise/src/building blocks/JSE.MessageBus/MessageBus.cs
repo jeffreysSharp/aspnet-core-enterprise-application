@@ -9,6 +9,8 @@ namespace JSE.MessageBus
     public class MessageBus : IMessageBus
     {
         private IBus _bus;
+        private IAdvancedBus _advancedBus;
+
         private readonly string _connectionString;
 
         public MessageBus(string connectionString)
@@ -16,9 +18,11 @@ namespace JSE.MessageBus
             _connectionString = connectionString;
             TryConnect();
         }
-        
-        public bool IsConnected => _bus?.IsConnected ?? false;
-        
+
+        //TODO
+        // public bool IsConnected => _bus?.IsConnected ?? false;
+        public IAdvancedBus AdvancedBus => _bus?.Advanced;
+
         public void Publish<T>(T message) where T : IntegrationEvent
         {
             TryConnect();
@@ -43,54 +47,62 @@ namespace JSE.MessageBus
             _bus.PubSub.SubscribeAsync(subscriptionId, onMessage);
         }
 
-        //TODO
         public TResponse Request<TRequest, TResponse>(TRequest request) where TRequest : IntegrationEvent
             where TResponse : ResponseMessage
         {
             TryConnect();
-            // return _bus.Request<TRequest, TResponse>(request);
-            throw new NotImplementedException();
+            return _bus.Rpc.Request<TRequest, TResponse>(request);
         }
 
-        //TODO
         public async Task<TResponse> RequestAsync<TRequest, TResponse>(TRequest request)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage
         {
             TryConnect();
-            // return await _bus.RequestAsync<TRequest, TResponse>(request);
-            throw new NotImplementedException();
+            return await _bus.Rpc.RequestAsync<TRequest, TResponse>(request);
         }
 
-        //TODO
         public IDisposable Respond<TRequest, TResponse>(Func<TRequest, TResponse> responder)
             where TRequest : IntegrationEvent
             where TResponse : ResponseMessage
         {
             TryConnect();
-            // return _bus.Respond(responder);
-            throw new NotImplementedException();
+            return _bus.Rpc.Respond(responder);
         }
 
-        //TODO
         public IDisposable RespondAsync<TRequest, TResponse>(Func<TRequest, Task<TResponse>> responder)
-            where TRequest : IntegrationEvent
-            where TResponse : ResponseMessage
+                where TRequest : IntegrationEvent
+                where TResponse : ResponseMessage
         {
             TryConnect();
-            // return _bus.RespondAsync(responder);
-            throw new NotImplementedException();
+            //TODO RespondAsync
+            return _bus.Rpc.Respond(responder);
         }
 
         private void TryConnect()
         {
-            if (IsConnected) return;
+            //TODO
+            // if (IsConnected) return;
 
             var policy = Policy.Handle<EasyNetQException>()
                 .Or<BrokerUnreachableException>().WaitAndRetry(3, retryAttempt =>
                 TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
 
-            policy.Execute(() => { _bus = RabbitHutch.CreateBus(_connectionString); });
+            policy.Execute(() =>
+            {
+                _bus = RabbitHutch.CreateBus(_connectionString);
+                _advancedBus = _bus.Advanced;
+                _advancedBus.Disconnected += OnDisconnect;
+            });
+        }
+
+        private void OnDisconnect(object s, EventArgs e)
+        {
+            var policy = Policy.Handle<EasyNetQException>()
+                .Or<BrokerUnreachableException>()
+                .RetryForever();
+
+            policy.Execute(TryConnect);
         }
 
         public void Dispose()

@@ -1,13 +1,16 @@
+using JSE.Core.Utils;
 using JSE.Identidade.API.Data;
+using JSE.Identidade.API.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
-using JSE.Identidade.API.Extensions;
-using JSE.Core.Utils;
-using Microsoft.Azure.ServiceBus;
+
+
+using JSE.MessageBus;
+using JSE.Client.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +19,9 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
 
-string messageQueueConnection = builder.Configuration.GetMessageQueueConnection("MessageQueueConnection:MessageBus");
-QueueClient queueClient = new QueueClient(messageQueueConnection, "MessageBus");
+string messageQueueConnection = builder.Configuration.GetMessageQueueConnection("MessageBus");
+builder.Services.AddMessageBus(messageQueueConnection);
+
 
 builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddRoles<IdentityRole>()
