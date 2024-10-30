@@ -19,8 +19,8 @@ namespace JSE.MessageBus
             TryConnect();
         }
 
-        //TODO
-        // public bool IsConnected => _bus?.IsConnected ?? false;
+        
+        public bool IsConnected => _advancedBus?.IsConnected ?? false;
         public IAdvancedBus AdvancedBus => _bus?.Advanced;
 
         public void Publish<T>(T message) where T : IntegrationEvent
@@ -81,8 +81,8 @@ namespace JSE.MessageBus
 
         private void TryConnect()
         {
-            //TODO
-            // if (IsConnected) return;
+            
+            if (IsConnected) return;
 
             var policy = Policy.Handle<EasyNetQException>()
                 .Or<BrokerUnreachableException>().WaitAndRetry(3, retryAttempt =>
