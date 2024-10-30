@@ -1,6 +1,6 @@
 ﻿
 using EasyNetQ;
-using JSE.Core.Integration;
+using JSE.Core.Messages.Integration;
 using Polly;
 using RabbitMQ.Client.Exceptions;
 

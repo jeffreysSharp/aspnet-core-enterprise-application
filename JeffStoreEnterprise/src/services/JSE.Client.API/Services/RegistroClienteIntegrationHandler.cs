@@ -1,8 +1,8 @@
 ﻿
 using FluentValidation.Results;
 using JSE.Client.API.Application.Commands;
-using JSE.Core.Integration;
 using JSE.Core.Mediator;
+using JSE.Core.Messages.Integration;
 using JSE.MessageBus;
 
 namespace JSE.Client.API.Services
