@@ -18,7 +18,7 @@ namespace JSE.Client.API.Services
             _bus = bus;
         }
 
-        private void SetResponder()
+        private async void SetResponder()
         {
             _bus.RespondAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(async request =>
                 await RegistrarCliente(request));

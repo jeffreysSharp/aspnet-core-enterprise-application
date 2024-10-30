@@ -75,8 +75,8 @@ namespace JSE.MessageBus
                 where TResponse : ResponseMessage
         {
             TryConnect();
-            //TODO RespondAsync
-            return _bus.Rpc.Respond(responder);
+
+            return _bus.Rpc.RespondAsync(responder).AsTask();
         }
 
         private void TryConnect()
