@@ -10,7 +10,7 @@ namespace JSE.WebAPI.Core.Controllers
     {
         protected ICollection<string> Errors = new List<string>();
 
-                protected bool ResponsePossuiErros(ResponseResult resposta)
+        protected bool ResponsePossuiErros(ResponseResult resposta)
         {
             if (resposta != null && resposta.Errors.Mensagens.Any())
             {

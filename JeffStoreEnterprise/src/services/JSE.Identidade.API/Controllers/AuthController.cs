@@ -11,7 +11,7 @@ using JSE.WebAPI.Core.Controllers;
 using JSE.Core.Integration;
 using JSE.MessageBus;
 
-namespace NSE.Identidade.API.Controllers
+namespace JSE.Identidade.API.Controllers
 {
     [Route("api/identidade")]
     public class AuthController : MainController

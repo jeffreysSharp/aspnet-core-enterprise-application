@@ -1,13 +1,8 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Models;
-using JSE.WebApp.MVC.Services;
 using Microsoft.Extensions.Options;
-using JSE.WebApp.MVC.Extensions;
-using JSE.WebApp.MVC.Models;
 
-namespace NSE.WebApp.MVC.Services
+namespace JSE.WebApp.MVC.Services
 {
     public class AutenticacaoService : Service, IAutenticacaoService
     {

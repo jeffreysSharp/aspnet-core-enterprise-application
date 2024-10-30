@@ -3,10 +3,12 @@ using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.DataAnnotations;
-using NSE.WebApp.MVC.Services;
-using NSE.WebApp.MVC.Services.Handlers;
+using JSE.WebApp.MVC.Services.Handlers;
 using Polly;
 using System.Globalization;
+using JSE.WebAPI.Core.IdentityConfiguration;
+using Microsoft.Extensions.DependencyInjection;
+using AppSettings = JSE.WebApp.MVC.Extensions.AppSettings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,9 @@ builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUser, AspNetUser>();
+
+var configuration = builder.Configuration.GetSection("AutenticacaoUrl");
+builder.Services.Configure<AppSettings>(configuration);
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
