@@ -8,8 +8,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using JSE.Identidade.API.Models;
 using JSE.WebAPI.Core.Controllers;
-using JSE.Core.Integration;
 using JSE.MessageBus;
+using JSE.Core.Messages.Integration;
 
 namespace JSE.Identidade.API.Controllers
 {

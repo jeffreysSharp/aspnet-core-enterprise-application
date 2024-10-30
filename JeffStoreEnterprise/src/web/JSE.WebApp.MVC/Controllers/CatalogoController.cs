@@ -1,4 +1,4 @@
-﻿using JSE.WebAPI.Core.Controllers;
+﻿using JSE.WebApp.MVC.Controllers;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Mvc;
 

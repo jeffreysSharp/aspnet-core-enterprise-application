@@ -1,5 +1,5 @@
 ﻿using EasyNetQ;
-using JSE.Core.Integration;
+using JSE.Core.Messages.Integration;
 
 namespace JSE.MessageBus
 {

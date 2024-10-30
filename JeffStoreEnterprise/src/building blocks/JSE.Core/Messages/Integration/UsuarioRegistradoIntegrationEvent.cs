@@ -1,8 +1,8 @@
-﻿namespace JSE.Core.Integration
+﻿namespace JSE.Core.Messages.Integration
 {
     public class UsuarioRegistradoIntegrationEvent : IntegrationEvent
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string Surname { get; private set; }
