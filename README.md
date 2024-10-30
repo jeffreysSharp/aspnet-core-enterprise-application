@@ -15,7 +15,6 @@
 - JWT
 - Dapper
 - API Gateway 
-- RabbitMQ
 - gRPC
 - NGINX
 - Docker
@@ -25,6 +24,13 @@
 - BFF
 - FluentValidation
 - MediatR e Command Handler
+- Events e Event Handlers
+- Shared Kernel
+- Refit
+- Arfquitetura exagonal
+ -CQRS
+- RabbitMQ
+- EasyNetQ
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++
 - SQL Server
@@ -35,7 +41,7 @@
 - [x] Autenticação
 - [x] Lista de Produtos
 - [x] Detalhes do Produto
-- [ ] Clientes
+- [X] Cadastro de Clientes
 - [ ] Carrinho
 - [ ] Pedidos
 - [ ] Pagamentos
