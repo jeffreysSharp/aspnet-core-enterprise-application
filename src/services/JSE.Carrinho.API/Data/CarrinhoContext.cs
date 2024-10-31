@@ -1,7 +1,6 @@
-﻿using System.Linq;
-using FluentValidation.Results;
-using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation.Results;
 using JSE.Carrinho.API.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace JSE.Carrinho.API.Data
 {
