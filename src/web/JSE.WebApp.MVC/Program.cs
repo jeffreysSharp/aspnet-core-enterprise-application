@@ -1,30 +1,45 @@
+using JSE.WebAPI.Core.User;
 using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Services;
+using JSE.WebApp.MVC.Services.Handlers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.DataAnnotations;
-using JSE.WebApp.MVC.Services.Handlers;
 using Polly;
 using System.Globalization;
-using JSE.WebAPI.Core.IdentityConfiguration;
-using Microsoft.Extensions.DependencyInjection;
-using AppSettings = JSE.WebApp.MVC.Extensions.AppSettings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<IAspNetUser, AspNetUser>();
+
+#region HttpServices
+
 builder.Services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 
-builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
+builder.Services.AddHttpClient<IAutenticacaoService, AutenticacaoService>()
+                    .AddPolicyHandler(PollyExtensions.EsperarTentar())
+                    .AddTransientHttpErrorPolicy(
+                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
+
+
 builder.Services.AddHttpClient<ICatalogoService, CatalogoService>()
     .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
         .AddPolicyHandler(PollyExtensions.EsperarTentar())
                 .AddTransientHttpErrorPolicy(
                     p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddScoped<IUser, AspNetUser>();
+builder.Services.AddHttpClient<ICarrinhoService, CarrinhoService>()
+    .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
+    .AddPolicyHandler(PollyExtensions.EsperarTentar())
+    .AddTransientHttpErrorPolicy(
+        p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
+
+
+#endregion
 
 var configuration = builder.Configuration.GetSection("AutenticacaoUrl");
 builder.Services.Configure<AppSettings>(configuration);

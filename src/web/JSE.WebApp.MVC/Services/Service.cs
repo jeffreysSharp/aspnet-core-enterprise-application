@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json;
 using JSE.WebApp.MVC.Extensions;
+using JSE.WebApp.MVC.Models;
 
 namespace JSE.WebApp.MVC.Services
 {
@@ -40,6 +41,11 @@ namespace JSE.WebApp.MVC.Services
 
             response.EnsureSuccessStatusCode();
             return true;
+        }
+
+        protected ResponseResult RetornoOk()
+        {
+            return new ResponseResult();
         }
     }
 }

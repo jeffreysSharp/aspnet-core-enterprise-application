@@ -1,12 +1,10 @@
-﻿using JSE.Catalogo.API.Extensions;
-using JSE.Catalogo.API.Models;
+﻿using JSE.Catalogo.API.Models;
 using JSE.WebAPI.Core.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JSE.Catalogo.API.Controllers
 {
-    [Authorize]
     public class CatalogoController : MainController
     {
 
@@ -24,8 +22,6 @@ namespace JSE.Catalogo.API.Controllers
             return await _produtoRepository.ObterTodos();
         }
 
-
-        [ClaimsAuthorize("Catalogo", "Ler")]
         [HttpGet("catalogo/produtos/{id}")]
         public async Task<Produto> Produtodetalhe(Guid id)
         {
