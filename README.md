@@ -43,6 +43,6 @@
 - [x] Lista de Produtos
 - [x] Detalhes do Produto
 - [X] Cadastro de Clientes
-- [ ] Carrinho
+- [x] Carrinho
 - [ ] Pedidos
 - [ ] Pagamentos
