@@ -1,6 +1,4 @@
-﻿using JSE.WebApp.MVC.Extensions;
-using JSE.WebApp.MVC.Models;
-using Microsoft.Extensions.Options;
+﻿using JSE.WebApp.MVC.Models;
 
 namespace JSE.WebApp.MVC.Services
 {
@@ -20,7 +18,7 @@ namespace JSE.WebApp.MVC.Services
 
         public async Task<CarrinhoViewModel> ObterCarrinho()
         {
-            var response = await _httpClient.GetAsync("https://localhost:7285/carrinho/");
+            var response = await _httpClient.GetAsync("https://localhost:44388/carrinho/");
 
             TratarErrosResponse(response);
 
@@ -31,7 +29,7 @@ namespace JSE.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(produto);
 
-            var response = await _httpClient.PostAsync("https://localhost:7285/carrinho/", itemContent);
+            var response = await _httpClient.PostAsync("https://localhost:44388/carrinho/", itemContent);
 
             if(!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
@@ -42,7 +40,7 @@ namespace JSE.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(produto);
 
-            var response = await _httpClient.PutAsync($"https://localhost:7285/carrinho/{produto.ProdutoId}", itemContent);
+            var response = await _httpClient.PutAsync($"https://localhost:44388/carrinho/{produto.ProdutoId}", itemContent);
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
@@ -51,7 +49,7 @@ namespace JSE.WebApp.MVC.Services
 
         public async Task<ResponseResult> RemoverItemCarrinho(Guid produtoId)
         {
-            var response = await _httpClient.DeleteAsync($"https://localhost:7285/carrinho/{produtoId}");
+            var response = await _httpClient.DeleteAsync($"https://localhost:44388/carrinho/{produtoId}");
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 

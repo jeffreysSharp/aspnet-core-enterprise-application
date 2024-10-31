@@ -1,7 +1,7 @@
 using JSE.Catalogo.API.Data;
 using JSE.Catalogo.API.Data.Repository;
 using JSE.Catalogo.API.Models;
-using JSE.Identidade.API.Extensions;
+using JSE.WebAPI.Core.IdentityConfiguration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -38,8 +38,8 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(key),
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidAudience = appSettings.ValidoEm,
-        ValidIssuer = appSettings.Emissor
+        ValidAudience = appSettings.ValidOn,
+        ValidIssuer = appSettings.Issuer
     };
 });
 
