@@ -1,11 +1,12 @@
-﻿using JSE.WebApp.MVC.Models;
+﻿using JSE.WebApp.MVC.Controllers;
+using JSE.WebApp.MVC.Models;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JSE.WebApp.MVC.Controllers
+namespace NSE.WebApp.MVC.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class CarrinhoController : MainController
     {
         private readonly ICarrinhoService _carrinhoService;
@@ -30,13 +31,12 @@ namespace JSE.WebApp.MVC.Controllers
         {
             var produto = await _catalogoService.ObterPorId(itemProduto.ProdutoId);
 
+            ValidarItemCarrinho(produto, itemProduto.Quantidade);
+            if (!OperacaoValida()) return View("Index", await _carrinhoService.ObterCarrinho());
+
             itemProduto.Nome = produto.Nome;
             itemProduto.Valor = produto.Valor;
             itemProduto.Imagem = produto.Imagem;
-
-            ValidarItemCarrinho(produto, itemProduto.Quantidade);
-
-            if (!OperacaoValida()) return View("Index", await _carrinhoService.ObterCarrinho());
 
             var resposta = await _carrinhoService.AdicionarItemCarrinho(itemProduto);
 

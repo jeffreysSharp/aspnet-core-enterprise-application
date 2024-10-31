@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JSE.Carrinho.API.Controllers
 {
-    [Authorize]
     public class CarrinhoController : MainController
     {
         private readonly IAspNetUser _user;

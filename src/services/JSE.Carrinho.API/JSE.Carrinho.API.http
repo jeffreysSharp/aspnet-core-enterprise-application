@@ -1,6 +1,6 @@
 @JSE.Carrinho.API_HostAddress = http://localhost:5291
 
-GET {{JSE.Carrinho.API_HostAddress}}/weatherforecast/
+GET {{JSE.Carrinho.API_HostAddress}}/carrinho/
 Accept: application/json
 
 ###
