@@ -1,7 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using JSE.Identidade.API.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -10,6 +9,7 @@ using JSE.Identidade.API.Models;
 using JSE.WebAPI.Core.Controllers;
 using JSE.MessageBus;
 using JSE.Core.Messages.Integration;
+using JSE.WebAPI.Core.IdentityConfiguration;
 
 namespace JSE.Identidade.API.Controllers
 {
@@ -130,10 +130,10 @@ namespace JSE.Identidade.API.Controllers
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = _appSettings.Emissor,
-                Audience = _appSettings.ValidoEm,
+                Issuer = _appSettings.Issuer,
+                Audience = _appSettings.ValidOn,
                 Subject = identityClaims,
-                Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
+                Expires = DateTime.UtcNow.AddHours(_appSettings.ExpirationHours),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             });
 
@@ -145,7 +145,7 @@ namespace JSE.Identidade.API.Controllers
             return new UsuarioRespostaLoginViewModel
             {
                 AccessToken = encodedToken,
-                ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiracaoHoras).TotalSeconds,
+                ExpiresIn = TimeSpan.FromHours(_appSettings.ExpirationHours).TotalSeconds,
                 UsuarioToken = new UsuarioTokenViewModel
                 {
                     Id = user.Id,

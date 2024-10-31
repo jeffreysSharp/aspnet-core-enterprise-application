@@ -1,81 +1,9 @@
-using JSE.Core.Utils;
-using JSE.Identidade.API.Data;
-using JSE.Identidade.API.Extensions;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using System.Text;
-using JSE.MessageBus;
-
+using JSE.Identidade.API.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
-builder.Services.AddControllers();
-
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
-
-string messageQueueConnection = builder.Configuration.GetMessageQueueConnection("MessageBus");
-builder.Services.AddMessageBus(messageQueueConnection);
-
-
-builder.Services.AddDefaultIdentity<IdentityUser>()
-    .AddRoles<IdentityRole>()
-    .AddErrorDescriber<IdentityMensagensPortugues>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
-
-// JWT
-
-var appSettingsSection = builder.Configuration.GetSection("AppSettings");
-builder.Services.Configure<AppSettings>(appSettingsSection);
-
-var appSettings = appSettingsSection.Get<AppSettings>();
-var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-}).AddJwtBearer(bearerOptions =>
-{
-    bearerOptions.RequireHttpsMetadata = true;
-    bearerOptions.SaveToken = true;
-    bearerOptions.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidAudience = appSettings.ValidoEm,
-        ValidIssuer = appSettings.Emissor
-    };
-});
-
-
-
-builder.Services.AddEndpointsApiExplorer();
-
-builder.Services.AddSwaggerGen(c =>
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "JeffStore Enterprise Identity API",
-        Description = "Esta é a API da JeffStore Enterprise Applications",
-        Contact = new OpenApiContact() { Name = "Jeferson Almeida", Email = "jefferson_qi3@hotmail.com" },
-        License = new OpenApiLicense()
-        {
-            Name = "MIT",
-            Url = new Uri("https://opensource.org/licenses/MIT")
-        }
-    })
-);
-
-var app = builder.Build();
-
-builder.Configuration
+configuration
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appsettings.json", false, false)
         .AddJsonFile($@"appsettings.{builder.Environment.EnvironmentName}.json", false, false)
@@ -83,17 +11,18 @@ builder.Configuration
         .AddEnvironmentVariables()
         .AddUserSecrets(typeof(Program).Assembly).Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+builder.Services.AddIdentityConfiguration(configuration);
+builder.Services.AddApiConfiguration();
+builder.Services.AddSwaggerConfiguration();
+builder.Services.AddMessageBusConfiguration(configuration);
+builder.Services.AddEndpointsApiExplorer();
 
-app.UseHttpsRedirection();
+var app = builder.Build();
+var environment = app.Environment;
 
-app.UseAuthorization();
-app.UseAuthentication();
+app.UseSwaggerConfiguration();
+app.UseApiConfiguration(environment);
 
-app.MapControllers();
+
 
 app.Run();
