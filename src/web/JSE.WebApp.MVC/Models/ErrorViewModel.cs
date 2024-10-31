@@ -6,10 +6,4 @@ namespace JSE.WebApp.MVC.Models
         public string Titulo { get; set; }
         public string Mensagem { get; set; }
     }
-
-
-    public class ResponseErrorMessages
-    {
-        public List<string> Mensagens { get; set; }
-    }
 }
