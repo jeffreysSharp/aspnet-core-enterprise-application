@@ -8,16 +8,19 @@ namespace JSE.WebApp.MVC.Services
     {
         private readonly HttpClient _httpClient;
 
-        public AutenticacaoService(HttpClient httpClient)
-        {   
-            _httpClient = httpClient;
+        public AutenticacaoService(HttpClient httpClient,
+                          IOptions<AppSettings> settings)
+        {
+            httpClient.BaseAddress = new Uri(settings.Value.AutenticacaoUrl);
+
+            _httpClient = httpClient;            
         }
 
         public async Task<UsuarioRespostaLoginViewModel> Login(UsuarioLoginViewModel usuarioLogin)
         {
             var loginContent = ObterConteudo(usuarioLogin);
 
-            var response = await _httpClient.PostAsync("https://localhost:44396/api/identidade/autenticar", loginContent);
+            var response = await _httpClient.PostAsync("/api/identidade/autenticar", loginContent);
 
             if (!TratarErrosResponse(response))
             {
@@ -34,7 +37,7 @@ namespace JSE.WebApp.MVC.Services
         {
             var registroContent = ObterConteudo(usuarioRegistro);
 
-            var response = await _httpClient.PostAsync("https://localhost:44396/api/identidade/nova-conta", registroContent);
+            var response = await _httpClient.PostAsync("/api/identidade/nova-conta", registroContent);
 
             if (!TratarErrosResponse(response))
             {
