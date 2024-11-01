@@ -1,7 +1,4 @@
-﻿using JSE.Client.API.Models;
-using JSE.Core.DomainObjects;
-using JSE.Core.Messages;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using JSE.Core.Messages;
 
 namespace JSE.Client.API.Application.Events
 {

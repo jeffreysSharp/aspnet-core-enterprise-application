@@ -6,8 +6,6 @@ namespace JSE.Client.API.Application.Events
     {
         public Task Handle(ClientRegisteredEvent notification, CancellationToken cancellationToken)
         {
-            //TODO
-            // Enviar evento confirmação
             return Task.CompletedTask;
         }
     }

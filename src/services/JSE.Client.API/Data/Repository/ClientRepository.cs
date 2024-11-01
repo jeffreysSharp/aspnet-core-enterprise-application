@@ -1,5 +1,4 @@
 ﻿
-using JSE.Catalogo.API.Data;
 using JSE.Client.API.Models;
 using JSE.Core.Data;
 using Microsoft.EntityFrameworkCore;

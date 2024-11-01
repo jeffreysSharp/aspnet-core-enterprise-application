@@ -6,7 +6,7 @@ using JSE.Core.Mediator;
 using JSE.Core.Messages;
 using Microsoft.EntityFrameworkCore;
 
-namespace JSE.Catalogo.API.Data
+namespace JSE.Client.API.Data
 {
     public class ClientContext : DbContext, IUnitOfWork
     {
