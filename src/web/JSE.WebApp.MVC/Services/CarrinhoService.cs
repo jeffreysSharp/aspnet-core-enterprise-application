@@ -40,7 +40,7 @@ namespace JSE.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(produto);
 
-            var response = await _httpClient.PutAsync($"https://localhost:44388/carrinho/{produto.ProdutoId}", itemContent);
+            var response = await _httpClient.PutAsync($"/carrinho/{produto.ProdutoId}", itemContent);
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
@@ -49,7 +49,7 @@ namespace JSE.WebApp.MVC.Services
 
         public async Task<ResponseResult> RemoverItemCarrinho(Guid produtoId)
         {
-            var response = await _httpClient.DeleteAsync($"https://localhost:44388/carrinho/{produtoId}");
+            var response = await _httpClient.DeleteAsync($"/carrinho/{produtoId}");
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
