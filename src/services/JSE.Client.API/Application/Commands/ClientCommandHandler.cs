@@ -1,7 +1,6 @@
 ﻿using FluentValidation.Results;
 using JSE.Client.API.Application.Events;
 using JSE.Client.API.Models;
-using JSE.Core.DomainObjects;
 using JSE.Core.Messages;
 using MediatR;
 

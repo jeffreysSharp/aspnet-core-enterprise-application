@@ -3,7 +3,7 @@ using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace NSE.WebApp.MVC.Controllers
+namespace JSE.WebApp.MVC.Controllers
 {
     public class CatalogoController : MainController
     {

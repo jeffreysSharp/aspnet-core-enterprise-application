@@ -1,4 +1,6 @@
-﻿using JSE.WebApp.MVC.Models;
+﻿using JSE.WebApp.MVC.Extensions;
+using JSE.WebApp.MVC.Models;
+using Microsoft.Extensions.Options;
 
 namespace JSE.WebApp.MVC.Services
 {
@@ -6,19 +8,17 @@ namespace JSE.WebApp.MVC.Services
     {
         private readonly HttpClient _httpClient;
 
-        public CarrinhoService(HttpClient httpClient
-            // TODO
-            //IOptions<AppSettings> settings
-            )
+        public CarrinhoService(HttpClient httpClient,
+            IOptions<AppSettings> settings)
         {
+            httpClient.BaseAddress = new Uri(settings.Value.CarrinhoUrl);
+
             _httpClient = httpClient;
-            // TODO
-            //_httpClient.BaseAddress = new Uri(settings.Value.CarrinhoUrl);
         }
 
         public async Task<CarrinhoViewModel> ObterCarrinho()
         {
-            var response = await _httpClient.GetAsync("https://localhost:44388/carrinho/");
+            var response = await _httpClient.GetAsync("/carrinho/");
 
             TratarErrosResponse(response);
 
@@ -29,9 +29,9 @@ namespace JSE.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(produto);
 
-            var response = await _httpClient.PostAsync("https://localhost:44388/carrinho/", itemContent);
+            var response = await _httpClient.PostAsync("/carrinho/", itemContent);
 
-            if(!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
+            if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
             return RetornoOk();
         }
@@ -40,7 +40,7 @@ namespace JSE.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(produto);
 
-            var response = await _httpClient.PutAsync($"https://localhost:44388/carrinho/{produto.ProdutoId}", itemContent);
+            var response = await _httpClient.PutAsync($"/carrinho/{produto.ProdutoId}", itemContent);
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
@@ -49,7 +49,7 @@ namespace JSE.WebApp.MVC.Services
 
         public async Task<ResponseResult> RemoverItemCarrinho(Guid produtoId)
         {
-            var response = await _httpClient.DeleteAsync($"https://localhost:44388/carrinho/{produtoId}");
+            var response = await _httpClient.DeleteAsync($"/carrinho/{produtoId}");
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 

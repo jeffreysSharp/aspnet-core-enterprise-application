@@ -1,4 +1,4 @@
-@JSE.Carrinho.API_HostAddress = http://localhost:5291
+@JSE.Carrinho.API_HostAddress = http://localhost:44388
 
 GET {{JSE.Carrinho.API_HostAddress}}/carrinho/
 Accept: application/json

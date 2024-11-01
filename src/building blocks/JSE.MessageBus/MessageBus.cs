@@ -76,7 +76,7 @@ namespace JSE.MessageBus
         {
             TryConnect();
 
-            return _bus.Rpc.RespondAsync(responder).AsTask();
+            return _bus.Rpc.RespondAsync(responder);
         }
 
         private void TryConnect()
@@ -107,7 +107,7 @@ namespace JSE.MessageBus
 
         public void Dispose()
         {
-            _bus.Dispose();
+            
         }
     }
 }

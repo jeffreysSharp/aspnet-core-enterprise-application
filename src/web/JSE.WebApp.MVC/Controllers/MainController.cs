@@ -1,6 +1,5 @@
-﻿using System.Linq;
+﻿using JSE.WebApp.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
-using JSE.WebApp.MVC.Models;
 
 namespace JSE.WebApp.MVC.Controllers
 {

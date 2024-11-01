@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\building blocks\JSE.WebAPI.Core\JSE.WebAPI.Core.csproj" />
   </ItemGroup>
 
