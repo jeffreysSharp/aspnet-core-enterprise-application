@@ -2,7 +2,6 @@
 using JSE.Carrinho.API.Model;
 using JSE.WebAPI.Core.Controllers;
 using JSE.WebAPI.Core.User;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
