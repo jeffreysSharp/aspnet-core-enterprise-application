@@ -23,6 +23,4 @@ var environment = app.Environment;
 app.UseSwaggerConfiguration();
 app.UseApiConfiguration(environment);
 
-
-
 app.Run();
