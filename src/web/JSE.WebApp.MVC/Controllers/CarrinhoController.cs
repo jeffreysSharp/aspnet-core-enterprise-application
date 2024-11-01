@@ -4,7 +4,7 @@ using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NSE.WebApp.MVC.Controllers
+namespace JSE.WebApp.MVC.Controllers
 {
     [Authorize]
     public class CarrinhoController : MainController
