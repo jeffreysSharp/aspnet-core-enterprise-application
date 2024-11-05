@@ -5,7 +5,7 @@ namespace JSE.WebApp.MVC.Controllers
 {
     public class MainController : Controller
     {
-        protected bool ResponsePossuiErros(ResponseResult resposta)
+        protected bool ResponsePossuiErros(ResponseResultViewModel resposta)
         {
             if (resposta != null && resposta.Errors.Mensagens.Any())
             {

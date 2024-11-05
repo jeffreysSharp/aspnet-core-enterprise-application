@@ -35,10 +35,11 @@ namespace JSE.Carrinho.API.Controllers
                 ManipularNovoCarrinho(item);
             else
                 ManipularCarrinhoExistente(carrinho, item);
-
+            
             if (!ValidOperation()) return CustomResponse();
 
             await PersistirDados();
+
             return CustomResponse();
         }
 
@@ -58,6 +59,7 @@ namespace JSE.Carrinho.API.Controllers
             _context.CarrinhoCliente.Update(carrinho);
 
             await PersistirDados();
+
             return CustomResponse();
         }
 
@@ -100,6 +102,7 @@ namespace JSE.Carrinho.API.Controllers
             var produtoItemExistente = carrinho.CarrinhoItemExistente(item);
 
             carrinho.AdicionarItem(item);
+
             ValidarCarrinho(carrinho);
 
             if (produtoItemExistente)

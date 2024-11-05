@@ -43,9 +43,9 @@ namespace JSE.WebApp.MVC.Services
             return true;
         }
 
-        protected ResponseResult RetornoOk()
+        protected ResponseResultViewModel RetornoOk()
         {
-            return new ResponseResult();
+            return new ResponseResultViewModel();
         }
     }
 }
