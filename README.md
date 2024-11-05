@@ -31,6 +31,8 @@
  -CQRS
 - RabbitMQ
 - EasyNetQ
+- Application Query Stack e Specification Pattern
+- 
 
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++
@@ -43,6 +45,7 @@
 - [x] Lista de Produtos
 - [x] Detalhes do Produto
 - [X] Cadastro de Clientes
-- [ ] Carrinho
+- [X] Carrinho
+- [ ] API Gateway / BFF - Compras 
 - [ ] Pedidos
 - [ ] Pagamentos
