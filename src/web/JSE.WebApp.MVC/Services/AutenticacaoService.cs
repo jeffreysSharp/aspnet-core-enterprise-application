@@ -26,7 +26,7 @@ namespace JSE.WebApp.MVC.Services
             {
                 return new UsuarioRespostaLoginViewModel
                 {
-                    ResponseResult = await DeserializarObjetoResponse<ResponseResult>(response)
+                    ResponseResult = await DeserializarObjetoResponse<ResponseResultViewModel>(response)
                 };
             }
 
@@ -43,7 +43,7 @@ namespace JSE.WebApp.MVC.Services
             {
                 return new UsuarioRespostaLoginViewModel
                 {
-                    ResponseResult = await DeserializarObjetoResponse<ResponseResult>(response)
+                    ResponseResult = await DeserializarObjetoResponse<ResponseResultViewModel>(response)
                 };
             }
 

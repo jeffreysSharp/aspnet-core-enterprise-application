@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JSE.Carrinho.API.Migrations
 {
     [DbContext(typeof(CarrinhoContext))]
-    [Migration("20241030201513_Carrinho")]
+    [Migration("20241105164222_Carrinho")]
     partial class Carrinho
     {
         /// <inheritdoc />
