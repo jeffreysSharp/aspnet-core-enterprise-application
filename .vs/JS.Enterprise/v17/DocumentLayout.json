@@ -3,48 +3,12 @@
   "WorkspaceRootPath": "C:\\Projects\\aspnet-core-enterprise-application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\pagamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\pagamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\catalogoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\catalogoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\extensions\\httpclientauthorizationdelegatinghandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\extensions\\httpclientauthorizationdelegatinghandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\extensions\\appservicessettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\extensions\\appservicessettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\configuration\\swaggerconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\configuration\\swaggerconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\configuration\\messagebusconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\configuration\\messagebusconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\configuration\\apiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SwaggerConfig.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
+              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
+              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:21:00.748Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -74,158 +51,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PedidoService.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\PedidoService.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\PedidoService.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\PedidoService.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\PedidoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:11:20.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PagamentoService.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\PagamentoService.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\PagamentoService.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\PagamentoService.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\PagamentoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:11:05.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CatalogoService.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\CatalogoService.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\CatalogoService.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\CatalogoService.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\CatalogoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:10:35.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Service.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:10:14.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CarrinhoService.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:09:50.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CarrinhoController.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:06:58.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HttpClientAuthorizationDelegatingHandler.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Extensions\\HttpClientAuthorizationDelegatingHandler.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Extensions\\HttpClientAuthorizationDelegatingHandler.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Extensions\\HttpClientAuthorizationDelegatingHandler.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Extensions\\HttpClientAuthorizationDelegatingHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:04:32.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SwaggerConfig.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\SwaggerConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:03:22.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MessageBusConfig.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\MessageBusConfig.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\MessageBusConfig.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\MessageBusConfig.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\MessageBusConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:03:01.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppServicesSettings.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Extensions\\AppServicesSettings.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Extensions\\AppServicesSettings.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Extensions\\AppServicesSettings.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Extensions\\AppServicesSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:01:41.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DependencyInjectionConfig.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\DependencyInjectionConfig.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\DependencyInjectionConfig.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\DependencyInjectionConfig.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\DependencyInjectionConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:02:23.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "ApiConfig.cs",
               "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\ApiConfig.cs",
               "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\ApiConfig.cs",
               "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Configuration\\ApiConfig.cs",
               "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Configuration\\ApiConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:00:21.387Z",
+              "WhenOpened": "2024-11-05T19:19:48.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Program.cs",
+              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Program.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Program.cs",
+              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:18:51.277Z",
               "EditorCaption": ""
             }
           ]
