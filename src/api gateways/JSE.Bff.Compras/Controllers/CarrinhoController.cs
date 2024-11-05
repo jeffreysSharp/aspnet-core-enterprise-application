@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using JSE.WebAPI.Core.Controllers;
+=======
+﻿using JSE.Bff.Compras.Services;
+using JSE.WebAPI.Core.Controllers;
+>>>>>>> develop
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +12,19 @@ namespace JSE.Bff.Compras.Controllers
     [Authorize]
     public class CarrinhoController : MainController
     {
+<<<<<<< HEAD
+=======
+        private readonly ICarrinhoService _carrinhoService;
+        private readonly ICatalogoService _catalogoService;
+
+        public CarrinhoController(ICarrinhoService carrinhoService, 
+                                  ICatalogoService catalogoService)
+        {
+            _carrinhoService = carrinhoService;
+            _catalogoService = catalogoService;
+        }
+
+>>>>>>> develop
         [HttpGet]
         [Route("compras/carrinho")]
         public async Task<IActionResult> Index()

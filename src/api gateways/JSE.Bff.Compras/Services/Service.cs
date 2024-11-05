@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using System.Net;
+=======
+﻿using JSE.Core.Comunication;
+using System.Net;
+>>>>>>> develop
 using System.Text;
 using System.Text.Json;
 
@@ -31,5 +36,13 @@ namespace JSE.Bff.Compras.Services
             response.EnsureSuccessStatusCode();
             return true;
         }
+<<<<<<< HEAD
+=======
+
+        protected ResponseResult RetornoOk()
+        {
+            return new ResponseResult();
+        }
+>>>>>>> develop
     }
 }

@@ -1,11 +1,11 @@
-﻿using JSE.WebApp.MVC.Models;
+﻿using JSE.Core.Comunication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JSE.WebApp.MVC.Controllers
 {
     public class MainController : Controller
     {
-        protected bool ResponsePossuiErros(ResponseResultViewModel resposta)
+        protected bool ResponsePossuiErros(ResponseResult resposta)
         {
             if (resposta != null && resposta.Errors.Mensagens.Any())
             {
