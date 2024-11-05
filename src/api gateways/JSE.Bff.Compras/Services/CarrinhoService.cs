@@ -1,20 +1,10 @@
 ﻿using JSE.Bff.Compras.Extensions;
-<<<<<<< HEAD
-=======
 using JSE.Bff.Compras.Models;
 using JSE.Core.Comunication;
->>>>>>> develop
 using Microsoft.Extensions.Options;
 
 namespace JSE.Bff.Compras.Services
 {
-<<<<<<< HEAD
-    public interface ICarrinhoService
-    {
-    }
-=======
->>>>>>> develop
-
     public class CarrinhoService : Service, ICarrinhoService
     {
         private readonly HttpClient _httpClient;
@@ -24,9 +14,6 @@ namespace JSE.Bff.Compras.Services
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(settings.Value.CarrinhoUrl);
         }
-<<<<<<< HEAD
-=======
-
         public async Task<CarrinhoDTO> ObterCarrinho()
         {
             var response = await _httpClient.GetAsync("/carrinho/");
@@ -66,6 +53,6 @@ namespace JSE.Bff.Compras.Services
 
             return RetornoOk();
         }
->>>>>>> develop
+
     }
 }
