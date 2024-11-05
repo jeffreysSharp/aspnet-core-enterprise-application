@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using JSE.Core.Comunication;
 using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Models;
 
@@ -43,9 +44,9 @@ namespace JSE.WebApp.MVC.Services
             return true;
         }
 
-        protected ResponseResultViewModel RetornoOk()
+        protected ResponseResult RetornoOk()
         {
-            return new ResponseResultViewModel();
+            return new ResponseResult();
         }
     }
 }
