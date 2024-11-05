@@ -1,4 +1,5 @@
-﻿using JSE.WebApp.MVC.Extensions;
+﻿using JSE.Core.Comunication;
+using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Models;
 using Microsoft.Extensions.Options;
 
@@ -26,7 +27,7 @@ namespace JSE.WebApp.MVC.Services
             {
                 return new UsuarioRespostaLoginViewModel
                 {
-                    ResponseResult = await DeserializarObjetoResponse<ResponseResultViewModel>(response)
+                    ResponseResult = await DeserializarObjetoResponse<ResponseResult>(response)
                 };
             }
 
@@ -43,7 +44,7 @@ namespace JSE.WebApp.MVC.Services
             {
                 return new UsuarioRespostaLoginViewModel
                 {
-                    ResponseResult = await DeserializarObjetoResponse<ResponseResultViewModel>(response)
+                    ResponseResult = await DeserializarObjetoResponse<ResponseResult>(response)
                 };
             }
 

@@ -1,8 +1,8 @@
-﻿namespace JSE.WebApp.MVC.Models
+﻿namespace JSE.Core.Comunication
 {
-    public class ResponseErrorMessagesViewModel
+    public class ResponseErrorMessages
     {
-        public ResponseErrorMessagesViewModel()
+        public ResponseErrorMessages()
         {
             Mensagens = new List<string>();
         }

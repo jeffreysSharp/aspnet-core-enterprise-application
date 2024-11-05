@@ -1,10 +1,12 @@
-﻿namespace JSE.WebApp.MVC.Models
+﻿using JSE.Core.Comunication;
+
+namespace JSE.WebApp.MVC.Models
 {
     public class UsuarioLoginRespostaViewModel
     {
         public string AccessToken { get; set; }
         public double ExpiresIn { get; set; }
         public UsuarioTokenViewModel UsuarioToken { get; set; }
-        public ResponseResultViewModel ResponseResult { get; set; }
+        public ResponseResult ResponseResult { get; set; }
     }
 }
