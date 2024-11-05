@@ -29,8 +29,8 @@ namespace JSE.WebApp.MVC.Services
         {
             var itemContent = ObterConteudo(produto);
 
-            var response = await _httpClient.PostAsync("/carrinho/", itemContent);
-
+            var response = await _httpClient.PostAsync("/carrinho/", itemContent);            
+            
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResultViewModel>(response);
 
             return RetornoOk();
