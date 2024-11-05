@@ -19,7 +19,7 @@ namespace JSE.Carrinho.API.Model
         public Guid CarrinhoId { get; set; }
 
         [JsonIgnore]
-        public CarrinhoCliente CarrinhoCliente { get; set; }
+        public CarrinhoCliente? CarrinhoCliente { get; set; }
 
         internal void AssociarCarrinho(Guid carrinhoId)
         {
