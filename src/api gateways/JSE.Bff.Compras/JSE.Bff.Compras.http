@@ -1,0 +1,6 @@
+@JSE.Bff.Compras_HostAddress = http://localhost:5262
+
+GET {{JSE.Bff.Compras_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
