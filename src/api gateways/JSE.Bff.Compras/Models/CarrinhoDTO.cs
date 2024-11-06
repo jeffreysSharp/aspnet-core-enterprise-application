@@ -6,4 +6,6 @@
         public decimal Desconto { get; set; }
         public List<ItemCarrinhoDTO> Itens { get; set; } = new List<ItemCarrinhoDTO>();
     }
+
+
 }
