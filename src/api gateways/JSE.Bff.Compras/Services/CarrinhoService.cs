@@ -1,6 +1,6 @@
 ﻿using JSE.Bff.Compras.Extensions;
 using JSE.Bff.Compras.Models;
-using JSE.Core.Comunication;
+using JSE.Core.Communication;
 using Microsoft.Extensions.Options;
 
 namespace JSE.Bff.Compras.Services

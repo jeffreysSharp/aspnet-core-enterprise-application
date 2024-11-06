@@ -1,4 +1,4 @@
-﻿using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 
 namespace JSE.WebApp.MVC.Models
 {

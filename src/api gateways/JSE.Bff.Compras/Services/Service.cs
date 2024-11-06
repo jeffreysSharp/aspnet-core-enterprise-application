@@ -1,4 +1,4 @@
-﻿using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 using System.Net;
 using System.Text;
 using System.Text.Json;

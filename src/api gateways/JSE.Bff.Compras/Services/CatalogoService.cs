@@ -1,11 +1,9 @@
 ﻿using JSE.Bff.Compras.Extensions;
+using JSE.Bff.Compras.Models;
 using Microsoft.Extensions.Options;
 
 namespace JSE.Bff.Compras.Services
 {
-    public interface ICatalogoService
-    {
-    }
 
     public class CatalogoService : Service, ICatalogoService
     {
@@ -15,6 +13,15 @@ namespace JSE.Bff.Compras.Services
         {
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(settings.Value.CatalogoUrl);
+        }
+
+        public async Task<ItemProdutoDTO> ObterPorId(Guid id)
+        {
+            var response = await _httpClient.GetAsync($"/catalogo/produto/{id}");
+
+            TratarErrosResponse(response);
+
+            return await DeserializarObjetoResponse<ItemProdutoDTO>(response);
         }
     }
 }
