@@ -47,5 +47,6 @@
 - [X] Cadastro de Clientes
 - [X] Carrinho
 - [x] API Gateway / BFF - Compras 
+- [ ] Aplicação de Voucher
 - [ ] Pedidos
 - [ ] Pagamentos

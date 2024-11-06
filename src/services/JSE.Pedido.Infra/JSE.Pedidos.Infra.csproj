@@ -26,9 +26,4 @@
     <ProjectReference Include="..\JSE.Pedido.Domain\JSE.Pedidos.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Mappings\" />
-    <Folder Include="Data\Repository\" />
-  </ItemGroup>
-
 </Project>
