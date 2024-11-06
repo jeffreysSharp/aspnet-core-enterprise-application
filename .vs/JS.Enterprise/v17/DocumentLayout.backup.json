@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\aspnet-core-enterprise-application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\extensions\\pollyextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\extensions\\pollyextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PollyExtensions.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:50:50.526Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

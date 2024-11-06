@@ -1,4 +1,4 @@
-﻿namespace JSE.Core.Comunication
+﻿namespace JSE.Core.Communication
 {
     public class ResponseErrorMessages
     {

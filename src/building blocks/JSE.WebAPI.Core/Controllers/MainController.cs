@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
-using JSE.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using JSE.Core.Communication;
 
 namespace JSE.WebAPI.Core.Controllers
 {
@@ -58,6 +58,25 @@ namespace JSE.WebAPI.Core.Controllers
             }
 
             return CustomResponse();
+        }
+
+        protected ActionResult CustomResponse(ResponseResult responseResult)
+        {
+            ResponseHasErrors(responseResult);
+
+            return CustomResponse();
+        }
+
+        protected bool ResponseHasErrors(ResponseResult resposta)
+        {
+            if (resposta == null || !resposta.Errors.Mensagens.Any()) return false;
+
+            foreach (var mensagem in resposta.Errors.Mensagens)
+            {
+                AddProcessingError(mensagem);
+            }
+
+            return true;
         }
 
         protected bool ValidOperation()

@@ -1,4 +1,4 @@
-﻿using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JSE.WebApp.MVC.Controllers

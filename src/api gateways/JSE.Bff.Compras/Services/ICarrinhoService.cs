@@ -1,5 +1,5 @@
 ﻿using JSE.Bff.Compras.Models;
-using JSE.Core.Comunication;
+using JSE.Core.Communication;
 
 namespace JSE.Bff.Compras.Services
 {

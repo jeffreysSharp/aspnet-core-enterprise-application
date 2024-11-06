@@ -1,4 +1,4 @@
-using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 using System.Net;
 using System.Text;
 using System.Text.Json;
@@ -32,10 +32,10 @@ namespace JSE.Bff.Compras.Services
             response.EnsureSuccessStatusCode();
             return true;
         }
+
         protected ResponseResult RetornoOk()
         {
             return new ResponseResult();
         }
-
     }
 }
