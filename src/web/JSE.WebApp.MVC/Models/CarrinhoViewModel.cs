@@ -3,6 +3,6 @@
     public class CarrinhoViewModel
     {
         public decimal ValorTotal { get; set; }
-        public List<ItemProdutoViewModel> Itens { get; set; } = new List<ItemProdutoViewModel>();
+        public List<ItemCarrinhoViewModel> Itens { get; set; } = new List<ItemCarrinhoViewModel>();
     }
 }
