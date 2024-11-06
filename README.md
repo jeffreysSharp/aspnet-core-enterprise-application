@@ -46,6 +46,6 @@
 - [x] Detalhes do Produto
 - [X] Cadastro de Clientes
 - [X] Carrinho
-- [ ] API Gateway / BFF - Compras 
+- [x] API Gateway / BFF - Compras 
 - [ ] Pedidos
 - [ ] Pagamentos
