@@ -1,4 +1,7 @@
-﻿using JSE.WebAPI.Core.User;
+﻿using JSE.Core.Mediator;
+using JSE.Pedidos.Infra.Data;
+using JSE.WebAPI.Core.User;
+using System.Reflection;
 
 namespace JSE.Pedidos.API.Configuration
 {
@@ -9,16 +12,18 @@ namespace JSE.Pedidos.API.Configuration
             // API
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IAspNetUser, AspNetUser>();
-            
+
             // Commands
 
             // Events
 
 
             // Application
-
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
 
             // Data
+            services.AddScoped<PedidosContext>();
 
         }
     }

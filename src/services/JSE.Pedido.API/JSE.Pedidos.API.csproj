@@ -11,8 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.35" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -24,7 +23,6 @@
     <Folder Include="Application\Commands\" />
     <Folder Include="Application\Events\" />
     <Folder Include="Application\Queries\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
