@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>JSE.Pedido_API</RootNamespace>
+    <UserSecretsId>5cc9a9c4-2296-4963-adbf-a76b1e64b6e7</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Commands\" />
+    <Folder Include="Application\Events\" />
+    <Folder Include="Application\Queries\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
+    <ProjectReference Include="..\..\building blocks\JSE.MessageBus\JSE.MessageBus.csproj" />
+    <ProjectReference Include="..\..\building blocks\JSE.WebAPI.Core\JSE.WebAPI.Core.csproj" />
+    <ProjectReference Include="..\JSE.Pedido.Domain\JSE.Pedidos.Domain.csproj" />
+    <ProjectReference Include="..\JSE.Pedido.Infra\JSE.Pedidos.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
