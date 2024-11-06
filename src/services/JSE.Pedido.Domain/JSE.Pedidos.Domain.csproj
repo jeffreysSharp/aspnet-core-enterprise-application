@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Vouchers\" />
     <Folder Include="Pedidos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
   </ItemGroup>
 
 </Project>

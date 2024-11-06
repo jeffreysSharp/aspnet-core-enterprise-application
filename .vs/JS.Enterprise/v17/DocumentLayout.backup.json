@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projects\\aspnet-core-enterprise-application\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.Infra\\Migrations\\20241106192026_Voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\services\\JSE.Pedido.Infra\\Migrations\\20241106192026_Voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCDB1D73-2DEA-41F9-87B7-67112E8B73C0}|src\\services\\JSE.Pedido.API\\JSE.Pedidos.API.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\services\\jse.pedido.api\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCDB1D73-2DEA-41F9-87B7-67112E8B73C0}|src\\services\\JSE.Pedido.API\\JSE.Pedidos.API.csproj|solutionrelative:src\\services\\jse.pedido.api\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCDB1D73-2DEA-41F9-87B7-67112E8B73C0}|src\\services\\JSE.Pedido.API\\JSE.Pedidos.API.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\services\\jse.pedido.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCDB1D73-2DEA-41F9-87B7-67112E8B73C0}|src\\services\\JSE.Pedido.API\\JSE.Pedidos.API.csproj|solutionrelative:src\\services\\jse.pedido.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{072FD5A4-520E-4FC0-AC39-B2C914F8A483}|src\\services\\JSE.Client.API\\JSE.Client.API.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\services\\jse.client.api\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{072FD5A4-520E-4FC0-AC39-B2C914F8A483}|src\\services\\JSE.Client.API\\JSE.Client.API.csproj|solutionrelative:src\\services\\jse.client.api\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +26,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20241106192026_Voucher.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.Infra\\Migrations\\20241106192026_Voucher.cs",
+              "RelativeDocumentMoniker": "src\\services\\JSE.Pedido.Infra\\Migrations\\20241106192026_Voucher.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.Infra\\Migrations\\20241106192026_Voucher.cs",
+              "RelativeToolTip": "src\\services\\JSE.Pedido.Infra\\Migrations\\20241106192026_Voucher.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T19:20:26.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjectionConfig.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Client.API\\Configuration\\DependencyInjectionConfig.cs",
+              "RelativeDocumentMoniker": "src\\services\\JSE.Client.API\\Configuration\\DependencyInjectionConfig.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Client.API\\Configuration\\DependencyInjectionConfig.cs",
+              "RelativeToolTip": "src\\services\\JSE.Client.API\\Configuration\\DependencyInjectionConfig.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAApwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T19:19:10.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DependencyInjectionConfig.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.API\\Configuration\\DependencyInjectionConfig.cs",
+              "RelativeDocumentMoniker": "src\\services\\JSE.Pedido.API\\Configuration\\DependencyInjectionConfig.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.API\\Configuration\\DependencyInjectionConfig.cs",
+              "RelativeToolTip": "src\\services\\JSE.Pedido.API\\Configuration\\DependencyInjectionConfig.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBUAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T19:04:29.76Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -22,6 +78,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\services\\JSE.Pedido.API\\Program.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\services\\JSE.Pedido.API\\Program.cs",
+              "RelativeToolTip": "src\\services\\JSE.Pedido.API\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T19:04:27.551Z",
+              "EditorCaption": ""
             }
           ]
         }
