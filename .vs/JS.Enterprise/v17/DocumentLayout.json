@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Projects\\aspnet-core-enterprise-application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\services\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\services\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\services\\icarrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\services\\icarrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\api gateways\\jse.bff.compras\\services\\icarrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203A9878-A87F-4A75-9E91-BD1B4845BD6E}|src\\api gateways\\JSE.Bff.Compras\\JSE.Bff.Compras.csproj|solutionrelative:src\\api gateways\\jse.bff.compras\\services\\icarrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\models\\usuariorespostaloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\models\\usuariorespostaloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\models\\usuariologinrespostaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\models\\usuariologinrespostaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|c:\\projects\\aspnet-core-enterprise-application\\src\\web\\jse.webapp.mvc\\extensions\\pollyextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2305CFC3-FEEC-4C9F-954E-4622F87AC3E9}|src\\web\\JSE.WebApp.MVC\\JSE.WebApp.MVC.csproj|solutionrelative:src\\web\\jse.webapp.mvc\\extensions\\pollyextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,28 +46,28 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ICarrinhoService.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\ICarrinhoService.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\ICarrinhoService.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\ICarrinhoService.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\ICarrinhoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\Service.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Services\\Service.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\Service.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Services\\Service.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T20:34:36.897Z",
+              "WhenOpened": "2024-11-06T12:52:04.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Service.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\Service.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwAcAAAAaAAAAAAAAAA==",
+              "Title": "ICarrinhoService.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\ICarrinhoService.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Services\\ICarrinhoService.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\ICarrinhoService.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Services\\ICarrinhoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T20:33:06.092Z",
+              "WhenOpened": "2024-11-06T12:51:59.862Z",
               "EditorCaption": ""
             },
             {
@@ -70,26 +86,78 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CarrinhoService.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Services\\CarrinhoService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\CarrinhoService.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Services\\CarrinhoService.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\CarrinhoService.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Services\\CarrinhoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T20:18:56.628Z",
+              "WhenOpened": "2024-11-06T12:51:50.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CarrinhoController.cs",
-              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "RelativeDocumentMoniker": "src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "RelativeToolTip": "src\\api gateways\\JSE.Bff.Compras\\Controllers\\CarrinhoController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowA0AAAAyAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "AutenticacaoService.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\AutenticacaoService.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Services\\AutenticacaoService.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Services\\AutenticacaoService.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Services\\AutenticacaoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T20:18:29.038Z",
+              "WhenOpened": "2024-11-06T12:51:45.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuarioRespostaLoginViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Models\\UsuarioRespostaLoginViewModel.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Models\\UsuarioRespostaLoginViewModel.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Models\\UsuarioRespostaLoginViewModel.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Models\\UsuarioRespostaLoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:51:38.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioLoginRespostaViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Models\\UsuarioLoginRespostaViewModel.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Models\\UsuarioLoginRespostaViewModel.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Models\\UsuarioLoginRespostaViewModel.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Models\\UsuarioLoginRespostaViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:51:32.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainController.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Controllers\\MainController.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Controllers\\MainController.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Controllers\\MainController.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Controllers\\MainController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:51:17.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PollyExtensions.cs",
+              "DocumentMoniker": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "RelativeDocumentMoniker": "src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "ToolTip": "C:\\Projects\\aspnet-core-enterprise-application\\src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "RelativeToolTip": "src\\web\\JSE.WebApp.MVC\\Extensions\\PollyExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:50:50.526Z",
               "EditorCaption": ""
             }
           ]

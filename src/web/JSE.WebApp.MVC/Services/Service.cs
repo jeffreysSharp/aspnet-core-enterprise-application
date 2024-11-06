@@ -1,8 +1,7 @@
-﻿using System.Text;
-using System.Text.Json;
-using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 using JSE.WebApp.MVC.Extensions;
-using JSE.WebApp.MVC.Models;
+using System.Text;
+using System.Text.Json;
 
 namespace JSE.WebApp.MVC.Services
 {

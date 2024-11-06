@@ -1,4 +1,4 @@
-﻿using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Models;
 using Microsoft.Extensions.Options;

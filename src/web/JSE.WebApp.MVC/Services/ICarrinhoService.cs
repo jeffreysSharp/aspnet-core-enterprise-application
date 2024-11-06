@@ -1,4 +1,4 @@
-﻿using JSE.Core.Comunication;
+﻿using JSE.Core.Communication;
 using JSE.WebApp.MVC.Models;
 
 namespace JSE.WebApp.MVC.Services

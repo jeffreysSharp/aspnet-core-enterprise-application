@@ -1,7 +1,7 @@
 ﻿using JSE.WebAPI.Core.User;
 using System.Net.Http.Headers;
 
-namespace NSE.Bff.Compras.Extensions
+namespace JSE.Bff.Compras.Extensions
 {
     public class HttpClientAuthorizationDelegatingHandler : DelegatingHandler
     {
