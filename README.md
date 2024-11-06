@@ -32,7 +32,7 @@
 - RabbitMQ
 - EasyNetQ
 - Application Query Stack e Specification Pattern
-- 
+- NetDevPack
 
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++
