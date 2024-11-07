@@ -1,5 +1,7 @@
-﻿using FluentValidation;
+
+using FluentValidation;
 using JSE.Core.Messages;
+
 using JSE.Pedidos.API.Application.DTO;
 
 namespace JSE.Pedidos.API.Application.Commands
