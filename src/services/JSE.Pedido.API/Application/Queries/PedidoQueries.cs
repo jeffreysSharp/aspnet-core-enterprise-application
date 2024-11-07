@@ -1,4 +1,6 @@
-﻿using Dapper;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using JSE.Pedidos.API.Application.DTO;
 using JSE.Pedidos.Domain.Pedidos;
 
