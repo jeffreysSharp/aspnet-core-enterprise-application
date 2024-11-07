@@ -1,4 +1,4 @@
-﻿namespace JSE.Pedidos.Domain.Vouchers
+﻿namespace JSE.Pedidos.Domain
 {
     public enum TipoDescontoVoucher
     {
