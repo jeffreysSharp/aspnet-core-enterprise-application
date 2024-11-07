@@ -16,13 +16,12 @@ namespace JSE.WebAPI.Core.IdentityConfiguration
             services.Configure<AppSettings>(appSettingsSection);
 
             var appSettings = appSettingsSection.Get<AppSettings>();
-            var key = Encoding.ASCII.GetBytes("F9F52344-59C3-4EAC-90E6-CB47935038BE");
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
 
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
             }).AddJwtBearer(x =>
             {
                 x.RequireHttpsMetadata = true;
