@@ -10,6 +10,8 @@ namespace JSE.Pedidos.Domain.Pedidos
         void Adicionar(Pedido pedido);
         void Atualizar(Pedido pedido);
 
+        DbConnection ObterConexao();
+
         // Pedido Item        
         Task<PedidoItem> ObterItemPorId(Guid id);
         Task<PedidoItem> ObterItemPorPedido(Guid pedidoId, Guid produtoId);
