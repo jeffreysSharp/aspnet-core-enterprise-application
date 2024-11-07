@@ -1,5 +1,6 @@
 using JSE.Pedidos.API.Configuration;
 using JSE.WebAPI.Core.IdentityConfiguration;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -16,6 +17,7 @@ builder.Services.AddApiConfiguration(configuration);
 builder.Services.AddJwtConfiguration(configuration);
 builder.Services.AddSwaggerConfiguration();
 builder.Services.RegisterServices();
+builder.Services.AddMessageBusConfiguration(configuration);
 
 var app = builder.Build();
 var environment = app.Environment;
