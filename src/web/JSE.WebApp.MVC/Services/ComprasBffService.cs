@@ -5,16 +5,16 @@ using Microsoft.Extensions.Options;
 
 namespace JSE.WebApp.MVC.Services
 {
-    public class ComprasBffServiceService : Service, IComprasBffService
+    public class ComprasBffService : Service, IComprasBffService
     {
         private readonly HttpClient _httpClient;
 
-        public ComprasBffServiceService(HttpClient httpClient,
+        public ComprasBffService(HttpClient httpClient,
             IOptions<AppSettings> settings)
         {
-            httpClient.BaseAddress = new Uri(settings.Value.ComprasBffUrl);
-
             _httpClient = httpClient;
+            httpClient.BaseAddress = new Uri(settings.Value.ComprasBffUrl);
+            
         }
 
         #region Carrinho
