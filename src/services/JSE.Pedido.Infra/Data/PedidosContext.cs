@@ -3,6 +3,7 @@ using JSE.Core.Data;
 using JSE.Core.DomainObjects;
 using JSE.Core.Mediator;
 using JSE.Core.Messages;
+using JSE.Pedidos.Domain.Pedidos;
 using JSE.Pedidos.Domain.Vouchers;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,8 @@ namespace JSE.Pedidos.Infra.Data
             _mediatorHandler = mediatorHandler;
         }
 
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<PedidoItem> PedidoItems { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
