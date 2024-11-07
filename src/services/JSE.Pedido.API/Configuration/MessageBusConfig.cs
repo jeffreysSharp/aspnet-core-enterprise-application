@@ -1,7 +1,7 @@
 ﻿using JSE.Core.Utils;
 using JSE.MessageBus;
 
-namespace NSE.Pedidos.API.Configuration
+namespace JSE.Pedidos.API.Configuration
 {
     public static class MessageBusConfig
     {

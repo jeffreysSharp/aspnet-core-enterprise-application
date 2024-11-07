@@ -16,6 +16,8 @@ builder.Services.AddApiConfiguration(configuration);
 builder.Services.AddJwtConfiguration(configuration);
 builder.Services.AddSwaggerConfiguration();
 builder.Services.RegisterServices();
+builder.Services.AddMessageBusConfiguration(configuration);
+
 
 var app = builder.Build();
 var environment = app.Environment;
