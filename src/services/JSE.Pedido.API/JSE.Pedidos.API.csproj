@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Events\" />
-  </ItemGroup>
-
-  <ItemGroup>
 
     <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
     <ProjectReference Include="..\..\building blocks\JSE.MessageBus\JSE.MessageBus.csproj" />
