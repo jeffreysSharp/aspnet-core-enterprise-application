@@ -1,6 +1,8 @@
 ﻿using JSE.Core.Mediator;
 using JSE.Pedido_API.Application.Queries;
+using JSE.Pedidos.Domain;
 using JSE.Pedidos.Infra.Data;
+using JSE.Pedidos.Infra.Data.Repository;
 using JSE.WebAPI.Core.User;
 using System.Reflection;
 
@@ -25,6 +27,7 @@ namespace JSE.Pedidos.API.Configuration
             services.AddScoped<IVoucherQueries, VoucherQueries>();
 
             // Data
+            services.AddScoped<IVoucherRepository, VoucherRepository>();
             services.AddScoped<PedidosContext>();
 
         }
