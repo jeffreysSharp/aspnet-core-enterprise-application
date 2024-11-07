@@ -1,0 +1,6 @@
+@JSE.Pedido_API_HostAddress = http://localhost:44352
+
+GET {{JSE.Pedido_API_HostAddress}}/pedidos/
+Accept: application/json
+
+###
