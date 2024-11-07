@@ -25,7 +25,7 @@ namespace JSE.Pedidos.API.Configuration
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IVoucherQueries, VoucherQueries>();
-            
+
             // Data
             services.AddScoped<IVoucherRepository, VoucherRepository>();
             services.AddScoped<PedidosContext>();
