@@ -43,7 +43,7 @@ namespace JSE.Bff.Compras.Controllers
         {
             var produto = await _catalogoService.ObterPorId(itemProduto.ProdutoId);
 
-            await ValidarItemCarrinho(produto, itemProduto.Quantidade);
+            await ValidarItemCarrinho(produto, itemProduto.Quantidade, true);
             if (!ValidOperation()) return CustomResponse();
 
             itemProduto.Nome = produto.Nome;
