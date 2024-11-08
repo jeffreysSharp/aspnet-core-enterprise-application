@@ -9,8 +9,7 @@ namespace JSE.WebApp.MVC.Services
     {
         private readonly HttpClient _httpClient;
 
-        public ComprasBffService(HttpClient httpClient,
-            IOptions<AppSettings> settings)
+        public ComprasBffService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
             httpClient.BaseAddress = new Uri(settings.Value.ComprasBffUrl);
