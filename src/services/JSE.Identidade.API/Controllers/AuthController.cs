@@ -158,13 +158,13 @@ namespace JSE.Identidade.API.Controllers
         private static long ToUnixEpochDate(DateTime date)
             => (long)Math.Round((date.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
 
-        private async Task<ResponseMessage> RegistrarCliente(UsuarioRegistroViewModel usuarioRegistroViewModel)
+        private async Task<ResponseMessage> RegistrarCliente(UsuarioRegistroViewModel usuarioRegistro)
         {
-            var usuario = await _userManager.FindByEmailAsync(usuarioRegistroViewModel.Email);
+            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
 
-            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(Guid.Parse(usuario.Id), usuarioRegistroViewModel.FirstName, usuarioRegistroViewModel.LastName,
-                usuarioRegistroViewModel.Surname, usuarioRegistroViewModel.GenderId, usuarioRegistroViewModel.Email, usuarioRegistroViewModel.Phone,
-                usuarioRegistroViewModel.BirthdayDate, usuarioRegistroViewModel.DocumentNumber);
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
+                           Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
+
 
             try
             {

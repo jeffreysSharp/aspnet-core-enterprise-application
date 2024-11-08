@@ -10,7 +10,7 @@ namespace JSE.WebApp.MVC.Extensions
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            return ClientDocument.ValidarCpf(value.ToString()) ? ValidationResult.Success : new ValidationResult("CPF em formato inválido");
+            return Cpf.Validar(value.ToString()) ? ValidationResult.Success : new ValidationResult("CPF em formato inválido");
         }
     }
 

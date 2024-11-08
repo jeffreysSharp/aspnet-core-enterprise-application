@@ -8,7 +8,7 @@ using JSE.Pedidos.Domain.Pedidos;
 using JSE.Pedidos.Domain.Vouchers.Specs;
 using MediatR;
 
-namespace NSE.Pedidos.API.Application.Commands
+namespace JSE.Pedidos.API.Application.Commands
 {
     public class PedidoCommandHandler : CommandHandler,
         IRequestHandler<AdicionarPedidoCommand, ValidationResult>
@@ -26,7 +26,7 @@ namespace NSE.Pedidos.API.Application.Commands
         public async Task<ValidationResult> Handle(AdicionarPedidoCommand message, CancellationToken cancellationToken)
         {
             // Validação do comando
-            if (!message.IsValid()) return message.ValidationResult;
+            if (!message.EhValido()) return message.ValidationResult;
 
             // Mapear Pedido
             var pedido = MapearPedido(message);
@@ -44,7 +44,7 @@ namespace NSE.Pedidos.API.Application.Commands
             pedido.AutorizarPedido();
 
             // Adicionar Evento
-            pedido.AddEvent(new PedidoRealizadoEvent(pedido.Id, pedido.ClienteId));
+            pedido.AdicionarEvento(new PedidoRealizadoEvent(pedido.Id, pedido.ClienteId));
 
             // Adicionar Pedido Repositorio
             _pedidoRepository.Adicionar(pedido);

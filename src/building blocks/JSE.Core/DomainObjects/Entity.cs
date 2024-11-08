@@ -11,27 +11,26 @@ namespace JSE.Core.DomainObjects
             Id = Guid.NewGuid();
         }
 
-        private List<Event> _events;
-        public IReadOnlyCollection<Event> Events => _events?.AsReadOnly();
+        private List<Event> _notificacoes;
+        public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();
 
-        public void AddEvent(Event events)
+        public void AdicionarEvento(Event evento)
         {
-            _events = _events ?? new List<Event>();
-            _events.Add(events);
+            _notificacoes = _notificacoes ?? new List<Event>();
+            _notificacoes.Add(evento);
         }
 
-        public void RemoveEvent(Event eventItem)
+        public void RemoverEvento(Event eventItem)
         {
-            _events?.Remove(eventItem);
+            _notificacoes?.Remove(eventItem);
         }
 
-        public void ClearEvents()
+        public void LimparEventos()
         {
-            _events?.Clear();
+            _notificacoes?.Clear();
         }
 
-        #region Comparations
-
+        #region Comparações
 
         public override bool Equals(object obj)
         {
@@ -68,6 +67,7 @@ namespace JSE.Core.DomainObjects
         {
             return $"{GetType().Name} [Id={Id}]";
         }
+
         #endregion
     }
 }
