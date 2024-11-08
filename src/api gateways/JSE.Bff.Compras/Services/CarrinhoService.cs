@@ -14,6 +14,7 @@ namespace JSE.Bff.Compras.Services
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(settings.Value.CarrinhoUrl);
         }
+
         public async Task<CarrinhoDTO> ObterCarrinho()
         {
             var response = await _httpClient.GetAsync("/carrinho/");
