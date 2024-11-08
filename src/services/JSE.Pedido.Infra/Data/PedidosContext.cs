@@ -71,14 +71,14 @@ namespace JSE.Pedidos.Infra.Data
         {
             var domainEntities = ctx.ChangeTracker
                 .Entries<Entity>()
-                .Where(x => x.Entity.Events != null && x.Entity.Events.Any());
+                .Where(x => x.Entity.Notificacoes != null && x.Entity.Notificacoes.Any());
 
             var domainEvents = domainEntities
-                .SelectMany(x => x.Entity.Events)
+                .SelectMany(x => x.Entity.Notificacoes)
                 .ToList();
 
             domainEntities.ToList()
-                .ForEach(entity => entity.Entity.ClearEvents());
+                .ForEach(entity => entity.Entity.LimparEventos());
 
             var tasks = domainEvents
                 .Select(async (domainEvent) => {

@@ -10,7 +10,6 @@ using JSE.Pedidos.Infra.Data;
 using JSE.Pedidos.Infra.Data.Repository;
 using JSE.WebAPI.Core.User;
 using MediatR;
-using NSE.Pedidos.API.Application.Commands;
 using System.Reflection;
 
 namespace JSE.Pedidos.API.Configuration

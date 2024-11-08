@@ -27,7 +27,7 @@ namespace JSE.Pedidos.API.Application.Commands
         public string ExpiracaoCartao { get; set; }
         public string CvvCartao { get; set; }
 
-        public override bool IsValid()
+        public override bool EhValido()
         {
             ValidationResult = new AdicionarPedidoValidation().Validate(this);
             return ValidationResult.IsValid;
