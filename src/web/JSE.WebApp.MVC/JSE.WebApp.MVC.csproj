@@ -27,7 +27,6 @@
   
   <ItemGroup>
     <Folder Include="wwwroot\assets\lib\bootstrap\dist\js\" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   
