@@ -1,8 +1,6 @@
 ﻿@model int
 
-<div style="padding-right: 15px">
-    <a asp-controller="Carrinho" asp-action="Index" class="widget-header">
-        <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-        <span class="badge badge-pill badge-danger notify">@Model</span>
-    </a>
-</div>
+<a class="btn btn-icon btn-lg fs-xl btn-outline-secondary position-relative border-0 rounded-circle animate-scale" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart" aria-label="Shopping cart" data-bs-placement="bottom" data-bs-title="Carrinho">
+    <span class="position-absolute top-0 start-100 badge fs-xs text-bg-primary rounded-pill mt-1 ms-n4 z-2" style="--cz-badge-padding-y: .25em; --cz-badge-padding-x: .42em">@Model</span>
+    <i class="ci-shopping-bag animate-target me-1"></i>
+</a>

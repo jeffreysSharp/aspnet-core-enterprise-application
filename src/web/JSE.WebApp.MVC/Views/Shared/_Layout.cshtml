@@ -3,50 +3,39 @@
 <head>
     <meta charset="utf-8">
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-
-    <!-- SEO Meta Tags -->
+    
+    
+    
     <title>@ViewData["Title"] - Jeff Store</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="Jeferson Almeida">
-
-    <!-- Webmanifest + Favicon / App icons -->
+    <meta name="author" content="Jeferson Almeida">    
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <link rel="manifest" href="~/manifest.json">
     <link rel="icon" type="image/png" href="~/assets/app-icons/icon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="~/assets/app-icons/icon-180x180.png">
-
-
-
-    <!-- Preloaded local web font (Inter) -->
     <link rel="preload" href="~/assets/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Font icons -->
     <link rel="preload" href="~/assets/icons/cartzilla-icons.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="~/assets/icons/cartzilla-icons.min.css">
-
-    <!-- Vendor styles -->
     <link rel="stylesheet" href="~/assets/vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="~/assets/vendor/choices.js/public/assets/styles/choices.min.css">
-
-    <!-- Bootstrap + Theme styles -->
     <link rel="preload" href="~/assets/css/theme.min.css" as="style">
     <link rel="stylesheet" href="~/assets/css/theme.min.css" id="theme-styles">
 </head>
 <body>
-    <!-- Navigation bar (Page header) -->
+
     <header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element>
         <div class="container flex-nowrap">
 
-            <!-- Mobile offcanvas menu toggler (Hamburger) -->
+
             <button type="button" class="navbar-toggler me-4 me-lg-0" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar brand (Logo) -->
             <a class="navbar-brand py-1 py-md-2 py-xl-1" asp-action="Index" asp-controller="Catalogo">
                 <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><path d="M36 18.01c0 8.097-5.355 14.949-12.705 17.2a18.12 18.12 0 0 1-5.315.79C9.622 36 2.608 30.313.573 22.611.257 21.407.059 20.162 0 18.879v-1.758c.02-.395.059-.79.099-1.185.099-.908.277-1.817.514-2.686C2.687 5.628 9.682 0 18 0c5.572 0 10.551 2.528 13.871 6.517 1.502 1.797 2.648 3.91 3.359 6.201.494 1.659.771 3.436.771 5.292z" fill="currentColor" /><g fill="#fff"><path d="M17.466 21.624c-.514 0-.988-.316-1.146-.829-.198-.632.138-1.303.771-1.501l7.666-2.469-1.205-8.254-13.317 4.621a1.19 1.19 0 0 1-1.521-.75 1.19 1.19 0 0 1 .751-1.521l13.89-4.818c.553-.197 1.166-.138 1.64.158a1.82 1.82 0 0 1 .85 1.284l1.344 9.183c.138.987-.494 1.994-1.482 2.33l-7.864 2.528-.375.04zm7.31.138c-.178-.632-.85-1.007-1.482-.81l-5.177 1.58c-2.331.79-3.28.02-3.418-.099l-6.56-8.412a4.25 4.25 0 0 0-4.406-1.758l-3.122.987c-.237.889-.415 1.777-.514 2.686l4.228-1.363a1.84 1.84 0 0 1 1.857.81l6.659 8.551c.751.948 2.015 1.323 3.359 1.323.909 0 1.857-.178 2.687-.474l5.078-1.54c.632-.178 1.008-.829.81-1.481z" /><use href="#czlogo" /><use href="#czlogo" x="8.516" y="-2.172" /></g><defs><path id="czlogo" d="M18.689 28.654a1.94 1.94 0 0 1-1.936 1.935 1.94 1.94 0 0 1-1.936-1.935 1.94 1.94 0 0 1 1.936-1.935 1.94 1.94 0 0 1 1.936 1.935z" /></defs></svg>
@@ -54,7 +43,6 @@
                 Jeff Store
             </a>
 
-            <!-- Main navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
             <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
                
                 <div class="offcanvas-header py-3">
@@ -62,8 +50,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
 
-
-                <!-- Account button visible on screens < 768px wide (md breakpoint) -->
                 <div class="offcanvas-header nav border-top px-0 py-3 mt-3 d-md-none">
                     <a class="nav-link justify-content-center w-100" href="">
                         <i class="ci-user fs-lg opacity-60 ms-n2 me-2"></i>
@@ -72,7 +58,6 @@
                 </div>
             </nav>
 
-            <!-- Button group -->
             <partial name="_LoginPartial" />
 
         </div>
@@ -83,11 +68,10 @@
     @RenderBody()
 
 
-    <!-- Page footer -->
-    <footer class="footer bg-dark pb-4" data-bs-theme="dark">
+   <footer class="footer bg-dark pb-4" data-bs-theme="dark">
         <div class="container pb-md-3">
 
-            <!-- Features -->
+
             <div class="border-bottom py-5">
                 <div class="row row-cols-2 row-cols-md-4 g-4 gx-sm-5 py-sm-1 py-md-2 py-lg-3 mb-n2 mb-md-0">
                     <div class="col mb-2 mb-md-0">
@@ -113,11 +97,11 @@
                 </div>
             </div>
 
-            <!-- Subscription + Links -->
+
             <div class="py-5">
                 <div class="row py-sm-1 py-md-2 py-lg-3">
 
-                    <!-- Subscription + Social buttons -->
+
                     <div class="col-lg-5 mb-4 mb-sm-5 mb-lg-0">
                         <h6 class="mb-4">Join our newsletter, get discounts 🔥</h6>
                         <form class="needs-validation d-flex gap-2 pb-sm-2 pb-lg-0 mb-4 mb-lg-5" novalidate>
@@ -140,7 +124,7 @@
                         </div>
                     </div>
 
-                    <!-- Columns with links that are turned into accordion on screens < 500px wide (sm breakpoint) -->
+
                     <div class="col-lg-7">
                         <div class="accordion ps-lg-4" id="footerLinks">
                             <div class="row">
@@ -222,17 +206,16 @@
                 </div>
             </div>
 
-            <!-- Copyright -->
+
             <p class="fs-xs text-body text-center text-lg-start mb-0">
                 &copy; All rights reserved. Made with <i class="ci-heart-filled align-middle"></i> by <span class="animate-underline"><a class="animate-target text-white text-decoration-none" href="/" target="_blank" rel="noreferrer">Jeferson Almeida</a></span>
             </p>
         </div>
 
-        <!-- Additional spacing to accommodate the sticky bottom bar -->
+
         <div class="d-lg-none" style="height: 5rem"></div>
     </footer>
 
-    <!-- Back to top button -->
     <div class="floating-buttons position-fixed top-50 end-0 z-sticky me-3 me-xl-4 pb-4">
         <a class="btn-scroll-top btn btn-sm bg-body border-0 rounded-pill shadow animate-slide-end" href="#top">
             Top
@@ -245,12 +228,8 @@
     </div>
 
 
-    <!-- Vendor scripts -->
     <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="~/assets/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
-
-
-    <!-- Bootstrap + Theme scripts -->
     <script src="~/assets/js/theme.min.js"></script>
 
     @RenderSection("Scripts", required: false)
