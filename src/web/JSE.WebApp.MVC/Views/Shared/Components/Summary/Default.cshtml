@@ -1,23 +1,25 @@
 ﻿@if (ViewData.ModelState.ErrorCount > 0)
 {
-    <div style="padding-top: 15px;"></div>
-
-    <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <h3 id="msgRetorno" style="padding-top: 20px">Opa! Algo deu errado :(</h3>
-        <div style="padding-top: 20px" asp-validation-summary="All" class="text-danger"></div>
+    <div class="alert d-sm-flex alert-danger pb-4 pt-sm-4" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <i class="ci-alert-triangle fs-4 mt-1 mb-2 mb-sm-0"></i>
+        <div class="ps-sm-3 pe-sm-4">
+            <h4 class="alert-heading mb-2">Opa! Algo deu errado!</h4>
+            <div style="padding-top: 20px" asp-validation-summary="All" class="text-danger"></div>
+        </div>        
     </div>
 }
 
 @{
     if (TempData["Erros"] is IEnumerable<string> mensagensErro && mensagensErro.Any())
     {
-        <div style="padding-top: 15px;"></div>
-
-        <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <h3 id="msgRetorno" style="padding-top: 20px">Opa! Algo deu errado :(</h3>
-
+        <div class="alert d-sm-flex alert-danger pb-4 pt-sm-4" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <i class="ci-alert-triangle fs-4 mt-1 mb-2 mb-sm-0"></i>
+            <div class="ps-sm-3 pe-sm-4">
+                <h4 class="alert-heading mb-2">Opa! Algo deu errado!</h4>
+            </div>
+           
             <ul>
                 @{
                     foreach (var erro in mensagensErro)
@@ -27,6 +29,7 @@
                 }
 
             </ul>
+        
         </div>
     }
 }
