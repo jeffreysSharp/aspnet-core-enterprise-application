@@ -47,7 +47,7 @@
             </button>
 
             <!-- Navbar brand (Logo) -->
-            <a class="navbar-brand py-1 py-md-2 py-xl-1" href="home-marketplace.html">
+            <a class="navbar-brand py-1 py-md-2 py-xl-1" asp-action="Index" asp-controller="Catalogo">
                 <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><path d="M36 18.01c0 8.097-5.355 14.949-12.705 17.2a18.12 18.12 0 0 1-5.315.79C9.622 36 2.608 30.313.573 22.611.257 21.407.059 20.162 0 18.879v-1.758c.02-.395.059-.79.099-1.185.099-.908.277-1.817.514-2.686C2.687 5.628 9.682 0 18 0c5.572 0 10.551 2.528 13.871 6.517 1.502 1.797 2.648 3.91 3.359 6.201.494 1.659.771 3.436.771 5.292z" fill="currentColor" /><g fill="#fff"><path d="M17.466 21.624c-.514 0-.988-.316-1.146-.829-.198-.632.138-1.303.771-1.501l7.666-2.469-1.205-8.254-13.317 4.621a1.19 1.19 0 0 1-1.521-.75 1.19 1.19 0 0 1 .751-1.521l13.89-4.818c.553-.197 1.166-.138 1.64.158a1.82 1.82 0 0 1 .85 1.284l1.344 9.183c.138.987-.494 1.994-1.482 2.33l-7.864 2.528-.375.04zm7.31.138c-.178-.632-.85-1.007-1.482-.81l-5.177 1.58c-2.331.79-3.28.02-3.418-.099l-6.56-8.412a4.25 4.25 0 0 0-4.406-1.758l-3.122.987c-.237.889-.415 1.777-.514 2.686l4.228-1.363a1.84 1.84 0 0 1 1.857.81l6.659 8.551c.751.948 2.015 1.323 3.359 1.323.909 0 1.857-.178 2.687-.474l5.078-1.54c.632-.178 1.008-.829.81-1.481z" /><use href="#czlogo" /><use href="#czlogo" x="8.516" y="-2.172" /></g><defs><path id="czlogo" d="M18.689 28.654a1.94 1.94 0 0 1-1.936 1.935 1.94 1.94 0 0 1-1.936-1.935 1.94 1.94 0 0 1 1.936-1.935 1.94 1.94 0 0 1 1.936 1.935z" /></defs></svg>
                 </span>
@@ -56,210 +56,12 @@
 
             <!-- Main navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
             <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
+               
                 <div class="offcanvas-header py-3">
                     <h5 class="offcanvas-title" id="navbarNavLabel">Browse JeffStore</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body pt-3 pb-4 py-lg-0 mx-lg-auto">
-                    <ul class="navbar-nav position-relative">
-                        <li class="nav-item dropdown py-lg-2 me-lg-n1 me-xl-0">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Home</a>
-                            <ul class="dropdown-menu" style="--cz-dropdown-spacer: .875rem">
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="/">
-                                        <span class="fw-medium">Electronics Store</span>
-                                        <span class="d-block fs-xs text-body-secondary">Megamenu + Hero slider</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/electronics-light.jpg" alt="Electronics Store">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/electronics-dark.jpg" alt="Electronics Store">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="/">
-                                        <span class="fw-medium">Fashion Store v.1</span>
-                                        <span class="d-block fs-xs text-body-secondary">Hero promo slider</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/fashion-1-light.jpg" alt="Fashion Store v.1">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/fashion-1-dark.jpg" alt="Fashion Store v.1">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="home-fashion-v2.html">
-                                        <span class="fw-medium">Fashion Store v.2</span>
-                                        <span class="d-block fs-xs text-body-secondary">Hero banner with hotspots</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/fashion-2-light.jpg" alt="Fashion Store v.2">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/fashion-2-dark.jpg" alt="Fashion Store v.2">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="home-furniture.html">
-                                        <span class="fw-medium">Furniture Store</span>
-                                        <span class="d-block fs-xs text-body-secondary">Fancy product carousel</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/furniture-light.jpg" alt="Furniture Store">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/furniture-dark.jpg" alt="Furniture Store">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="home-grocery.html">
-                                        <span class="fw-medium">Grocery Store</span>
-                                        <span class="d-block fs-xs text-body-secondary">Hero slider + Category cards</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/grocery-light.jpg" alt="Grocery Store">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/grocery-dark.jpg" alt="Grocery Store">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="home-marketplace.html">
-                                        <span class="fw-medium">Marketplace</span>
-                                        <span class="d-block fs-xs text-body-secondary">Multi-vendor, digital goods</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/marketplace-light.jpg" alt="Marketplace">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/marketplace-dark.jpg" alt="Marketplace">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="hover-effect-opacity px-2 mx-n2">
-                                    <a class="dropdown-item d-block mb-0" href="home-single-store.html">
-                                        <span class="fw-medium">Single Product Store</span>
-                                        <span class="d-block fs-xs text-body-secondary">Single product / mono brand</span>
-                                        <div class="d-none d-lg-block hover-effect-target position-absolute top-0 start-100 bg-body border border-light-subtle rounded rounded-start-0 transition-none invisible opacity-0 pt-2 px-2 ms-n2" style="width: 212px; height: calc(100% + 2px); margin-top: -1px">
-                                            <img class="position-relative z-2 d-none-dark" src="~/images/mega-menu/demo-preview/single-store-light.jpg" alt="Single Product Store">
-                                            <img class="position-relative z-2 d-none d-block-dark" src="~/images/mega-menu/demo-preview/single-store-dark.jpg" alt="Single Product Store">
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none-dark" style="box-shadow: .875rem .5rem 2rem -.5rem #676f7b; opacity: .1"></span>
-                                            <span class="position-absolute top-0 start-0 w-100 h-100 rounded rounded-start-0 d-none d-block-dark" style="box-shadow: .875rem .5rem 1.875rem -.5rem #080b12; opacity: .25"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown position-static py-lg-2 me-lg-n1 me-xl-0">
-                            <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Shop</a>
-                            <div class="dropdown-menu rounded-4 p-4" style="--cz-dropdown-spacer: .875rem">
-                                <div class="d-flex flex-column flex-lg-row gap-4">
-                                    <div style="min-width: 190px">
-                                        <div class="h6 mb-2">Electronics Store</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-categories-electronics.html">Categories Page</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.html">Catalog with Side Filters</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Product General Info</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Product Details</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-reviews-electronics.html">Product Reviews</a>
-                                            </li>
-                                        </ul>
-                                        <div class="h6 pt-4 mb-2">Fashion Store</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-fashion.html">Catalog with Side Filters</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Product Page</a>
-                                            </li>
-                                        </ul>
-                                        <div class="h6 pt-4 mb-2">Furniture Store</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-furniture.html">Catalog with Top Filters</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-furniture.html">Product Page</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div style="min-width: 190px">
-                                        <div class="h6 mb-2">Grocery Store</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-grocery.html">Catalog with Side Filters</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-grocery.html">Product Page</a>
-                                            </li>
-                                        </ul>
-                                        <div class="h6 pt-4 mb-2">Marketplace</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-marketplace.html">Catalog with Top Filters</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-marketplace.html">Digital Product Page</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-marketplace.html">Cart / Checkout</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div style="min-width: 190px">
-                                        <div class="h6 mb-2">Checkout v.1</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-cart.html">Shopping Cart</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-1.html">Delivery Info (Step 1)</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-2.html">Delivery Info (Step 2)</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-shipping.html">Shipping Address</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-payment.html">Payment</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-thankyou.html">Thank You Page</a>
-                                            </li>
-                                        </ul>
-                                        <div class="h6 pt-4 mb-2">Checkout v.2</div>
-                                        <ul class="nav flex-column gap-2 mt-0">
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-cart.html">Shopping Cart</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-delivery.html">Delivery Info</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-pickup.html">Pickup from Store</a>
-                                            </li>
-                                            <li class="d-flex w-100 pt-1">
-                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-thankyou.html">Thank You Page</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
 
-                    </ul>
-                </div>
 
                 <!-- Account button visible on screens < 768px wide (md breakpoint) -->
                 <div class="offcanvas-header nav border-top px-0 py-3 mt-3 d-md-none">
@@ -273,48 +75,10 @@
             <!-- Button group -->
             <div class="d-flex align-items-center">
 
-                <!-- Theme switcher (light/dark/auto) -->
-                <div class="dropdown">
-                    <button type="button" class="theme-switcher btn btn-icon btn-lg btn-outline-secondary fs-lg border-0 rounded-circle animate-scale" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme (light)">
-                        <span class="theme-icon-active d-flex animate-target">
-                            <i class="ci-sun"></i>
-                        </span>
-                    </button>
-                    <ul class="dropdown-menu" style="--cz-dropdown-min-width: 9rem">
-                        <li>
-                            <button type="button" class="dropdown-item active" data-bs-theme-value="light" aria-pressed="true">
-                                <span class="theme-icon d-flex fs-base me-2">
-                                    <i class="ci-sun"></i>
-                                </span>
-                                <span class="theme-label">Light</span>
-                                <i class="item-active-indicator ci-check ms-auto"></i>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
-                                <span class="theme-icon d-flex fs-base me-2">
-                                    <i class="ci-moon"></i>
-                                </span>
-                                <span class="theme-label">Dark</span>
-                                <i class="item-active-indicator ci-check ms-auto"></i>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="dropdown-item" data-bs-theme-value="auto" aria-pressed="false">
-                                <span class="theme-icon d-flex fs-base me-2">
-                                    <i class="ci-auto"></i>
-                                </span>
-                                <span class="theme-label">Auto</span>
-                                <i class="item-active-indicator ci-check ms-auto"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Search toggle button -->
-                <button type="button" class="btn btn-icon btn-lg fs-xl btn-outline-secondary border-0 rounded-circle animate-shake" data-bs-toggle="offcanvas" data-bs-target="#searchBox" aria-controls="searchBox" aria-label="Toggle search bar">
-                    <i class="ci-search animate-target"></i>
-                </button>
+                <a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" asp-area="" asp-controller="Catalogo" asp-action="Index">
+                    <i class="ci-home animate-target"></i>                    
+                    <span class="visually-hidden">Home</span>
+                </a>
 
                 <!-- Account button visible on screens > 768px wide (md breakpoint) -->
                 <a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" href="account-signin.html">
@@ -477,7 +241,7 @@
 
             <!-- Copyright -->
             <p class="fs-xs text-body text-center text-lg-start mb-0">
-                &copy; All rights reserved. Made with <i class="ci-heart-filled align-middle"></i> by <span class="animate-underline"><a class="animate-target text-white text-decoration-none" href="https://createx.studio/" target="_blank" rel="noreferrer">Createx Studio</a></span>
+                &copy; All rights reserved. Made with <i class="ci-heart-filled align-middle"></i> by <span class="animate-underline"><a class="animate-target text-white text-decoration-none" href="/" target="_blank" rel="noreferrer">Jeferson Almeida</a></span>
             </p>
         </div>
 
