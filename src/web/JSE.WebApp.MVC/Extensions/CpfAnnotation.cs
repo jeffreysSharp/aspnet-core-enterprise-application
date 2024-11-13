@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.DataAnnotations;
+﻿using JSE.Core.DomainObjects;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.Localization;
 using System.ComponentModel.DataAnnotations;
-using JSE.Core.DomainObjects;
 
 namespace JSE.WebApp.MVC.Extensions
 {
