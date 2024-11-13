@@ -2,23 +2,38 @@
 @using JSE.WebApp.MVC.Extensions
 @inject IAspNetUser AppUser
 
-<ul class="navbar-nav">
+
+<div class="d-flex align-items-center">
+
+    <a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" asp-area="" asp-controller="Catalogo" asp-action="Index" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Home">
+        <i class="ci-home animate-target"></i>
+        <span class="visually-hidden">Home</span>
+    </a>
+
     @if (AppUser.EstaAutenticado())
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" title="Manage">Olá @AppUser.ObterUserEmail()</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Identidade" asp-action="Logout">Sair</a>
-        </li>
+        <a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Olá @AppUser.ObterUserEmail()">
+            <i class="ci-user-check animate-target"></i>
+            <span class="visually-hidden">Olá @AppUser.ObterUserEmail()</span>
+        </a>
+
+        <a asp-controller="Identidade" asp-action="Logout" class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Sair">
+            <i class="ci-log-out animate-target"></i>            
+            <span class="visually-hidden">Sair</span>
+        </a>
+
+        <vc:carrinho />        
     }
     else
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Identidade" asp-action="Registro">Crie sua conta</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Identidade" asp-action="Login">Entrar</a>
-        </li>
+        <a asp-controller="Identidade" asp-action="Login"  class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Entrar">
+            <i class="ci-unlock animate-target"></i>            
+            <span class="visually-hidden">Entrar</span>
+        </a>
+
+        <a asp-controller="Identidade" asp-action="Registro" class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-title="Cadastre-se">
+            <i class="ci-user-plus animate-target"></i>
+            <span class="visually-hidden">Cadastre-se</span>
+        </a>
     }
-</ul>
+</div>

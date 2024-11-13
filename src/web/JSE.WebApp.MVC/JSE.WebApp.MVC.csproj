@@ -26,11 +26,6 @@
 
   
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-
-  
-  <ItemGroup>
     <ProjectReference Include="..\..\building blocks\JSE.Core\JSE.Core.csproj" />
     <ProjectReference Include="..\..\building blocks\JSE.WebAPI.Core\JSE.WebAPI.Core.csproj" />
   </ItemGroup>

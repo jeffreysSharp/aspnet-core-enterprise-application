@@ -4,68 +4,227 @@
     ViewData["Title"] = "Cadastro de novo usuário";
 }
 
+<main class="content-wrapper w-100 px-3 ps-lg-5 pe-lg-4 mx-auto" style="max-width: 1920px">
+    <div class="d-lg-flex">
 
-<div class="row mt-5">
-    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
-        <vc:Summary></vc:Summary>
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <label asp-for="Nome" class="form-label"></label>
-                <input asp-for="Nome" type="text" class="form-control" value="" autocomplete="new-text" required>
-                <span asp-validation-for="Nome" class="text-danger m-1"></span>
+        <div class="d-flex flex-column min-vh-100 w-100 py-4 mx-auto me-lg-5" style="max-width: 416px">
+
+            <h1 class="h2 mt-auto">Cadastrar nova conta</h1>
+            <div class="nav fs-sm mb-3 mb-lg-4">
+                Eu já tenho uma conta
+                <a class="nav-link text-decoration-underline p-0 ms-2" asp-action="Login" asp-controller="Identidade">Entrar</a>
+            </div>
+            <div class="nav fs-sm mb-4 d-lg-none">
+                <span class="me-2">Uncertain about creating an account?</span>
+                <a class="nav-link text-decoration-underline p-0" href="#benefits" data-bs-toggle="offcanvas" aria-controls="benefits">Explore the Benefits</a>
             </div>
 
-            <div class="col-md-4 mb-3">
-                <label asp-for="Cpf" class="form-label"></label>
-                <input asp-for="Cpf" type="text" class="form-control" value="" autocomplete="new-text" required>
-                <span asp-validation-for="Cpf" class="text-danger m-1"></span>
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
+                <vc:Summary></vc:Summary>
+
+                <div class="position-relative mb-4">
+                    <label asp-for="Nome" class="form-label"></label>
+                    <input asp-for="Nome" type="text" class="form-control form-control-lg" value="" autocomplete="new-text">
+                    <span asp-validation-for="Nome" class="text-danger m-1"></span>
+                </div>
+
+                <div class="position-relative mb-4">
+                    <label asp-for="Cpf" class="form-label"></label>
+                    <input asp-for="Cpf" type="text" class="form-control form-control-lg" value="" autocomplete="new-text">
+                    <span asp-validation-for="Cpf" class="text-danger m-1"></span>
+                </div>
+
+                <div class="position-relative mb-4">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" type="text" class="form-control form-control-lg" value="" autocomplete="new-text">
+                    <span asp-validation-for="Email" class="text-danger m-1"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Senha" class="form-label"></label>
+                    <div class="password-toggle">
+                        <input asp-for="Senha" type="password" class="form-control form-control-lg">
+                        <span asp-validation-for="Senha" class="text-danger m-1"></span>
+                        <label class="password-toggle-button fs-lg" aria-label="Show/hide password">
+                            <input type="checkbox" class="btn-check">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="SenhaConfirmacao" class="form-label"></label>
+                    <div class="password-toggle">
+                        <input asp-for="SenhaConfirmacao" type="password" class="form-control form-control-lg">
+                        <span asp-validation-for="SenhaConfirmacao" class="text-danger m-1"></span>
+                        <label class="password-toggle-button fs-lg" aria-label="Show/hide password">
+                            <input type="checkbox" class="btn-check">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column gap-2 mb-4">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="save-pass">
+                        <label for="save-pass" class="form-check-label">Salvar Senha</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="privacy" required>
+                        <label for="privacy" class="form-check-label">
+                            Eu li e aceito as <a class="text-dark-emphasis" href="#!">Politicas de Privacidade</a>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary w-100">
+                    Cadastrar
+                </button>
+            </form>
+
+            <div class="d-flex align-items-center my-4">
+                <hr class="w-100 m-0">
+                <span class="text-body-emphasis fw-medium text-nowrap mx-4">ou continue com</span>
+                <hr class="w-100 m-0">
             </div>
 
-
-
+            <div class="d-flex flex-column flex-sm-row gap-3 pb-4 mb-3 mb-lg-4">
+                <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-google ms-1 me-1"></i>
+                    Google
+                </button>
+                <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-facebook ms-1 me-1"></i>
+                    Facebook
+                </button>
+                <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-apple ms-1 me-1"></i>
+                    Apple
+                </button>
+            </div>
         </div>
-        <div class="row">
 
 
-            <div class="col-md-8 mb-3">
-                <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" type="text" class="form-control" value="" autocomplete="new-text" required>
-                <span asp-validation-for="Email" class="text-danger m-1"></span>
+        <div class="offcanvas-lg offcanvas-end w-100 py-lg-4 ms-auto" id="benefits" style="max-width: 1034px">
+            <div class="offcanvas-header justify-content-end position-relative z-2 p-3">
+                <button type="button" class="btn btn-icon btn-outline-dark text-dark border-dark bg-transparent rounded-circle d-none-dark" data-bs-dismiss="offcanvas" data-bs-target="#benefits" aria-label="Close">
+                    <i class="ci-close fs-lg"></i>
+                </button>
+                <button type="button" class="btn btn-icon btn-outline-dark text-light border-light bg-transparent rounded-circle d-none d-inline-flex-dark" data-bs-dismiss="offcanvas" data-bs-target="#benefits" aria-label="Close">
+                    <i class="ci-close fs-lg"></i>
+                </button>
             </div>
-
-
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-lg-none">
+                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background: linear-gradient(-90deg, #accbee 0%, #e7f0fd 100%)"></span>
+                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background: linear-gradient(-90deg, #1b273a 0%, #1f2632 100%)"></span>
+            </div>
+            <div class="offcanvas-body position-relative z-2 d-lg-flex flex-column align-items-center justify-content-center h-100 pt-2 px-3 p-lg-0">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-none d-lg-block">
+                    <span class="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-none-dark" style="background: linear-gradient(-90deg, #accbee 0%, #e7f0fd 100%)"></span>
+                    <span class="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-none d-block-dark" style="background: linear-gradient(-90deg, #1b273a 0%, #1f2632 100%)"></span>
+                </div>
+                <div class="position-relative z-2 w-100 text-center px-md-2 p-lg-5">
+                    <h2 class="h4 pb-3">
+                        Benefícios da conta Jeff Store
+                    </h2>
+                    <div class="mx-auto" style="max-width: 790px">
+                        <div class="row row-cols-1 row-cols-sm-2 g-3 g-md-4 g-lg-3 g-xl-4">
+                            <div class="col">
+                                <div class="card h-100 bg-transparent border-0">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25 border border-white border-opacity-50 rounded-4 d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white border rounded-4 d-none d-block-dark" style="--cz-bg-opacity: .05"></span>
+                                    <div class="card-body position-relative z-2">
+                                        <div class="d-inline-flex position-relative text-info p-3">
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-pill d-none-dark"></span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary rounded-pill d-none d-block-dark"></span>
+                                            <i class="ci-mail position-relative z-2 fs-4 m-1"></i>
+                                        </div>
+                                        <h3 class="h6 pt-2 my-2">
+                                            Assine seus produtos favoritos
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 bg-transparent border-0">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25 border border-white border-opacity-50 rounded-4 d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white border rounded-4 d-none d-block-dark" style="--cz-bg-opacity: .05"></span>
+                                    <div class="card-body position-relative z-2">
+                                        <div class="d-inline-flex position-relative text-info p-3">
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-pill d-none-dark"></span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary rounded-pill d-none d-block-dark"></span>
+                                            <i class="ci-settings position-relative z-2 fs-4 m-1"></i>
+                                        </div>
+                                        <h3 class="h6 pt-2 my-2">Visualize e gerencie seus pedidos e lista de desejos</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 bg-transparent border-0">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25 border border-white border-opacity-50 rounded-4 d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white border rounded-4 d-none d-block-dark" style="--cz-bg-opacity: .05"></span>
+                                    <div class="card-body position-relative z-2">
+                                        <div class="d-inline-flex position-relative text-info p-3">
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-pill d-none-dark"></span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary rounded-pill d-none d-block-dark"></span>
+                                            <i class="ci-gift position-relative z-2 fs-4 m-1"></i>
+                                        </div>
+                                        <h3 class="h6 pt-2 my-2">
+                                            Ganhe recompensas para compras futuras
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 bg-transparent border-0">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25 border border-white border-opacity-50 rounded-4 d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white border rounded-4 d-none d-block-dark" style="--cz-bg-opacity: .05"></span>
+                                    <div class="card-body position-relative z-2">
+                                        <div class="d-inline-flex position-relative text-info p-3">
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-pill d-none-dark"></span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary rounded-pill d-none d-block-dark"></span>
+                                            <i class="ci-percent position-relative z-2 fs-4 m-1"></i>
+                                        </div>
+                                        <h3 class="h6 pt-2 my-2">
+                                            Receba ofertas e descontos exclusivos
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 bg-transparent border-0">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25 border border-white border-opacity-50 rounded-4 d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white border rounded-4 d-none d-block-dark" style="--cz-bg-opacity: .05"></span>
+                                    <div class="card-body position-relative z-2">
+                                        <div class="d-inline-flex position-relative text-info p-3">
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-pill d-none-dark"></span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary rounded-pill d-none d-block-dark"></span>
+                                            <i class="ci-heart position-relative z-2 fs-4 m-1"></i>
+                                        </div>
+                                        <h3 class="h6 pt-2 my-2">
+                                            Crie várias listas de desejos
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 bg-transparent border-0">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white bg-opacity-25 border border-white border-opacity-50 rounded-4 d-none-dark"></span>
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-white border rounded-4 d-none d-block-dark" style="--cz-bg-opacity: .05"></span>
+                                    <div class="card-body position-relative z-2">
+                                        <div class="d-inline-flex position-relative text-info p-3">
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-white rounded-pill d-none-dark"></span>
+                                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary rounded-pill d-none d-block-dark"></span>
+                                            <i class="ci-pie-chart position-relative z-2 fs-4 m-1"></i>
+                                        </div>
+                                        <h3 class="h6 pt-2 my-2">Parcele as compras</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="row">
-
-            <div class="col-md-4 mb-3">
-                <label asp-for="Senha" class="form-label"></label>
-                <input asp-for="Senha" type="password" class="form-control" value="" autocomplete="new-text" required>
-                <span asp-validation-for="Senha" class="text-danger m-1"></span>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <label asp-for="SenhaConfirmacao" class="form-label"></label>
-                <input asp-for="SenhaConfirmacao" type="password" class="form-control" value="" autocomplete="new-text" required>
-                <span asp-validation-for="SenhaConfirmacao" class="text-danger m-1"></span>
-            </div>
-
-        </div>
-
-
-        <div class="mb-3">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" required>
-                <label for="validationText06" class="form-check-label">Concordo com os termos e condições</label>
-                <div class="invalid-feedback">Você deve concordar antes de enviar</div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-        <hr class="my-4">
-        <small class="text-body-secondary"><a asp-action="Login" asp-controller="Identidade">Entrar</a></small>
-    </form>
-
-</div>
+    </div>
+</main>
 
 
 @section Scripts {

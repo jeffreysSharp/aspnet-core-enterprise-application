@@ -4,39 +4,86 @@
     ViewData["Title"] = "Entrar";
 }
 
-<h1>@ViewData["Title"]</h1>
+<main class="content-wrapper w-100 px-3 ps-lg-5 pe-lg-4 mx-auto" style="max-width: 1920px">
+    <div class="d-lg-flex">
 
-    <div class="row align-items-center mt-4">
-        
-        <div class="col-lg-7 text-center text-lg-start">
-            <h5 class="display-4 mb-3">Entre com seu login e senha</h5>
-            <p class="col-lg-10 fs-4">Para efetuar transações você precisa fazer autenticação.</p>
-        </div>
+        <div class="d-flex flex-column min-vh-100 w-100 py-4 mx-auto me-lg-5" style="max-width: 416px">
 
-        <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-2 p-md-3 border rounded-3 bg-body-tertiary" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
+            <h1 class="h2 mt-10">Bem-vindo!</h1>
+            <div class="nav fs-sm mb-4">
+                Não tem uma conta?
+                <a class="nav-link text-decoration-underline p-0 ms-2" asp-action="Registro" asp-controller="Identidade">Cadastre-se</a>
+            </div>
+
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" autocomplete="off">
                 <vc:Summary></vc:Summary>
-               
-                <div class="form-floating mb-2">
-                <input asp-for="Email" class="form-control" placeholder="nome@dominio.com" autocomplete="new-text" />
-                    <label asp-for="Email"></label>
+
+                <div class="position-relative mb-4">
+                    <input asp-for="Email" class="form-control form-control-lg" placeholder="nome@dominio.com" autocomplete="new-text" />
                     <span asp-validation-for="Email" class="text-danger m-1"></span>
                 </div>
 
-                <div class="form-floating mb-2">                
-                <input type="password" asp-for="Senha" class="form-control" placeholder="Senha" autocomplete="new-text" />
-                <label asp-for="Senha"></label>
-                <span asp-validation-for="Senha" class="text-danger m-1"></span>
+                <div class="mb-4">
+                    <input type="password" asp-for="Senha" class="form-control form-control-lg" placeholder="Senha" autocomplete="new-text" />
+                    <label asp-for="Senha" class="password-toggle-button fs-lg" aria-label="Show/hide password">
+                        <input type="checkbox" class="btn-check">
+                    </label>
+                    <span asp-validation-for="Senha" class="text-danger m-1"></span>
+
                 </div>
 
-                <button type="submit" class="w-100 btn btn-lg btn-primary">Entrar</button>
-
-                <hr class="my-4">
-                <small class="text-body-secondary"><a asp-action="Registro" asp-controller="Identidade">Criar uma conta</a></small>
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="form-check me-2">
+                        <input type="checkbox" class="form-check-input" id="remember-30">
+                        <label for="remember-30" class="form-check-label">Lembrar-me</label>
+                    </div>
+                    <div class="nav">
+                        <a class="nav-link animate-underline p-0" href="#!">
+                            <span class="animate-target">Esqueceu a senha?</span>
+                        </a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary w-100">Entrar</button>
             </form>
+
+
+            <div class="d-flex align-items-center my-4">
+                <hr class="w-100 m-0">
+                <span class="text-body-emphasis fw-medium text-nowrap mx-4">ou continue com</span>
+                <hr class="w-100 m-0">
+            </div>
+
+
+            <div class="d-flex flex-column flex-sm-row gap-3 pb-4 mb-3 mb-lg-4">
+                <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-google ms-1 me-1"></i>
+                    Google
+                </button>
+                <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-facebook ms-1 me-1"></i>
+                    Facebook
+                </button>
+                <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-apple ms-1 me-1"></i>
+                    Apple
+                </button>
+            </div>
+
+
+        </div>
+
+
+        <div class="d-none d-lg-block w-100 py-4 ms-auto" style="max-width: 1034px">
+            <div class="d-flex flex-column justify-content-end h-100 rounded-5 overflow-hidden">
+                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background: linear-gradient(-90deg, #accbee 0%, #e7f0fd 100%)"></span>
+                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background: linear-gradient(-90deg, #1b273a 0%, #1f2632 100%)"></span>
+                <div class="ratio position-relative z-2" style="--cz-aspect-ratio: calc(1030 / 1032 * 100%)">
+                    <img src="~/images/account/cover.png" alt="Girl">
+                </div>
+            </div>
         </div>
     </div>
-
+</main>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

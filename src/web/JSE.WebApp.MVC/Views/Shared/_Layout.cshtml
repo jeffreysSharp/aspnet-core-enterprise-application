@@ -1,48 +1,237 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" data-bs-theme="light" data-pwa="true">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+
+    
+    
+    
     <title>@ViewData["Title"] - Jeff Store</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/site.css" asp-append-version="true" />
-</head>  
-<body class="d-flex flex-column h-100">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-            <div class="container">
-                <a asp-action="Index" asp-controller="Catalogo" class="navbar-brand">Jeff Store</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                 
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Home</a>
-                        </li>                          
-                    </ul>
-                    <partial name="_LoginPartial" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jeferson Almeida">    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="manifest" href="~/manifest.json">
+    <link rel="icon" type="image/png" href="~/assets/app-icons/icon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="~/assets/app-icons/icon-180x180.png">
+    <link rel="preload" href="~/assets/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="~/assets/icons/cartzilla-icons.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="~/assets/icons/cartzilla-icons.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/choices.js/public/assets/styles/choices.min.css">
+    <link rel="preload" href="~/assets/css/theme.min.css" as="style">
+    <link rel="stylesheet" href="~/assets/css/theme.min.css" id="theme-styles">
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top z-fixed px-0" data-sticky-element>
+        <div class="container flex-nowrap">
+
+
+            <button type="button" class="navbar-toggler me-4 me-lg-0" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand py-1 py-md-2 py-xl-1" asp-action="Index" asp-controller="Catalogo">
+                <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><path d="M36 18.01c0 8.097-5.355 14.949-12.705 17.2a18.12 18.12 0 0 1-5.315.79C9.622 36 2.608 30.313.573 22.611.257 21.407.059 20.162 0 18.879v-1.758c.02-.395.059-.79.099-1.185.099-.908.277-1.817.514-2.686C2.687 5.628 9.682 0 18 0c5.572 0 10.551 2.528 13.871 6.517 1.502 1.797 2.648 3.91 3.359 6.201.494 1.659.771 3.436.771 5.292z" fill="currentColor" /><g fill="#fff"><path d="M17.466 21.624c-.514 0-.988-.316-1.146-.829-.198-.632.138-1.303.771-1.501l7.666-2.469-1.205-8.254-13.317 4.621a1.19 1.19 0 0 1-1.521-.75 1.19 1.19 0 0 1 .751-1.521l13.89-4.818c.553-.197 1.166-.138 1.64.158a1.82 1.82 0 0 1 .85 1.284l1.344 9.183c.138.987-.494 1.994-1.482 2.33l-7.864 2.528-.375.04zm7.31.138c-.178-.632-.85-1.007-1.482-.81l-5.177 1.58c-2.331.79-3.28.02-3.418-.099l-6.56-8.412a4.25 4.25 0 0 0-4.406-1.758l-3.122.987c-.237.889-.415 1.777-.514 2.686l4.228-1.363a1.84 1.84 0 0 1 1.857.81l6.659 8.551c.751.948 2.015 1.323 3.359 1.323.909 0 1.857-.178 2.687-.474l5.078-1.54c.632-.178 1.008-.829.81-1.481z" /><use href="#czlogo" /><use href="#czlogo" x="8.516" y="-2.172" /></g><defs><path id="czlogo" d="M18.689 28.654a1.94 1.94 0 0 1-1.936 1.935 1.94 1.94 0 0 1-1.936-1.935 1.94 1.94 0 0 1 1.936-1.935 1.94 1.94 0 0 1 1.936 1.935z" /></defs></svg>
+                </span>
+                Jeff Store
+            </a>
+
+            <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
+               
+                <div class="offcanvas-header py-3">
+                    <h5 class="offcanvas-title" id="navbarNavLabel">Browse JeffStore</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-            </div>
-        </nav>
+
+                <div class="offcanvas-header nav border-top px-0 py-3 mt-3 d-md-none">
+                    <a class="nav-link justify-content-center w-100" href="">
+                        <i class="ci-user fs-lg opacity-60 ms-n2 me-2"></i>
+                        Account
+                    </a>
+                </div>
+            </nav>
+
+            <partial name="_LoginPartial" />
+
+        </div>
     </header>
 
-    <main class="flex-shrink-0">
-        <div class="container">
-        @RenderBody()
-        </div>
-    </main>
 
-    <footer class="footer mt-auto py-3 bg-body-tertiary">
-        <div class="container">
-            <span class="text-body-secondary">Jeff Store by Jeferson Almeida since 2024 | v1.0.4</span>
+
+    @RenderBody()
+
+
+   <footer class="footer bg-dark pb-4" data-bs-theme="dark">
+        <div class="container pb-md-3">
+
+
+            <div class="border-bottom py-5">
+                <div class="row row-cols-2 row-cols-md-4 g-4 gx-sm-5 py-sm-1 py-md-2 py-lg-3 mb-n2 mb-md-0">
+                    <div class="col mb-2 mb-md-0">
+                        <i class="ci-layers-2 fs-xl text-dark-emphasis mb-3"></i>
+                        <h6 class="pb-2 mb-1">Regularly updated content</h6>
+                        <p class="fs-sm text-body mb-0">Stay ahead of trends, always having fresh and modern assets.</p>
+                    </div>
+                    <div class="col mb-2 mb-md-0">
+                        <i class="ci-click fs-xl text-dark-emphasis mb-3"></i>
+                        <h6 class="pb-2 mb-1">Subscription-based access</h6>
+                        <p class="fs-sm text-body mb-0">Find everything you need in one place, saving time and effort.</p>
+                    </div>
+                    <div class="col mb-2 mb-md-0">
+                        <i class="ci-grid-2 fs-xl text-dark-emphasis mb-3"></i>
+                        <h6 class="pb-2 mb-1">Exclusive collections</h6>
+                        <p class="fs-sm text-body mb-0">Partner with renowned designers and artists to create exclusive collections.</p>
+                    </div>
+                    <div class="col mb-2 mb-md-0">
+                        <i class="ci-check-search fs-xl text-dark-emphasis mb-3"></i>
+                        <h6 class="pb-2 mb-1">User-friendly search </h6>
+                        <p class="fs-sm text-body mb-0">Spend less time searching and more time creating.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="py-5">
+                <div class="row py-sm-1 py-md-2 py-lg-3">
+
+
+                    <div class="col-lg-5 mb-4 mb-sm-5 mb-lg-0">
+                        <h6 class="mb-4">Join our newsletter, get discounts 🔥</h6>
+                        <form class="needs-validation d-flex gap-2 pb-sm-2 pb-lg-0 mb-4 mb-lg-5" novalidate>
+                            <input type="email" class="form-control form-control-lg w-100 rounded-pill" placeholder="Your email" style="max-width: 340px" required>
+                            <button type="submit" class="btn btn-lg btn-primary rounded-pill">Subscribe</button>
+                        </form>
+                        <div class="d-flex gap-3">
+                            <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="Instagram">
+                                <i class="ci-instagram fs-base"></i>
+                            </a>
+                            <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="Facebook">
+                                <i class="ci-facebook fs-base"></i>
+                            </a>
+                            <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="YouTube">
+                                <i class="ci-youtube fs-base"></i>
+                            </a>
+                            <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="Telegram">
+                                <i class="ci-telegram fs-base"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-7">
+                        <div class="accordion ps-lg-4" id="footerLinks">
+                            <div class="row">
+                                <div class="accordion-item col-sm-4 border-0">
+                                    <h6 class="accordion-header" id="categoriesHeading">
+                                        <span class="text-dark-emphasis d-none d-sm-block">Categories</span>
+                                        <button type="button" class="accordion-button collapsed py-3 d-sm-none" data-bs-toggle="collapse" data-bs-target="#categoriesLinks" aria-expanded="false" aria-controls="categoriesLinks">Categories</button>
+                                    </h6>
+                                    <div class="accordion-collapse collapse d-sm-block" id="categoriesLinks" aria-labelledby="categoriesHeading" data-bs-parent="#footerLinks">
+                                        <ul class="nav flex-column gap-2 pt-sm-3 pb-3 pb-sm-0 mt-n1 mb-1 mb-sm-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Vectors</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Photos</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">3D illustrations</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">AI images</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Templates</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Mockups</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr class="d-sm-none my-0">
+                                </div>
+                                <div class="accordion-item col-sm-4 border-0">
+                                    <h6 class="accordion-header" id="membersHeading">
+                                        <span class="text-dark-emphasis d-none d-sm-block">For members</span>
+                                        <button type="button" class="accordion-button collapsed py-3 d-sm-none" data-bs-toggle="collapse" data-bs-target="#membersLinks" aria-expanded="false" aria-controls="membersLinks">For members</button>
+                                    </h6>
+                                    <div class="accordion-collapse collapse d-sm-block" id="membersLinks" aria-labelledby="membersHeading" data-bs-parent="#footerLinks">
+                                        <ul class="nav flex-column gap-2 pt-sm-3 pb-3 pb-sm-0 mt-n1 mb-1 mb-sm-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Licenses</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Return policy</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Payment methods</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Become a vendor</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr class="d-sm-none my-0">
+                                </div>
+                                <div class="accordion-item col-sm-4 border-0">
+                                    <h6 class="accordion-header" id="supportHeading">
+                                        <span class="text-dark-emphasis d-none d-sm-block">Support</span>
+                                        <button type="button" class="accordion-button collapsed py-3 d-sm-none" data-bs-toggle="collapse" data-bs-target="#supportLinks" aria-expanded="false" aria-controls="supportLinks">Support</button>
+                                    </h6>
+                                    <div class="accordion-collapse collapse d-sm-block" id="supportLinks" aria-labelledby="supportHeading" data-bs-parent="#footerLinks">
+                                        <ul class="nav flex-column gap-2 pt-sm-3 pb-3 pb-sm-0 mt-n1 mb-1 mb-sm-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">FAQs</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Search guide</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="#!">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr class="d-sm-none my-0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <p class="fs-xs text-body text-center text-lg-start mb-0">
+                &copy; All rights reserved. Made with <i class="ci-heart-filled align-middle"></i> by <span class="animate-underline"><a class="animate-target text-white text-decoration-none" href="/" target="_blank" rel="noreferrer">Jeferson Almeida</a></span>
+            </p>
         </div>
+
+
+        <div class="d-lg-none" style="height: 5rem"></div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <script src="~/js/script.js" type="text/javascript"></script>
-    <script src="~/js/site.js" type="text/javascript"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <div class="floating-buttons position-fixed top-50 end-0 z-sticky me-3 me-xl-4 pb-4">
+        <a class="btn-scroll-top btn btn-sm bg-body border-0 rounded-pill shadow animate-slide-end" href="#top">
+            Top
+            <i class="ci-arrow-right fs-base ms-1 me-n1 animate-target"></i>
+            <span class="position-absolute top-0 start-0 w-100 h-100 border rounded-pill z-0"></span>
+            <svg class="position-absolute top-0 start-0 w-100 h-100 z-1" viewBox="0 0 62 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x=".75" y=".75" width="60.5" height="30.5" rx="15.25" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="~/assets/lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="~/assets/js/theme.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
