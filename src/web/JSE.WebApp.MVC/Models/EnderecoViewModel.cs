@@ -5,20 +5,25 @@ namespace JSE.WebApp.MVC.Models
 {
     public class EnderecoViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Logradouro { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DisplayName("Número")]
         public string Numero { get; set; }
         public string Complemento { get; set; }
-        [Required]
+        
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Bairro { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DisplayName("CEP")]
         public string Cep { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Cidade { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Estado { get; set; }
 
         public override string ToString()

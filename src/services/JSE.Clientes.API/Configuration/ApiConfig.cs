@@ -8,7 +8,7 @@ namespace JSE.Clientes.API.Configuration
     {
         public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ClienteContext>(options =>
+            services.AddDbContext<ClientesContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();

@@ -8,24 +8,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JSE.Clientes.API.Data
 {
-    public class ClienteContext : DbContext, IUnitOfWork
+    public sealed class ClientesContext : DbContext, IUnitOfWork
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public ClienteContext(DbContextOptions<ClienteContext> options, IMediatorHandler mediatorHandler)
+        public ClientesContext(DbContextOptions<ClientesContext> options, IMediatorHandler mediatorHandler)
             : base(options)
         {
             _mediatorHandler = mediatorHandler;
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             ChangeTracker.AutoDetectChangesEnabled = false;
-        }
-
-        public ClienteContext(DbContextOptions<ClienteContext> options)
-            : base(options)
-        {
-
-            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
-            ChangeTracker.AutoDetectChangesEnabled = true;
         }
 
         public DbSet<Cliente> Clientes { get; set; }
@@ -43,21 +35,21 @@ namespace JSE.Clientes.API.Data
             foreach (var relationship in modelBuilder.Model.GetEntityTypes()
                 .SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClienteContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClientesContext).Assembly);
         }
 
         public async Task<bool> Commit()
         {
-            var success = await base.SaveChangesAsync() > 0;
-            if (success) await _mediatorHandler.PublishEvent(this);
+            var sucesso = await base.SaveChangesAsync() > 0;
+            if (sucesso) await _mediatorHandler.PublicarEventos(this);
 
-            return success;
+            return sucesso;
         }
     }
 
     public static class MediatorExtension
     {
-        public static async Task PublishEvent<T>(this IMediatorHandler mediator, T ctx) where T : DbContext
+        public static async Task PublicarEventos<T>(this IMediatorHandler mediator, T ctx) where T : DbContext
         {
             var domainEntities = ctx.ChangeTracker
                 .Entries<Entity>()
@@ -71,8 +63,7 @@ namespace JSE.Clientes.API.Data
                 .ForEach(entity => entity.Entity.LimparEventos());
 
             var tasks = domainEvents
-                .Select(async (domainEvent) =>
-                {
+                .Select(async (domainEvent) => {
                     await mediator.PublishEvent(domainEvent);
                 });
 

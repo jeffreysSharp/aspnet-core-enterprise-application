@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JSE.Clientes.API.Data.Repository
 {
-    public class ClienteRepository : IClienteRepository
+    public class ClientesRepository : IClienteRepository
     {
-        private readonly ClienteContext _context;
+        private readonly ClientesContext _context;
 
-        public ClienteRepository(ClienteContext context)
+        public ClientesRepository(ClientesContext context)
         {
             _context = context;
         }
