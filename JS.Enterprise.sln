@@ -61,6 +61,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pedidos.Infra", "src\se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Clientes.API", "src\services\JSE.Clientes.API\JSE.Clientes.API.csproj", "{AC75EECB-1BC5-4653-AB42-E8148D5B05D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSE.Pagamentos.NerdsPag", "src\services\JSE.Pagamentos.NerdsPag\JSE.Pagamentos.NerdsPag.csproj", "{3D83A7B3-B140-43CF-885C-660C043B498A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,10 @@ Global
 		{AC75EECB-1BC5-4653-AB42-E8148D5B05D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC75EECB-1BC5-4653-AB42-E8148D5B05D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC75EECB-1BC5-4653-AB42-E8148D5B05D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D83A7B3-B140-43CF-885C-660C043B498A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D83A7B3-B140-43CF-885C-660C043B498A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D83A7B3-B140-43CF-885C-660C043B498A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D83A7B3-B140-43CF-885C-660C043B498A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{42556C73-9ABF-45D0-911F-16E74D2919EB} = {856468DF-3B1E-4BAB-AD97-2D72FB744435}
 		{2BB79FC1-2E45-486B-AC1E-F680B3C54BCD} = {856468DF-3B1E-4BAB-AD97-2D72FB744435}
 		{AC75EECB-1BC5-4653-AB42-E8148D5B05D9} = {B89AEBFA-BA86-4AC4-A0B4-117C29036158}
+		{3D83A7B3-B140-43CF-885C-660C043B498A} = {68C69BFC-835D-4BD4-899B-56E0349A1895}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F19279BD-86B0-48AF-9FA4-26C84BD715EB}
