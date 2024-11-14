@@ -4,7 +4,6 @@ using JSE.Clientes.API.Application.Events;
 using JSE.Clientes.API.Data;
 using JSE.Clientes.API.Data.Repository;
 using JSE.Clientes.API.Models;
-using JSE.Clientes.API.Services;
 using JSE.Core.Mediator;
 using JSE.WebAPI.Core.User;
 using MediatR;
@@ -27,8 +26,8 @@ namespace JSE.Clientes.API.Configuration
 
             services.AddScoped<INotificationHandler<ClienteRegistradoEvent>, ClienteEventHandler>();
 
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<ClienteContext>();
+            services.AddScoped<IClienteRepository, ClientesRepository>();
+            services.AddScoped<ClientesContext>();
         }
     }
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JSE.Clientes.API.Migrations
 {
-    [DbContext(typeof(ClienteContext))]
-    [Migration("20241108194137_Clientes")]
+    [DbContext(typeof(ClientesContext))]
+    [Migration("20241114155008_Clientes")]
     partial class Clientes
     {
         /// <inheritdoc />
