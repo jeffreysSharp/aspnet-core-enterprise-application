@@ -28,5 +28,11 @@ namespace JSE.Catalogo.API.Controllers
             return await _produtoRepository.ObterPorId(id);
         }
 
+        [HttpGet("catalogo/produtos/lista/{ids}")]
+        public async Task<IEnumerable<Produto>> ObterProdutosPorId(string ids)
+        {
+            return await _produtoRepository.ObterProdutosPorId(ids);
+        }
+
     }
 }
