@@ -1,11 +1,8 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
-using JSE.Core.Communication;
+﻿using JSE.Core.Communication;
 using JSE.WebApp.MVC.Extensions;
 using JSE.WebApp.MVC.Models;
+using Microsoft.Extensions.Options;
+using System.Net;
 
 namespace JSE.WebApp.MVC.Services
 {
