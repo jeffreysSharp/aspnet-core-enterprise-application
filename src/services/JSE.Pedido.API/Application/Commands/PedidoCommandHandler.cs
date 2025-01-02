@@ -1,7 +1,6 @@
 ﻿using FluentValidation.Results;
 using JSE.Core.Messages;
 using JSE.Pedido_API.Application.Events;
-using JSE.Pedidos.API.Application.Commands;
 using JSE.Pedidos.API.Application.DTO;
 using JSE.Pedidos.Domain;
 using JSE.Pedidos.Domain.Pedidos;

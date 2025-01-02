@@ -1,6 +1,5 @@
 using JSE.Pedidos.API.Configuration;
 using JSE.WebAPI.Core.IdentityConfiguration;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
