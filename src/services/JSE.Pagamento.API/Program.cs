@@ -1,25 +1,27 @@
+using JSE.Pagamentos.API.Configuration;
+using JSE.WebAPI.Core.IdentityConfiguration;
+
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
-// Add services to the container.
+configuration
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", false, false)
+        .AddJsonFile($@"appsettings.{builder.Environment.EnvironmentName}.json", false, false)
+        .AddCommandLine(args)
+        .AddEnvironmentVariables()
+        .AddUserSecrets(typeof(Program).Assembly).Build();
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddApiConfiguration(configuration);
+builder.Services.AddJwtConfiguration(configuration);
+builder.Services.AddSwaggerConfiguration();
+builder.Services.RegisterServices();
+builder.Services.AddMessageBusConfiguration(configuration);
 
 var app = builder.Build();
+var environment = app.Environment;
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseSwaggerConfiguration();
+app.UseApiConfiguration(environment);
 
 app.Run();

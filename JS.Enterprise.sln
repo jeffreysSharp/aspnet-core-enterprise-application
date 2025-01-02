@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pedido", "Pedido", "{856468
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Carrinho.API", "src\services\JSE.Carrinho.API\JSE.Carrinho.API.csproj", "{D3FFF619-CBFD-4472-BA95-093C058BCB40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pagamento.API", "src\services\JSE.Pagamento.API\JSE.Pagamento.API.csproj", "{6CBCEEF0-45E1-4050-9745-556ED2C4BDC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pagamentos.API", "src\services\JSE.Pagamento.API\JSE.Pagamentos.API.csproj", "{6CBCEEF0-45E1-4050-9745-556ED2C4BDC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pedidos.API", "src\services\JSE.Pedido.API\JSE.Pedidos.API.csproj", "{FCDB1D73-2DEA-41F9-87B7-67112E8B73C0}"
 EndProject
@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pedidos.Infra", "src\se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Clientes.API", "src\services\JSE.Clientes.API\JSE.Clientes.API.csproj", "{AC75EECB-1BC5-4653-AB42-E8148D5B05D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSE.Pagamentos.NerdsPag", "src\services\JSE.Pagamentos.NerdsPag\JSE.Pagamentos.NerdsPag.csproj", "{3D83A7B3-B140-43CF-885C-660C043B498A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSE.Pagamentos.NerdsPag", "src\services\JSE.Pagamentos.NerdsPag\JSE.Pagamentos.NerdsPag.csproj", "{3D83A7B3-B140-43CF-885C-660C043B498A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
