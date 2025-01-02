@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace JSE.Pedidos.API.Configuration
+namespace JSE.Pagamentos.API.Configuration
 {
     public static class SwaggerConfig
     {
@@ -10,10 +10,10 @@ namespace JSE.Pedidos.API.Configuration
             {
                 c.SwaggerDoc("v1", new OpenApiInfo()
                 {
-                    Title = "JeffStore Enterprise Pedidos API",
-                    Description = "Esta API faz parte do projeto JeffStore Enterprise Applications.",
-                    Contact = new OpenApiContact() {Name = "Jeferson Almeida", Email = "jefferson_qi3@hotmail.com"},
-                    License = new OpenApiLicense() {Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT")}
+                    Title = "JF Store Pagamentos API",
+                    Description = "Esta API faz parte do projeto ASP.NET Core Enterprise Applications.",
+                    Contact = new OpenApiContact() { Name = "Jeferson Almeida", Email = "jefferson_qi3@hotmail.com" },
+                    License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
                 });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
