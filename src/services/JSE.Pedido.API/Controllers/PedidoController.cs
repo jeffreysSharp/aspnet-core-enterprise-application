@@ -6,7 +6,7 @@ using JSE.WebAPI.Core.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JSE.Pedido_API.Controllers
+namespace JSE.Pedidos.API.Controllers
 {
     [Authorize]
     public class PedidoController : MainController
