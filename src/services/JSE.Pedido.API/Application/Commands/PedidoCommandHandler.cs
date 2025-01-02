@@ -1,5 +1,7 @@
 ﻿using FluentValidation.Results;
 using JSE.Core.Messages;
+using JSE.Core.Messages.Integration;
+using JSE.MessageBus;
 using JSE.Pedido_API.Application.Events;
 using JSE.Pedidos.API.Application.DTO;
 using JSE.Pedidos.Domain;
@@ -14,12 +16,15 @@ namespace JSE.Pedidos.API.Application.Commands
     {
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IVoucherRepository _voucherRepository;
+        private readonly IMessageBus _bus;
 
-        public PedidoCommandHandler(IVoucherRepository voucherRepository, 
-                                    IPedidoRepository pedidoRepository)
+        public PedidoCommandHandler(IVoucherRepository voucherRepository,
+                                    IPedidoRepository pedidoRepository,
+                                    IMessageBus bus)
         {
             _voucherRepository = voucherRepository;
             _pedidoRepository = pedidoRepository;
+            _bus = bus;
         }
 
         public async Task<ValidationResult> Handle(AdicionarPedidoCommand message, CancellationToken cancellationToken)
@@ -37,7 +42,7 @@ namespace JSE.Pedidos.API.Application.Commands
             if (!ValidarPedido(pedido)) return ValidationResult;
 
             // Processar pagamento
-            if (!ProcessarPagamento(pedido)) return ValidationResult;
+            if (! await ProcessarPagamento(pedido, message)) return ValidationResult;
 
             // Se pagamento tudo ok!
             pedido.AutorizarPedido();
@@ -122,8 +127,29 @@ namespace JSE.Pedidos.API.Application.Commands
             return true;
         }
 
-        public bool ProcessarPagamento(Pedido pedido)
+        public async Task<bool> ProcessarPagamento(Pedido pedido, AdicionarPedidoCommand message)
         {
+            var pedidoIniciado = new PedidoIniciadoIntegrationEvent
+            {
+                PedidoId = pedido.Id,
+                ClienteId = pedido.ClienteId,
+                Valor = pedido.ValorTotal,
+                TipoPagamento = 1, // Fixo, alterar se tiver mais tipos
+                NomeCartao = message.NomeCartao,
+                MesAnoVencimento = message.ExpiracaoCartao,
+                CVV = message.CvvCartao
+            };
+
+            var result = await _bus
+                .RequestAsync<PedidoIniciadoIntegrationEvent, ResponseMessage>(pedidoIniciado);
+
+            if (result.ValidationResult.IsValid) return true;
+
+            foreach (var erro in result.ValidationResult.Errors)
+            {
+                AddError(erro.ErrorMessage);
+            }
+
             return true;
         }
     }
