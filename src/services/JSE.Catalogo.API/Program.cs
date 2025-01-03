@@ -13,6 +13,7 @@ configuration
         .AddUserSecrets(typeof(Program).Assembly).Build();
 
 builder.Services.AddApiConfiguration(configuration);
+builder.Services.AddMessageBusConfiguration(configuration);
 builder.Services.AddJwtConfiguration(configuration);
 builder.Services.AddSwaggerConfiguration();
 builder.Services.AddEndpointsApiExplorer();
