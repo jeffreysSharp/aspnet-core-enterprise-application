@@ -50,6 +50,19 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
 
+                <div class="col-lg-5 col-sm-12">
+                    <form method="get" asp-controller="Catalogo" asp-action="Index" class="search">
+                        <div class="input-group w-100">
+                            <input type="text" id="q" name="q" class="form-control" value="@ViewBag.Pesquisa" placeholder="O que você está procurando?">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="offcanvas-header nav border-top px-0 py-3 mt-3 d-md-none">
                     <a class="nav-link justify-content-center w-100" href="">
                         <i class="ci-user fs-lg opacity-60 ms-n2 me-2"></i>
