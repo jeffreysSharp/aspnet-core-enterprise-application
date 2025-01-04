@@ -1,5 +1,5 @@
 ﻿@using JSE.WebApp.MVC.Extensions
-@model IEnumerable<JSE.WebApp.MVC.Models.ProdutoViewModel>
+@model PagedViewModel<ProdutoViewModel>
 
 @{
     ViewData["Title"] = "Todos os produtos";
@@ -10,7 +10,7 @@
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             @{
-                foreach (var produto in Model.Where(p => p.Ativo).OrderBy(p => p.Nome))
+                foreach (var produto in Model.List.Where(p => p.Ativo).OrderBy(p => p.Nome))
                 {
 
                     <div class="col">
@@ -43,5 +43,27 @@
             }
 
         </div>
+
+        <nav aria-label="...">
+            <ul class="pagination">
+                @{
+                    for (var i = 1; i < Model.TotalPages + 1; i++)
+                    {
+                        if (i == Model.PageIndex)
+                        {
+                            <li class="page-item active">
+                                <a class="page-link" asp-action="Index" asp-route-ps="@Model.PageSize" asp-route-page="@i" asp-route-q="@Model.Query">@i</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="Index" asp-route-ps="@Model.PageSize" asp-route-page="@i" asp-route-q="@Model.Query">@i</a>
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+        </nav>
     </div>
 </div>

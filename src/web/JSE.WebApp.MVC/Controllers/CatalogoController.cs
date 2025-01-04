@@ -1,6 +1,7 @@
 ﻿using JSE.WebApp.MVC.Controllers;
 using JSE.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Constraints;
 
 
 namespace JSE.WebApp.MVC.Controllers
@@ -17,9 +18,10 @@ namespace JSE.WebApp.MVC.Controllers
         [HttpGet]
         [Route("")]
         [Route("vitrine")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index([FromQuery] int ps = 8, [FromQuery] int page = 1, [FromQuery] string q = null)
         {
-            var produtos = await _catalogoService.ObterTodos();
+            var produtos = await _catalogoService.ObterTodos(ps, page, q);
+            ViewBag.Pesquisa = q;
 
             return View(produtos);
         }
