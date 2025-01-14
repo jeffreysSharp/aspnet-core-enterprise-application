@@ -3,6 +3,7 @@ using JSE.Identidade.API.Extensions;
 using JSE.WebAPI.Core.IdentityConfiguration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NetDevPack.Security.JwtSigningCredentials;
 
 namespace JSE.Identidade.API.Configuration
 {
@@ -11,6 +12,10 @@ namespace JSE.Identidade.API.Configuration
         public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services,
             IConfiguration configuration)
         {
+
+            services.AddJwksManager(options => options.Algorithm = Algorithm.ES256)
+                .PersistKeysToDatabaseStore<ApplicationDbContext>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
