@@ -35,6 +35,7 @@
 - NetDevPack
 - Facade
 - Elastic Search
+- JWK e JWKS
 
 # Ferramentas
 - Visual Studio 2022 - Version 17.11.4 ++

@@ -1,6 +1,5 @@
 ﻿using JSE.Identidade.API.Data;
 using JSE.Identidade.API.Extensions;
-using JSE.WebAPI.Core.IdentityConfiguration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NetDevPack.Security.JwtSigningCredentials;
@@ -24,8 +23,6 @@ namespace JSE.Identidade.API.Configuration
                 .AddErrorDescriber<IdentityMensagensPortugues>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-            services.AddJwtConfiguration(configuration);
 
             return services;
         }
