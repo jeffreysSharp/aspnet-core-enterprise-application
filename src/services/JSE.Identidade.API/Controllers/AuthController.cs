@@ -155,7 +155,7 @@ namespace JSE.Identidade.API.Controllers
             return new UsuarioRespostaLoginViewModel
             {
                 AccessToken = encodedToken,
-                ExpiresIn = TimeSpan.FromHours(_appSettings.ExpirationHours).TotalSeconds,
+                ExpiresIn = TimeSpan.FromHours(1).TotalSeconds,
                 UsuarioToken = new UsuarioTokenViewModel
                 {
                     Id = user.Id,
