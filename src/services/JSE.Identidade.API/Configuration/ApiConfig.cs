@@ -1,4 +1,6 @@
 ﻿using JSE.WebAPI.Core.IdentityConfiguration;
+using JSE.WebAPI.Core.User;
+using NetDevPack.Security.JwtSigningCredentials.AspNetCore;
 
 namespace JSE.Identidade.API.Configuration
 {
@@ -7,6 +9,8 @@ namespace JSE.Identidade.API.Configuration
         public static IServiceCollection AddApiConfiguration(this IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<IAspNetUser, AspNetUser>();
 
             return services;
         }
@@ -28,6 +32,8 @@ namespace JSE.Identidade.API.Configuration
             {
                 endpoints.MapControllers();
             });
+
+            app.UseJwksDiscovery();
 
             return app;
         }
