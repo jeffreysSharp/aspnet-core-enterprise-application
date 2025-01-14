@@ -52,4 +52,4 @@
 - [x] API Gateway / BFF - Compras 
 - [X] Aplicação de Voucher
 - [X] Pedidos
-- [ ] Pagamentos
+- [x] Pagamentos
