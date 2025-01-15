@@ -1,19 +1,16 @@
-﻿using JSE.WebApp.MVC.Models;
+﻿using JSE.WebApp.MVC.Controllers;
+using JSE.WebApp.MVC.Models;
 using JSE.WebApp.MVC.Services;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 
-namespace JSE.WebApp.MVC.Controllers
+namespace NSE.WebApp.MVC.Controllers
 {
     public class IdentidadeController : MainController
     {
-
         private readonly IAutenticacaoService _autenticacaoService;
 
-        public IdentidadeController(IAutenticacaoService autenticacaoService)
+        public IdentidadeController(
+            IAutenticacaoService autenticacaoService)
         {
             _autenticacaoService = autenticacaoService;
         }
@@ -27,18 +24,17 @@ namespace JSE.WebApp.MVC.Controllers
 
         [HttpPost]
         [Route("nova-conta")]
-        public async Task<IActionResult> Registro(UsuarioRegistroViewModel usuarioRegistroViewModel)
+        public async Task<IActionResult> Registro(UsuarioRegistroViewModel usuarioRegistro)
         {
-            if (!ModelState.IsValid) return View(usuarioRegistroViewModel);
+            if (!ModelState.IsValid) return View(usuarioRegistro);
 
-            var resposta = await _autenticacaoService.Registro(usuarioRegistroViewModel);
+            var resposta = await _autenticacaoService.Registro(usuarioRegistro);
 
-            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistroViewModel);
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistro);
 
-            await RealizarLogin(resposta);
+            await _autenticacaoService.RealizarLogin(resposta);
 
             return RedirectToAction("Index", "Catalogo");
-
         }
 
         [HttpGet]
@@ -51,17 +47,16 @@ namespace JSE.WebApp.MVC.Controllers
 
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(UsuarioLoginViewModel usuarioLoginViewModel, string returnUrl = null)
+        public async Task<IActionResult> Login(UsuarioLoginViewModel usuarioLogin, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+            if (!ModelState.IsValid) return View(usuarioLogin);
 
-            if (!ModelState.IsValid) return View(usuarioLoginViewModel);
+            var resposta = await _autenticacaoService.Login(usuarioLogin);
 
-            var resposta = await _autenticacaoService.Login(usuarioLoginViewModel);
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLogin);
 
-            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLoginViewModel);
-
-            await RealizarLogin(resposta);
+            await _autenticacaoService.RealizarLogin(resposta);
 
             if (string.IsNullOrEmpty(returnUrl)) return RedirectToAction("Index", "Catalogo");
 
@@ -72,35 +67,8 @@ namespace JSE.WebApp.MVC.Controllers
         [Route("sair")]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await _autenticacaoService.Logout();
             return RedirectToAction("Index", "Catalogo");
-        }
-
-        private async Task RealizarLogin(UsuarioRespostaLoginViewModel usuarioRespostaLoginViewModel)
-        {
-            var token = ObterTokenFormatado(usuarioRespostaLoginViewModel.AccessToken);
-
-            var claims = new List<Claim>();
-            claims.Add(new Claim("JWT", usuarioRespostaLoginViewModel.AccessToken));
-            claims.AddRange(token.Claims);
-
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-            var authProperties = new AuthenticationProperties
-            {
-                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(60),
-                IsPersistent = true
-            };
-
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                authProperties);
-        }
-
-        private static JwtSecurityToken ObterTokenFormatado(string jwtToken)
-        {
-            return new JwtSecurityTokenHandler().ReadToken(jwtToken) as JwtSecurityToken;
         }
     }
 }
