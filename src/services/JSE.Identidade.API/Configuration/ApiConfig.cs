@@ -1,4 +1,5 @@
-﻿using JSE.WebAPI.Core.IdentityConfiguration;
+﻿using JSE.Identidade.API.Services;
+using JSE.WebAPI.Core.IdentityConfiguration;
 using JSE.WebAPI.Core.User;
 using NetDevPack.Security.JwtSigningCredentials.AspNetCore;
 
@@ -10,6 +11,7 @@ namespace JSE.Identidade.API.Configuration
         {
             services.AddControllers();
 
+            services.AddScoped<AuthenticationService>();
             services.AddScoped<IAspNetUser, AspNetUser>();
 
             return services;
